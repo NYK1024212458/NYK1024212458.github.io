@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+ <script src=""></script>
+  <link href="" rel="stylesheet">
+  <script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+    </script>
+
+  
+  
+    
+     
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/heart_bulb_stars_16px_1209625_easyicon.net.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="于七分" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="这是关于无线硬件模块ESp8266为基础的软件配置源码分析,主要是使用的是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="frist">
+<meta property="og:url" content="http://yoursite.com/2018/01/10/frist/index.html">
+<meta property="og:site_name" content="于七分">
+<meta property="og:description" content="这是关于无线硬件模块ESp8266为基础的软件配置源码分析,主要是使用的是">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://i.imgur.com/k7gL7G9.png">
+<meta property="og:image" content="http://i.imgur.com/suC35bU.jpg">
+<meta property="og:updated_time" content="2018-01-17T01:32:48.497Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="frist">
+<meta name="twitter:description" content="这是关于无线硬件模块ESp8266为基础的软件配置源码分析,主要是使用的是">
+<meta name="twitter:image" content="http://i.imgur.com/k7gL7G9.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/01/10/frist/"/>
+
+
+
+
+
+  <title>frist | 于七分</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+<a href="https://github.com/NYK1024212458">
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" 
+alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png">
+</a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">于七分</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Don’t panic.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-photo">
+          <a href="/categories/图片" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            图片
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/10/frist/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kunkun5love">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="于七分">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">frist</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-10T14:40:47+08:00">
+                2018-01-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3,448
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  17
+                </span>
+              
+            </div>
+          
+
+          
+              <div class="post-description">
+                  这是关于无线硬件模块ESp8266为基础的软件配置源码分析,主要是使用的是
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="执行一任务中Activity的解析"><a href="#执行一任务中Activity的解析" class="headerlink" title="执行一任务中Activity的解析"></a>执行一任务中Activity的解析</h1><p>告诉自己每天认真的学习,充电!过好每一天.</p>
+<a id="more"></a>
+<p> 我们执行异步任务的类是: EsptouchDemoActivity</p>
+<pre><code>new EsptouchAsyncTask3().execute(apSsid, apBssid, apPassword,
+isSsidHiddenStr, taskResultCountStr); // 参数  apssid apbssid appassword no 1;
+</code></pre><h2 id="开始分析这个异步任务"><a href="#开始分析这个异步任务" class="headerlink" title="开始分析这个异步任务"></a>开始分析这个异步任务</h2><p>参数说明,是哪个参数分别是在doInBackground中使用到的, 和设置进度条使用到的,  最后是在onPostExecuter中使用到的,是一个集合;</p>
+<p>我们看看这个接口 : IEsptouchResult 里面有四个方法:第一个方法是 是否继续进行下一步    第二个方法是检查这个任务是不是用户自己关闭的; 第三个方法是: 获取设备的bssid 第四个方法是获取设备的 ip地址.</p>
+<pre><code>private class EsptouchAsyncTask3 extends AsyncTask&lt;String, Void, List&lt;IEsptouchResult&gt;&gt; {
+
+    private ProgressDialog mProgressDialog;
+
+    private IEsptouchTask mEsptouchTask;
+
+    private final Object mLock = new Object();
+
+    @Override  
+    protected void onPreExecute() {  //  准备工作
+    异步任务的第一个方法,其实就是展示对话框,直接不看,有一点就是有队task的是不是空的判断,非空直接打断
+    }
+
+
+
+    @Override  // 异步任务的最后返回的结果    没什么可看的,最重要的在上面
+
+    protected void onPostExecute(List&lt;IEsptouchResult&gt; result) {
+
+        IEsptouchResult firstResult = result.get(0);
+        Log.d(TAG, &quot;onPostExecute: &quot;);
+
+        if (!firstResult.isCancelled()) {// isCancelled 表示是不是客户关闭的  这里不是客户关闭的
+//                int count = 0; 
+//                final int maxDisplayCount = 5; 
+            if (firstResult.isSuc()) {
+                   try {  
+                          if(str_ssid_FLAG.equals(str_ssid)){ // 
+                              if(!str_pass_FLAG.equals(str_pass)){  // dubug不走
+                                  if(str_ssid.length()&gt;0 &amp;&amp; str_pass.length()&gt;0 &amp;&amp; index!=-1){
+                                      ssid_list.set(index, str_ssid);
+                                      pass_list.set(index, str_pass);
+                                      writeSSID(FAVOSSIDPATH);
+                                      writePASS(FAVOPASSPATH);
+                                  }
+                              }
+                          }else{
+                              if(str_ssid.length()&gt;0 &amp;&amp; str_pass.length()&gt;0){
+                                  ssid_list.add(str_ssid);
+                                  pass_list.add(str_pass);
+                                  writeSSID(FAVOSSIDPATH);
+                                  writePASS(FAVOPASSPATH);
+                              }
+                          }
+                    } catch (Exception e) {  
+                        // TODO Auto-generated catch block  
+                        e.printStackTrace();  
+                    } 
+                  new AlertDialog.Builder(EsptouchDemoActivity.this)
+                  .setIcon(android.R.drawable.ic_dialog_info)
+                  .setTitle(&quot;提示&quot;)
+                  .setMessage(&quot;配置成功!&quot;) 
+                  .setPositiveButton(&quot;确定&quot;, new DialogInterface.OnClickListener() {
+                      public void onClick(DialogInterface dialog, int whichButton) {
+
+                            dialog.dismiss();    
+                            finish();
+                      }
+                  }).show();  
+            } else { 
+
+                 str_ssid = null;
+                 str_pass = null;
+
+                  new AlertDialog.Builder(EsptouchDemoActivity.this)
+                  .setIcon(android.R.drawable.ic_dialog_info)
+                  .setTitle(&quot;提示&quot;)
+                  .setMessage(&quot;配置失败，请重试!&quot;) 
+                  .setPositiveButton(&quot;确定&quot;, new DialogInterface.OnClickListener() {
+                      public void onClick(DialogInterface dialog, int whichButton) {
+                            dialog.dismiss();     
+                      }
+                  }).show();
+            }
+        }
+    }
+}
+</code></pre><p>上面的是准备的方法和最后的返回的方法; 我们单独将 doInBackground 分出来设置一下子</p>
+<pre><code>@Override // 关键方法
+    protected List&lt;IEsptouchResult&gt; doInBackground(String... params) {
+
+        int taskResultCount = -1;  //  初始化默认的值  最后赋值为1
+        synchronized (mLock) { 
+
+            // 获取传递过来的参数
+            String apSsid = params[0]; //  ssid
+            String apBssid = params[1]; //  bssid
+            String apPassword = params[2]; // 密码
+            String isSsidHiddenStr = params[3]; //  no
+            String taskResultCountStr = params[4]; // 1
+            boolean isSsidHidden = false;
+
+            if (isSsidHiddenStr.equals(&quot;YES&quot;)) {  //  不会执行
+                isSsidHidden = true;
+            }
+            taskResultCount = Integer.parseInt(taskResultCountStr); //1  实质就是讲转化的string 转化为int  结果就是我们选择的1
+
+            mEsptouchTask = new EsptouchTask(apSsid, apBssid, apPassword,  //传递参数
+                    isSsidHidden, EsptouchDemoActivity.this);
+
+            mEsptouchTask.setEsptouchListener(myListener); //  这是参数类型  IEsptouchListener 这个接口里面只有一个方法就是添加 IEsptouchResult的方法;
+        }
+
+
+        List&lt;IEsptouchResult&gt; resultList = mEsptouchTask.executeForResults(taskResultCount);   //
+
+
+
+        return resultList;
+    }
+</code></pre><p>我们看到首先是将参数传递到EsptouchTask中:</p>
+<pre><code>public EsptouchTask(String apSsid, String apBssid, String apPassword,
+        boolean isSsidHidden, Context context) {
+
+    _mParameter = new EsptouchTaskParameter();
+    _mEsptouchTask = new __EsptouchTask(apSsid, apBssid, apPassword,
+            context, _mParameter, isSsidHidden);
+}
+</code></pre><p>EsptouchTaskParameter我们看过,里面定义了很多的常量和方法,不细看了<br>再一次将参数传递过去__EsptouchTask:</p>
+<pre><code>public __EsptouchTask(String apSsid, String apBssid, String apPassword,
+        Context context, IEsptouchTaskParameter parameter,
+        boolean isSsidHidden) {
+    // 空处理不看了   接下来就是成员变量接收传递过来的信息
+    mContext = context;
+    mApSsid = apSsid;
+    mApBssid = apBssid;
+    mApPassword = apPassword;
+
+    mIsCancelled = new AtomicBoolean(false);  //  多线程高并发使用的饿一个类  比较和赋值一体化
+
+    mSocketClient = new UDPSocketClient();  //  具有发送 DatagramPacket的方法
+
+    mParameter = parameter;  //  获取定义好的数据类型的值
+
+    mSocketServer = new UDPSocketServer(mParameter.getPortListening(),  //  获取端口监听   超时时间   上下文
+            mParameter.getWaitUdpTotalMillisecond(), context);
+
+    mIsSsidHidden = isSsidHidden; // false
+
+    mEsptouchResultList = new ArrayList&lt;IEsptouchResult&gt;(); // 创建一个存放IEsptouchResult的集合
+mBssidTaskSucCountMap = new HashMap&lt;String, Integer&gt;();  // 创建集合 来干嘛的  关于ssid的task 进行数量的一个集合
+}
+</code></pre><p>我们继续查看: new AtomicBoolean(false); 传递的是一个false 实际测试的结果也是false;接下来是一个实例化了一 UDPSocketClient</p>
+<p>我们看看坐的是什么操作:</p>
+<pre><code>public UDPSocketClient() {
+    try {
+        this.mSocket = new DatagramSocket();  //  用于接收的发送udp的sockect的实例
+        this.mIsStop = false;
+        this.mIsClosed = false;
+    } catch (SocketException e) {
+        if (__IEsptouchTask.DEBUG) {   // 日志管理  是true 
+            Log.e(TAG, &quot;SocketException&quot;);
+        }
+        e.printStackTrace();
+    }
+}
+</code></pre><p>我们可以看出来,在实际的过程中,创建udp通信实例中,初始化了数据包.我们继续,获取的参数parameter,以成员变量保存,下面一个是我们看到udpsockectServer ,将获取到的监听端口传递进去; 监听端口是18266  设置超时的时间是60000 ,一个上下文</p>
+<h2 id="关于UDPSocketServer"><a href="#关于UDPSocketServer" class="headerlink" title="关于UDPSocketServer"></a>关于UDPSocketServer</h2><p>代码如下:</p>
+<pre><code>public UDPSocketServer(int port, int socketTimeout, Context context) { //  第一个是我们需要监听的端口 18266,  超时时间,  山下文
+    this.mContext = context;
+    this.buffer = new byte[64];
+    this.mReceivePacket = new DatagramPacket(buffer, 64);  //  接收DatagramSockect
+    try {
+        this.mServerSocket = new DatagramSocket(port);
+        this.mServerSocket.setSoTimeout(socketTimeout);
+        this.mIsClosed = false;
+
+        //  获取Android的wifi管理
+        WifiManager manager = (WifiManager) mContext
+                .getSystemService(Context.WIFI_SERVICE);
+
+        mLock = manager.createMulticastLock(&quot;test wifi&quot;);  //  创建组播锁   输入的&quot;test wifi 是一个tag&quot;   最后会调用acquire
+        Log.d(TAG, &quot;mServerSocket is created, socket read timeout: &quot;
+                + socketTimeout + &quot;, port: &quot; + port);
+    } catch (IOException e) {
+        Log.e(TAG, &quot;IOException&quot;);
+        e.printStackTrace();
+    }
+}
+</code></pre><p>我们在doInbackground中看到传递一个myListener,我们看看最后传递到哪里了!参数的类型如下:</p>
+<p>// myListener的类型是一个接口: 接口IEsptouchListener  只有一个方法那就是 添加onEsptouchResultAdded()方法;添加的参数类型IEsptouchResul(四个方法是关于设备的,监听回调)</p>
+<p>第一将这个监听回调对象传递到 EsptouchTsak类中: 具体代码如下:</p>
+<pre><code>@Override
+public void setEsptouchListener(IEsptouchListener esptouchListener) {
+    _mEsptouchTask.setEsptouchListener(esptouchListener);
+}
+</code></pre><p>我们可以看到类型不变,只不过传递到_mEsptouchTask,我们继续查看:</p>
+<p>_mEsptouchTask类中:</p>
+<pre><code>@Override
+public void setEsptouchListener(IEsptouchListener esptouchListener) {
+    mEsptouchListener = esptouchListener;
+}
+</code></pre><p>最后也就是在_mEsptouchTask类中接收了, 成员变量来保存.</p>
+<h2 id="最后我们看看-关键方法"><a href="#最后我们看看-关键方法" class="headerlink" title="最后我们看看 关键方法"></a>最后我们看看 关键方法</h2><pre><code>List&lt;IEsptouchResult&gt; resultList = mEsptouchTask.executeForResults(taskResultCount);   //默认是1,可以在下拉刷新中选择
+</code></pre><p>继续在EsptouchTask中查找这个方法</p>
+<pre><code>public List&lt;IEsptouchResult&gt; executeForResults(int expectTaskResultCount) //传递过来是1 默认是1可以选择
+        throws RuntimeException {
+    if (expectTaskResultCount &lt;= 0) {
+        expectTaskResultCount = Integer.MAX_VALUE;
+    }
+    return _mEsptouchTask.executeForResults(expectTaskResultCount); // 再次传递执行
+}
+</code></pre><p>同理也就是传递到 _mEsptouchTask中去,我们继续查看</p>
+<p>/**</p>
+<pre><code>*  4  追查的结果  _mEsptouchTask.executeForResults(expectTaskResultCount); //  传递的是1
+* // 关键方法
+@Override
+public List&lt;IEsptouchResult&gt; executeForResults(int expectTaskResultCount)throws RuntimeException {
+
+__checkTaskValid(); //  判断esptouchtask只能执行一次  不需要看
+
+mParameter.setExpectTaskResultCount(expectTaskResultCount);
+
+// udp 通信中获取 up地址  ESPnETTYIL工具类
+
+InetAddress localInetAddress = EspNetUtil.getLocalInetAddress(mContext);  //  结果是获取手机的IP地址  192.168.188.23
+
+// generator the esptouch byte[][] to be transformed, which will cost
+// some time(maybe a bit much)
+IEsptouchGenerator generator = new EsptouchGenerator(mApSsid, mApBssid, mApPassword, localInetAddress, mIsSsidHidden);
+
+// listen the esptouch result asyn
+
+__listenAsyn(mParameter.getEsptouchResultTotalLen());   实质就是 _listenAsyn(11);
+
+boolean isSuc = false;
+for (int i = 0; i &lt; mParameter.getTotalRepeatTime(); i++) {    //mParameter.getTotalRepeatTime()=1;
+
+isSuc = __execute(generator);  //  这个方法中会去发送数据包
+
+if (isSuc) {
+
+return __getEsptouchResultList();
+
+}
+}
+
+if (!mIsInterrupt) {
+// wait the udp response without sending udp broadcast
+try {
+Thread.sleep(mParameter.getWaitUdpReceivingMillisecond());
+} catch (InterruptedException e) {
+// receive the udp broadcast or the user interrupt the task
+
+if (this.mIsSuc) {
+
+return __getEsptouchResultList();
+
+} else {
+
+this.__interrupt();
+
+return __getEsptouchResultList();
+}
+}
+this.__interrupt();
+}
+
+return __getEsptouchResultList();
+
+}
+
+*/
+</code></pre><h2 id="我们首先看第一个关键性的方法"><a href="#我们首先看第一个关键性的方法" class="headerlink" title="我们首先看第一个关键性的方法"></a>我们首先看第一个关键性的方法</h2><p>有一个小的操作需要看看  mParameter.setExpectTaskResultCount(expectTaskResultCount);</p>
+<p>@Override<br>    public int getExpectTaskResultCount() {<br>        return this.mExpectTaskResultCount;<br>    }</p>
+<pre><code>@Override
+public void setExpectTaskResultCount(int expectTaskResultCount) {
+    this.mExpectTaskResultCount = expectTaskResultCount;
+}
+</code></pre><p>我们看看又初始化了一个类:localInetAddress这个是获取手机的IP地址 这里就是192.168.188.23</p>
+<p> IEsptouchGenerator generator = new EsptouchGenerator(mApSsid, mApBssid, mApPassword, localInetAddress, mIsSsidHidden);</p>
+<p>我们看看初始化的时候的操作:</p>
+<pre><code>public EsptouchGenerator(String apSsid, String apBssid, String apPassword,
+        InetAddress inetAddress, boolean isSsidHiden) { // ssid bssid pwd 192.168.188.23, false 
+    // generate guide code
+
+    GuideCode gc = new GuideCode();
+    char[] gcU81 = gc.getU8s();
+    mGcBytes2 = new byte[gcU81.length][];
+
+    for (int i = 0; i &lt; mGcBytes2.length; i++) {
+        mGcBytes2[i] = ByteUtil.genSpecBytes(gcU81[i]); //看看这个数据装的是什么
+    }
+
+    // generate data code
+    DatumCode dc = new DatumCode(apSsid, apBssid, apPassword, inetAddress,
+            isSsidHiden);
+    char[] dcU81 = dc.getU8s();
+    mDcBytes2 = new byte[dcU81.length][];
+
+    for (int i = 0; i &lt; mDcBytes2.length; i++) {
+        mDcBytes2[i] = ByteUtil.genSpecBytes(dcU81[i]);  //看看这个数据装的是什么
+    }
+
+}
+</code></pre><p>我们debug打印一下子就OK了!</p>
+<p>gcU81:四个元素: </p>
+<p>mGcBytes2:</p>
+<p>DatumCode:</p>
+<p>mDcBytes2:</p>
+<p>直接图片展示: <img src="http://i.imgur.com/k7gL7G9.png" alt=""></p>
+<p>下面的都是关于 DatumCode的构造方法:</p>
+<p>  public DatumCode(String apSsid, String apBssid, String apPassword,<br>            InetAddress ipAddress, boolean isSsidHiden) {  // 构造方法<br>        // Data = total len(1 byte) + apPwd len(1 byte) + SSID CRC(1 byte) +<br>        // BSSID CRC(1 byte) + TOTAL XOR(1 byte)+ ipAddress(4 byte) + apPwd + apSsid apPwdLen &lt;=<br>        // 105 at the moment</p>
+<pre><code>    // total xor
+    char totalXor = 0;
+
+    char apPwdLen = (char) ByteUtil.getBytesByString(apPassword).length;
+
+    CRC8 crc = new CRC8();
+    crc.update(ByteUtil.getBytesByString(apSsid));
+    char apSsidCrc = (char) crc.getValue();
+
+    crc.reset();
+    crc.update(EspNetUtil.parseBssid2bytes(apBssid));
+    char apBssidCrc = (char) crc.getValue();
+
+    char apSsidLen = (char) ByteUtil.getBytesByString(apSsid).length;
+    // hostname parse
+    String ipAddrStrs[] = ipAddress.getHostAddress().split(&quot;\\.&quot;);
+    int ipLen = ipAddrStrs.length;
+
+    char ipAddrChars[] = new char[ipLen];
+    // only support ipv4 at the moment
+    for (int i = 0; i &lt; ipLen; ++i) {
+        ipAddrChars[i] = (char) Integer.parseInt(ipAddrStrs[i]);
+    }
+
+
+    char _totalLen = (char) (EXTRA_HEAD_LEN + ipLen + apPwdLen + apSsidLen);
+    char totalLen = isSsidHiden ? (char) (EXTRA_HEAD_LEN + ipLen + apPwdLen + apSsidLen)
+            : (char) (EXTRA_HEAD_LEN + ipLen + apPwdLen);
+
+    // build data codes
+    mDataCodes = new DataCode[totalLen];
+    mDataCodes[0] = new DataCode(_totalLen, 0);
+    totalXor ^= _totalLen;
+    mDataCodes[1] = new DataCode(apPwdLen, 1);
+    totalXor ^= apPwdLen;
+    mDataCodes[2] = new DataCode(apSsidCrc, 2);
+    totalXor ^= apSsidCrc;
+    mDataCodes[3] = new DataCode(apBssidCrc, 3);
+    totalXor ^= apBssidCrc;
+    mDataCodes[4] = null;
+    for (int i = 0; i &lt; ipLen; ++i) {
+        mDataCodes[i + EXTRA_HEAD_LEN] = new DataCode(ipAddrChars[i], i + EXTRA_HEAD_LEN);
+        totalXor ^= ipAddrChars[i];
+    }
+
+    byte[] apPwdBytes = ByteUtil.getBytesByString(apPassword);
+    char[] apPwdChars = new char[apPwdBytes.length];
+    for (int i = 0;i &lt; apPwdBytes.length; i++) {
+        apPwdChars[i] = ByteUtil.convertByte2Uint8(apPwdBytes[i]);
+    }
+    for (int i = 0; i &lt; apPwdChars.length; i++) {
+        mDataCodes[i + EXTRA_HEAD_LEN + ipLen] = new DataCode(
+                apPwdChars[i], i + EXTRA_HEAD_LEN + ipLen);
+        totalXor ^= apPwdChars[i];
+    }
+
+    byte[] apSsidBytes = ByteUtil.getBytesByString(apSsid);
+    char[] apSsidChars = new char[apSsidBytes.length];
+
+    // totalXor will xor apSsidChars no matter whether the ssid is hidden
+    for (int i = 0; i &lt; apSsidBytes.length; i++) {
+        apSsidChars[i] = ByteUtil.convertByte2Uint8(apSsidBytes[i]);
+        totalXor ^= apSsidChars[i];
+    }
+
+    if (isSsidHiden) {
+        for (int i = 0; i &lt; apSsidChars.length; i++) {
+            mDataCodes[i + EXTRA_HEAD_LEN + ipLen + apPwdLen] = new DataCode(
+                    apSsidChars[i], i + EXTRA_HEAD_LEN + ipLen + apPwdLen);
+        }
+    }
+
+    // set total xor last
+    mDataCodes[4] = new DataCode(totalXor, 4);
+}
+</code></pre><h2 id="下面的是一个关键性方法-listenAsyn-mParameter-getEsptouchResultTotalLen"><a href="#下面的是一个关键性方法-listenAsyn-mParameter-getEsptouchResultTotalLen" class="headerlink" title="下面的是一个关键性方法__listenAsyn(mParameter.getEsptouchResultTotalLen());"></a>下面的是一个关键性方法__listenAsyn(mParameter.getEsptouchResultTotalLen());</h2><p><strong>listenAsyn(mParameter.getEsptouchResultTotalLen());实质就是</strong>listenAsyn(11);</p>
+<pre><code>private void __listenAsyn(final int expectDataLen) { //11
+    new Thread() {
+        public void run() {
+
+            long startTimestamp = System.currentTimeMillis();//获取系统当前时间
+
+            byte[] apSsidAndPassword = ByteUtil.getBytesByString(mApSsid
+                    + mApPassword); //return string.getBytes(ESPTOUCH_ENCODING_CHARSET);  转化为utf-8的格式
+
+            byte expectOneByte = (byte) (apSsidAndPassword.length + 9); // 看一下子期望的字节
+
+
+            byte receiveOneByte = -1;    // 接收的字节
+            byte[] receiveBytes = null; // 接收的字节数组
+            while (mEsptouchResultList.size() &lt; mParameter
+                    .getExpectTaskResultCount() &amp;&amp; !mIsInterrupt) {
+
+                receiveBytes = mSocketServer
+                        .receiveSpecLenBytes(expectDataLen);  //  接收特定的特殊的字符  11
+
+                if (receiveBytes != null) {
+
+                    receiveOneByte = receiveBytes[0];
+
+                } else {
+                    receiveOneByte = -1;
+                }
+            // 接收到的字节和期望的字节一致
+                if (receiveOneByte == expectOneByte) {
+                    if (__IEsptouchTask.DEBUG) {
+                        Log.i(TAG, &quot;receive correct broadcast&quot;);
+                    }
+                    // change the socket&apos;s timeout
+                    long consume = System.currentTimeMillis()
+                            - startTimestamp;  // 当前的异步的时间减去开始异步监听的系统时间
+                    int timeout = (int) (mParameter
+                            .getWaitUdpTotalMillisecond() - consume); // 60000-consume
+                    if (timeout &lt; 0) {  // 超时
+                        if (__IEsptouchTask.DEBUG) {
+                            Log.i(TAG, &quot;esptouch timeout&quot;);
+                        }
+                        break;
+                    } else { // 没有超时
+
+                        if (__IEsptouchTask.DEBUG) {
+                            Log.i(TAG, &quot;mSocketServer&apos;s new timeout is &quot;
+                                    + timeout + &quot; milliseconds&quot;);
+                        }
+
+                        mSocketServer.setSoTimeout(timeout);
+
+                        if (__IEsptouchTask.DEBUG) {
+                            Log.i(TAG, &quot;receive correct broadcast&quot;);
+                        }
+                        if (receiveBytes != null) {
+
+                            String bssid = ByteUtil.parseBssid( // 解析获取的设备ssid
+                                    receiveBytes,
+                                    mParameter.getEsptouchResultOneLen(), // 查询是1
+                                    mParameter.getEsptouchResultMacLen()); //查询是6
+                            InetAddress inetAddress = EspNetUtil  // 解析获取的设备的 ip地址
+                                    .parseInetAddr(
+                                            receiveBytes,
+                                            mParameter.getEsptouchResultOneLen() //1
+                                            + mParameter.getEsptouchResultMacLen(), //6
+                                            mParameter.getEsptouchResultIpLen());//4
+
+                            __putEsptouchResult(true, bssid, inetAddress);  // 存放到集合
+                        }
+                    }
+                } else {
+                    if (__IEsptouchTask.DEBUG) {
+                        Log.i(TAG, &quot;receive rubbish message, just ignore&quot;);
+                    }
+                }
+            }
+            mIsSuc = mEsptouchResultList.size() &gt;= mParameter
+                    .getExpectTaskResultCount();  // size和1比较
+            __EsptouchTask.this.__interrupt();// 打断
+            if (__IEsptouchTask.DEBUG) {
+                Log.d(TAG, &quot;__listenAsyn() finish&quot;);
+            }
+        }
+    }.start();
+}
+</code></pre><p>首先是这个方法里面又开了一个子线程来运行程序:其他的都直接在程序中说明:</p>
+<p>我们看看存放的方法 __putEsptouchResult():</p>
+<pre><code>private void __putEsptouchResult(boolean isSuc, String bssid,
+        InetAddress inetAddress) {
+    synchronized (mEsptouchResultList) {
+        // check whether the result receive enough UDP response
+        boolean isTaskSucCountEnough = false;
+        Integer count = mBssidTaskSucCountMap.get(bssid);// map结合根据bssid获取 count
+        if (count == null) {
+            count = 0;
+        }
+        ++count;
+        if (__IEsptouchTask.DEBUG) {
+            Log.d(TAG, &quot;__putEsptouchResult(): count = &quot; + count);
+        }
+        mBssidTaskSucCountMap.put(bssid, count); //  存放到集合中
+        isTaskSucCountEnough = count &gt;= mParameter
+                .getThresholdSucBroadcastCount();  // 将count和1比较
+        if (!isTaskSucCountEnough) {
+            if (__IEsptouchTask.DEBUG) {
+                Log.d(TAG, &quot;__putEsptouchResult(): count = &quot; + count
+                        + &quot;, isn&apos;t enough&quot;);
+            }
+            return;
+        }
+        // check whether the result is in the mEsptouchResultList already 检查是否存在
+        boolean isExist = false;
+        for (IEsptouchResult esptouchResultInList : mEsptouchResultList) {
+            if (esptouchResultInList.getBssid().equals(bssid)) {
+                isExist = true;
+                break;
+            }
+        }
+        // only add the result who isn&apos;t in the mEsptouchResultList
+        if (!isExist) { // 不存在,new一个 EsptouchResult并进行复制,走到这一步就是成功的,后面有失败的处理,失败集合就是null的.
+            if (__IEsptouchTask.DEBUG) {
+                Log.d(TAG, &quot;__putEsptouchResult(): put one more result&quot;);
+            }
+            final IEsptouchResult esptouchResult = new EsptouchResult(isSuc,
+                    bssid, inetAddress);
+
+            mEsptouchResultList.add(esptouchResult);
+            if (mEsptouchListener != null) {
+                mEsptouchListener.onEsptouchResultAdded(esptouchResult);
+            }
+        }
+    }
+}
+</code></pre><p>我们看完继续看:__execute(generator);</p>
+<pre><code>isSuc = __execute(generator);  //  这个方法中会去发送数据包
+
+private boolean __execute(IEsptouchGenerator generator) {
+
+    long startTime = System.currentTimeMillis();
+    long currentTime = startTime;
+    long lastTime = currentTime - mParameter.getTimeoutTotalCodeMillisecond();// 6000 (不是60000)
+
+    byte[][] gcBytes2 = generator.getGCBytes2();
+    byte[][] dcBytes2 = generator.getDCBytes2();
+
+    int index = 0;
+    while (!mIsInterrupt) {
+        if (currentTime - lastTime &gt;= mParameter.getTimeoutTotalCodeMillisecond()) { // 6000
+            if (__IEsptouchTask.DEBUG) {
+                Log.d(TAG, &quot;send gc code &quot;);
+            }
+            // send guide code
+            while (!mIsInterrupt
+                    &amp;&amp; System.currentTimeMillis() - currentTime &lt; mParameter
+                            .getTimeoutGuideCodeMillisecond()) { //6000
+
+                //  也是一个发送数据的地方
+                mSocketClient.sendData(gcBytes2,
+                        mParameter.getTargetHostname(),
+                        mParameter.getTargetPort(),
+                        mParameter.getIntervalGuideCodeMillisecond());
+
+                // check whether the udp is send enough time
+                if (System.currentTimeMillis() - startTime &gt; mParameter.getWaitUdpSendingMillisecond()) {
+                    break;
+                }
+            }
+            lastTime = currentTime;
+        } else {
+            //   发送数据报文
+
+            mSocketClient.sendData(dcBytes2, index, ONE_DATA_LEN,
+                    mParameter.getTargetHostname(), //234.1.1.1, 234.2.2.2, 234.3.3.3 to 234.100.100.100
+                    mParameter.getTargetPort(), //7001
+                    mParameter.getIntervalDataCodeMillisecond());  // 10
+            index = (index + ONE_DATA_LEN) % dcBytes2.length;  // (index+3)%dcBytes2.length;
+        }
+        currentTime = System.currentTimeMillis();
+        // check whether the udp is send enough time
+        if (currentTime - startTime &gt; mParameter.getWaitUdpSendingMillisecond()) {
+            break;
+        }
+    }
+
+    return mIsSuc;
+}
+</code></pre><p>我们来看看具体的发送的发送的hostname:</p>
+<pre><code>// target hostname is : 234.1.1.1, 234.2.2.2, 234.3.3.3 to 234.100.100.100
+@Override
+public String getTargetHostname() {
+
+    int count = __getNextDatagramCount();
+    return &quot;234.&quot; + count + &quot;.&quot; + count + &quot;.&quot; + count;
+}
+</code></pre><p>还差最后一点方法:executeForResults(1)</p>
+<pre><code>if (isSuc) {
+            return __getEsptouchResultList();
+        }
+</code></pre><p>上面返回的 isSUC的值为true </p>
+<p>获取__getEsptouchResultList();</p>
+<pre><code>private List&lt;IEsptouchResult&gt; __getEsptouchResultList() {
+    synchronized (mEsptouchResultList) {
+        if (mEsptouchResultList.isEmpty()) { // 失败的结果,也返回这不过返回的就是 false 和null null
+            EsptouchResult esptouchResultFail = new EsptouchResult(false,
+                    null, null);
+            esptouchResultFail.setIsCancelled(mIsCancelled.get());
+            mEsptouchResultList.add(esptouchResultFail);
+        }
+
+        return mEsptouchResultList;
+    }
+}
+</code></pre><p>整体的过程结束.我们查看查看,发送数据那一段:</p>
+<p>IEsptouchGenerator generator = new EsptouchGenerator(mApSsid, mApBssid,<br>                mApPassword, localInetAddress, mIsSsidHidden);<br>开始说起:</p>
+<pre><code>public EsptouchGenerator(String apSsid, String apBssid, String apPassword,
+        InetAddress inetAddress, boolean isSsidHiden) {
+    // generate guide code
+    GuideCode gc = new GuideCode();
+    char[] gcU81 = gc.getU8s();// 获取的就是 515 514 5123 512
+    mGcBytes2 = new byte[gcU81.length][];// 创建数组
+
+    for (int i = 0; i &lt; mGcBytes2.length; i++) {
+        mGcBytes2[i] = ByteUtil.genSpecBytes(gcU81[i]);
+    }
+
+    // generate data code
+    DatumCode dc = new DatumCode(apSsid, apBssid, apPassword, inetAddress,
+            isSsidHiden);
+    char[] dcU81 = dc.getU8s();
+    mDcBytes2 = new byte[dcU81.length][];
+
+    for (int i = 0; i &lt; mDcBytes2.length; i++) {
+        mDcBytes2[i] = ByteUtil.genSpecBytes(dcU81[i]); // 注意的是 图片显示的是0123 ,表示的是下表,是一个二维数组
+    }
+}
+</code></pre><p>我们再来看看:GuideCode</p>
+<p>源代码如下:</p>
+<pre><code>public class GuideCode implements ICodeData {
+
+public static final int GUIDE_CODE_LEN = 4;
+
+@Override
+public byte[] getBytes() {
+    throw new RuntimeException(&quot;DataCode don&apos;t support getBytes()&quot;);
+}
+
+@Override
+public String toString() {
+    StringBuilder sb = new StringBuilder();
+    char[] dataU8s = getU8s();
+    for (int i = 0; i &lt; GUIDE_CODE_LEN; i++) {
+        String hexString = ByteUtil.convertU8ToHexString(dataU8s[i]);
+        sb.append(&quot;0x&quot;);
+        if (hexString.length() == 1) {
+            sb.append(&quot;0&quot;);
+        }
+        sb.append(hexString).append(&quot; &quot;);
+    }
+    return sb.toString();
+}
+
+@Override
+public char[] getU8s() {
+    char[] guidesU8s = new char[GUIDE_CODE_LEN];
+    guidesU8s[0] = 515;
+    guidesU8s[1] = 514;
+    guidesU8s[2] = 513;
+    guidesU8s[3] = 512;
+    return guidesU8s;
+}
+}
+</code></pre><p>解释如下:</p>
+<p>实现的接口代码:</p>
+<pre><code>byte[] getBytes();  //Get the byte[] to be transformed.
+char[] getU8s(); //Get the char[](u8[]) to be transfromed.
+</code></pre><p>我们看看实现的过程,字节直接是一个空方法,下面看getU8s()数组中分别开始赋值 515到512,tostring()的操作: 最后的结果如下:</p>
+<pre><code>//  dubug的测试的最后结果是: 0x203 0x202 0x201 0x200   注意前面的ox是直接添加的
+</code></pre><p>我们继续看DatumCode类:</p>
+<p><img src="http://i.imgur.com/suC35bU.jpg" alt=""></p>
+<p>就这样吧!</p>
+
+      
+    </div>
+    
+    
+    
+
+  <div>
+      
+        
+      
+   </div>
+
+    
+
+    <div>
+    
+       <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读!-------------</div>
+    
+</div>
+     
+    </div>
+
+   
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>写作是一个学习的过程,感谢你的赞助!</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="kunkun5love 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="kunkun5love 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/08/this-is-new-page-hello-world/" rel="next" title="this is new page hello world">
+                <i class="fa fa-chevron-left"></i> this is new page hello world
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/10/测试页面/" rel="prev" title="测试页面">
+                测试页面 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzMwNC85ODYx"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="kunkun5love" />
+            
+              <p class="site-author-name" itemprop="name">kunkun5love</p>
+              <p class="site-description motion-element" itemprop="description">不要太满,给自己一些余地.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/NYK1024212458" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:kunkun5love@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/kunkun5love" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://stackoverflow.com/kunkun5love" target="_blank" title="StackOverflow">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/users/d92fc6aa2781/timeline" target="_blank" title="简书">
+                      
+                        <i class="fa fa-fw fa-usb"></i>简书</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://www.kunkun5love.tk/" target="_blank" title="csdn">
+                      
+                        <i class="fa fa-fw fa-crosshairs"></i>csdn</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://gitee.com/niuyukunwork/events" target="_blank" title="码云">
+                      
+                        <i class="fa fa-fw fa-gg"></i>码云</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="/" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i>QQ</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="/" target="_blank" title="微信">
+                      
+                        <i class="fa fa-fw fa-wexin"></i>微信</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#执行一任务中Activity的解析"><span class="nav-number">1.</span> <span class="nav-text">执行一任务中Activity的解析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#开始分析这个异步任务"><span class="nav-number">1.1.</span> <span class="nav-text">开始分析这个异步任务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于UDPSocketServer"><span class="nav-number">1.2.</span> <span class="nav-text">关于UDPSocketServer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后我们看看-关键方法"><span class="nav-number">1.3.</span> <span class="nav-text">最后我们看看 关键方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我们首先看第一个关键性的方法"><span class="nav-number">1.4.</span> <span class="nav-text">我们首先看第一个关键性的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下面的是一个关键性方法-listenAsyn-mParameter-getEsptouchResultTotalLen"><span class="nav-number">1.5.</span> <span class="nav-text">下面的是一个关键性方法__listenAsyn(mParameter.getEsptouchResultTotalLen());</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kunkun5love</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">19.9k</span>
+  
+</div>
+
+
+
+ <div class="powered-by">
+ <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  我的网站的访客数:<span id="busuanzi_value_site_uv"></span>
+ </span>
+ </div>
+
+<!--  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+-->
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共19.9k字</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+   <!-- 页面点击小红心 -->
+	<script type="text/javascript" src="/js/src/love.js"></script>
+
+	<!-- 页面的爆炸效果 -->
+
+</body>
+</html>

@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+ <script src=""></script>
+  <link href="" rel="stylesheet">
+  <script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+    </script>
+
+  
+  
+    
+     
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/heart_bulb_stars_16px_1209625_easyicon.net.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="于七分" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="前言: 一直对hexo的风格所喜欢者,只是在开始的时候选择阴差阳错的选择了workpress ,搭建的博客也是很好使用,最近看到一篇关于hexo搭建的网页,我觉得我还是在来折腾一次,趁着年轻,赶快折腾.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo的使用">
+<meta property="og:url" content="http://yoursite.com/2018/01/17/Hexo基本使用/index.html">
+<meta property="og:site_name" content="于七分">
+<meta property="og:description" content="前言: 一直对hexo的风格所喜欢者,只是在开始的时候选择阴差阳错的选择了workpress ,搭建的博客也是很好使用,最近看到一篇关于hexo搭建的网页,我觉得我还是在来折腾一次,趁着年轻,赶快折腾.">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.imgur.com/IoyDaLo.png">
+<meta property="og:image" content="https://i.imgur.com/JVjeFgU.png">
+<meta property="og:image" content="https://i.imgur.com/laNw1Ai.png">
+<meta property="og:image" content="https://i.imgur.com/wh4sJkQ.png">
+<meta property="og:image" content="https://i.imgur.com/qOs757K.png">
+<meta property="og:image" content="https://i.imgur.com/0A9nG1B.png">
+<meta property="og:image" content="https://i.imgur.com/uYTzCEU.png">
+<meta property="og:image" content="https://i.imgur.com/YFFdGir.png">
+<meta property="og:image" content="https://i.imgur.com/7s6JBVH.png">
+<meta property="og:image" content="https://i.imgur.com/5C5gpJ3.png">
+<meta property="og:image" content="https://i.imgur.com/cZ95cUA.png">
+<meta property="og:image" content="https://i.imgur.com/NYr1pnO.png">
+<meta property="og:image" content="https://i.imgur.com/gEL8KCN.png">
+<meta property="og:image" content="https://i.imgur.com/MQtU7WR.png">
+<meta property="og:image" content="https://i.imgur.com/E79lMZE.png">
+<meta property="og:image" content="https://i.imgur.com/51OBHhX.png">
+<meta property="og:image" content="https://i.imgur.com/eO65ZV3.png">
+<meta property="og:image" content="https://i.imgur.com/ShU33yh.png">
+<meta property="og:image" content="https://i.imgur.com/ETz0iup.png">
+<meta property="og:image" content="https://i.imgur.com/EmeWMMs.png">
+<meta property="og:image" content="https://i.imgur.com/6WbGPda.png">
+<meta property="og:image" content="https://i.imgur.com/kaXsuz7.png">
+<meta property="og:image" content="https://i.imgur.com/jsiQAjR.png">
+<meta property="og:image" content="https://i.imgur.com/6nf0Gs0.png">
+<meta property="og:image" content="https://i.imgur.com/qs6FZvo.png">
+<meta property="og:image" content="https://i.imgur.com/oQwdcvb.png">
+<meta property="og:image" content="http://yoursite.com/image-url">
+<meta property="og:image" content="http://yoursite.com/image-url">
+<meta property="og:image" content="http://yoursite.com/image-url">
+<meta property="og:updated_time" content="2018-01-22T09:00:13.496Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo的使用">
+<meta name="twitter:description" content="前言: 一直对hexo的风格所喜欢者,只是在开始的时候选择阴差阳错的选择了workpress ,搭建的博客也是很好使用,最近看到一篇关于hexo搭建的网页,我觉得我还是在来折腾一次,趁着年轻,赶快折腾.">
+<meta name="twitter:image" content="https://i.imgur.com/IoyDaLo.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/01/17/Hexo基本使用/"/>
+
+
+
+
+
+  <title>Hexo的使用 | 于七分</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+<a href="https://github.com/NYK1024212458">
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" 
+alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png">
+</a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">于七分</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Don’t panic.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-photo">
+          <a href="/categories/图片" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            图片
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/17/Hexo基本使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kunkun5love">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="于七分">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Hexo的使用</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-17T09:52:49+08:00">
+                2018-01-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/博客/" itemprop="url" rel="index">
+                    <span itemprop="name">博客</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2,356
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  9
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>前言: 一直对hexo的风格所喜欢者,只是在开始的时候选择阴差阳错的选择了workpress ,搭建的博客也是很好使用,最近看到一篇关于hexo搭建的网页,我觉得我还是在来折腾一次,趁着年轻,赶快折腾.</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h1 id="Hexo的安转"><a href="#Hexo的安转" class="headerlink" title="Hexo的安转"></a>Hexo的安转</h1><p>首先是你有自己的云主机; 其次就是你使用软件登录进去,这些我前面都有自己的文件.</p>
+<p>我们手下是xshell进行登录:</p>
+<h2 id="安转git"><a href="#安转git" class="headerlink" title="安转git"></a>安转git</h2><pre><code>Linux (Ubuntu, Debian)：sudo apt-get install git-core
+Linux (Fedora, Red Hat, CentOS)：sudo yum install git-core
+</code></pre><p>上面对Linux根据不同使用到的安装git的命令.</p>
+<p>之后就是安转nodes</p>
+<p>连接地址: (hexo的使用手册)<a href="https://hexo.io/zh-cn/docs/index.html" title="hexo的使用手册" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/index.html</a></p>
+<p>根据这个手册在使用的时候出现的信息是不是我所想要的, 执行安转nodes 的第二个命令的时候出现了错误.</p>
+<p>其实我们不需要自己输入,直接复制在到xhsell中右击粘贴回车就ok了!</p>
+<p>图片一<br><img src="https://i.imgur.com/IoyDaLo.png" alt=""></p>
+<p>使用到的命令行如下:</p>
+<pre><code>https://hexo.io/zh-cn/docs/index.html
+
+https://hexo.io/zh-cn/docs/index.html
+</code></pre><p>之后的操作就是重启连接终端,执行命令进行安转hexo</p>
+<p><img src="https://i.imgur.com/JVjeFgU.png" alt=""><br>    nvm install stable</p>
+<p>安装Nodes.js之后我们才开始安装Hexo</p>
+<p><img src="https://i.imgur.com/laNw1Ai.png" alt=""></p>
+<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>直接复制命令行进行安装:</p>
+<pre><code>npm install -g hexo-cli
+</code></pre><p>之后就是安装的hexo的初始化等的操</p>
+<p><img src="https://i.imgur.com/wh4sJkQ.png" alt=""><br>我们是安装在/opt/hexoflolder文件夹下面.我们使用xftp看看安装完成后的目录结构.<br><img src="https://i.imgur.com/qOs757K.png" alt=""></p>
+<p> 使用到的命名行如下:</p>
+<pre><code>$ hexo init &lt;folder&gt;
+$ cd &lt;folder&gt;
+$ npm install
+</code></pre><h1 id="第一次安装之后的访问地址"><a href="#第一次安装之后的访问地址" class="headerlink" title="第一次安装之后的访问地址"></a>第一次安装之后的访问地址</h1><p>在这次是我自己的服务器外地址的:</p>
+<p>自己服务器的ip地址: 116.196.91.100</p>
+<p>我们的访问网址: <a href="http://116.196.91.100:4000/" title="hexo的默认地址" target="_blank" rel="noopener">http://116.196.91.100:4000/</a>  对我们直接访问就可以了!</p>
+<p>我们在访问这个地址的时候我们首先要保证的是hexo的服务是不是启动的,启动之后我么 访问才能访问到.</p>
+<p><img src="https://i.imgur.com/0A9nG1B.png" alt=""></p>
+<p>我们首先要进入的是hexo的root很目录,这里面是blog<br>在输入: hexo s</p>
+<p><img src="https://i.imgur.com/uYTzCEU.png" alt=""></p>
+<p>访问成功:</p>
+<p><img src="https://i.imgur.com/YFFdGir.png" alt=""></p>
+<h1 id="按照简书的学习一边再做总结"><a href="#按照简书的学习一边再做总结" class="headerlink" title="按照简书的学习一边再做总结"></a>按照简书的学习一边再做总结</h1><p>新建一个页面(进入到blog根页面) </p>
+<pre><code>hexo new &quot;页面的名称&quot;
+</code></pre><p>此时会生成一个”页面名称”.md 的文件,地址在:/root/blog/source/_posts</p>
+<p>展示如图:</p>
+<p><img src="https://i.imgur.com/7s6JBVH.png" alt=""></p>
+<p>以后生成的所有的页面都会在这个文件中有对应的md文件.</p>
+<p>之后的操作就是使用 hexo generate 生成静态的文件,这个命令的含义是将md文件转化为html文件.</p>
+<pre><code>hexo generate 
+</code></pre><p><img src="https://i.imgur.com/5C5gpJ3.png" alt=""></p>
+<p>之后在blog/public的目录下面会有对应的html. </p>
+<p><img src="https://i.imgur.com/cZ95cUA.png" alt=""></p>
+<p>2018里面就是刚才的新建的页面你的html.</p>
+<p> <strong>展示的结果</strong><br><img src="https://i.imgur.com/NYr1pnO.png" alt=""></p>
+<p> 总结: 以后新建页面的时候  使用 的命令分别是</p>
+<pre><code>hexo new &quot;post的提交的页面的名称&quot;
+</code></pre><p>之后修改里面的内容.</p>
+<p>只有生成静态的文件:<br>    hexo generate </p>
+<p>之后启动页面 :</p>
+<pre><code>hexo s (hexo  server)
+</code></pre><h1 id="绑定独立的域名"><a href="#绑定独立的域名" class="headerlink" title="绑定独立的域名"></a>绑定独立的域名</h1><h1 id="安装next主题"><a href="#安装next主题" class="headerlink" title="安装next主题"></a>安装next主题</h1><p><strong>第一步 git pill next主题</strong><br>我们首先进入的是我们的hexo的根目录:(这里是进入 blog)</p>
+<pre><code>git clone https://github.com/iissnan/hexo-theme-next themes/next
+</code></pre><p>回车,等待完成:</p>
+<p><img src="https://i.imgur.com/gEL8KCN.png" alt=""></p>
+<p><strong>第二步 配置主题</strong></p>
+<p><img src="https://i.imgur.com/MQtU7WR.png" alt=""></p>
+<p>修改为next主题</p>
+<p><strong>清楚缓冲,并且开启debug服务</strong></p>
+<pre><code>hexo clean 
+</code></pre><p>开启debug的服务</p>
+<pre><code>hexo s --debug
+</code></pre><p><img src="https://i.imgur.com/E79lMZE.png" alt=""></p>
+<p>ok,不在展示了!</p>
+<h1 id="修改主题的scheme"><a href="#修改主题的scheme" class="headerlink" title="修改主题的scheme"></a>修改主题的scheme</h1><blockquote>
+<p>注意修改的主题配置文件</p>
+</blockquote>
+<p>是在根目录下面的 theme文件夹下面  我们打开next目录,之后的我们修改配置文件 下面的scheme </p>
+<p><img src="https://i.imgur.com/51OBHhX.png" alt=""></p>
+<p><strong>修改主题的文字支持</strong></p>
+<p><img src="https://i.imgur.com/eO65ZV3.png" alt=""></p>
+<p>注意修改的是站点配置文件</p>
+<p>修改的是language:  zh-hans (注意配置文件都需要空一格之后再书写)</p>
+<h1 id="出错了-明天解决"><a href="#出错了-明天解决" class="headerlink" title="出错了,明天解决"></a>出错了,明天解决</h1><p>问题的展示:</p>
+<p><img src="https://i.imgur.com/ShU33yh.png" alt=""></p>
+<p>对于这个问题,我只是修改了站点的配置文件为 语言的设置,还有就是设置的是主题的配置文件,最后重新运行之后出现的错误,</p>
+<p>查询之后出现的问题是,在配置文件的时候需要 空一格在书写相应的配置信息.</p>
+<p>重新修改配置信息.空格之后开始相应的配置. 重新运行就可以了!</p>
+<h1 id="设置主题"><a href="#设置主题" class="headerlink" title="设置主题"></a>设置主题</h1><p> 修改的文件是主题配置文件    </p>
+<h1 id="其他的问题"><a href="#其他的问题" class="headerlink" title="其他的问题"></a>其他的问题</h1><p>修改hexo的默认端口,第一个就是在站点配置文件中添加下面的代码:</p>
+<pre><code>server:
+port: 4001 (自己任意填写)
+compress: true
+header: true
+</code></pre><p>第二个就是直接使用命令行来修改:</p>
+<p>进入根目录: hexo server -p(自己喜欢的端口) </p>
+<p>之后重新运行,就ok,访问的地址变成: <a href="http://116.196.91.100:40001/" target="_blank" rel="noopener">http://116.196.91.100:40001/</a></p>
+<p><strong>后台运行</strong></p>
+<p>hexo s &amp;</p>
+<p><a href="http://www.tuijiankan.com/2015/05/08/hexo-forever-run/" title="别人的连接" target="_blank" rel="noopener">http://www.tuijiankan.com/2015/05/08/hexo-forever-run/</a></p>
+<h1 id="关于hexo的菜单的设置"><a href="#关于hexo的菜单的设置" class="headerlink" title="关于hexo的菜单的设置"></a>关于hexo的菜单的设置</h1><p>菜单的显示如下三部分:</p>
+<p> <strong>第一部分是设置菜单的内容</strong></p>
+<p>在主题配置文件中:<br>  menu:<br>      home:<br>      about:/about/ ||user  (user表示的就是展示的图标)<br>这里设置的不会显示在页面,而是根据这里的字段去我们在站点配置文件中设置的语音找对应字段去解析出来的文字才是战士的额文字.<br><strong>第二部分解析文字</strong><br>比如我们在我们的站点配置文件中设置的语言是 zh-Hans,之后会在theme这个文件下面的next主题下寻找 zh-Hans.yml去解析 home对应的文字解析,</p>
+<p><img src="https://i.imgur.com/ETz0iup.png" alt=""><br><strong>第三部分解析图标</strong><br>menu-icon 表示的就是对于解析的图标.其中 enable 表示的是对图标展示的控制 true 表示的就是显示图标 false表示就是不显示图标</p>
+<p><strong> 关于主题的推荐</strong></p>
+<p><a href="https://www.zhihu.com/question/24422335" title="主题的推荐" target="_blank" rel="noopener">https://www.zhihu.com/question/24422335</a></p>
+<h1 id="next主题的使用文档"><a href="#next主题的使用文档" class="headerlink" title="next主题的使用文档:"></a>next主题的使用文档:</h1><p><a href="http://theme-next.iissnan.com/" title="next的主题使用" target="_blank" rel="noopener">http://theme-next.iissnan.com/</a></p>
+<h1 id="傻瓜式安装搭建博客"><a href="#傻瓜式安装搭建博客" class="headerlink" title="傻瓜式安装搭建博客"></a>傻瓜式安装搭建博客</h1><p><a href="https://portablehexo.bitmoe.cn/" title="便携式" target="_blank" rel="noopener">https://portablehexo.bitmoe.cn/</a></p>
+<h1 id="关于头像的设置"><a href="#关于头像的设置" class="headerlink" title="关于头像的设置"></a>关于头像的设置</h1><p>修改的主题配置文件  avatar </p>
+<p><img src="https://i.imgur.com/EmeWMMs.png" alt=""></p>
+<h1 id="创建page"><a href="#创建page" class="headerlink" title="创建page"></a>创建page</h1><p>首先是   进入根目录</p>
+<pre><code>hexo new page about 
+</code></pre><p>之后就会生成相对应的page页面,这个页面不是文章页面不会显示在页面列表中.</p>
+<p>此时会在 resource目录下生成about 文件,并且生成index.md文件</p>
+<p>部署就行了.</p>
+<h1 id="记录一下子自己的配置的"><a href="#记录一下子自己的配置的" class="headerlink" title="记录一下子自己的配置的"></a>记录一下子自己的配置的</h1><p><img src="https://i.imgur.com/6WbGPda.png" alt=""></p>
+<p>图片有几点需要在此记录一下子.</p>
+<p>首先是图片这个菜单项的添加和初见这个页面文字的居中展示和分类标签的设置.</p>
+<p><img src="https://i.imgur.com/kaXsuz7.png" alt=""></p>
+<p><strong>一个就是菜单的图片的显示</strong></p>
+<p> 说明一下子,我使用的主题是 next 主题.</p>
+<p>其他的站点配置不需要更改,我们需要的是修改主题页面 下的_config.yml配置文件.</p>
+<p> 在menu 下面 添加photo: /categories/图片</p>
+<p>然后在主题的lauguage目录下找到你在站点配置文件下面设置的站点的语言信息,比如我在我的站点的语言配置的是zh-Hans ,在next主题下面的languange文件夹下面寻找到 zh-Hans.yml 在里面添加解析字段:<br><img src="https://i.imgur.com/jsiQAjR.png" alt=""></p>
+<p>主题文档的文字解析:</p>
+<p><img src="https://i.imgur.com/6nf0Gs0.png" alt=""></p>
+<p>你们看到我在menu下面添加的 photo: 图片   </p>
+<blockquote>
+<p>注意的是在设置配置的时候 需要的而是空一格在填写.</p>
+</blockquote>
+<p>我们在看一个图片:</p>
+<p><img src="https://i.imgur.com/qs6FZvo.png" alt=""></p>
+<p>这个是我们新建文章的时候 layout的类型,默认是post类型:</p>
+<p>page.md是页面,会在sources下面创建对应的文件夹,生成index.md文件.</p>
+<p>draf.md 是我们文章的草稿就是这个类型.</p>
+<p>新建photo.md类型,里面的格式如下:</p>
+<p><img src="https://i.imgur.com/oQwdcvb.png" alt=""></p>
+<p>新建一个文章  hexo new layout phot “初见”</p>
+<p>关键点就是在这个文章md中添加: categories: 图片</p>
+<blockquote>
+<p>试试直接新建一个页面 不适用photo 只是添加分类为图片,我们看看<br>最后测试,只要设置了 categories: 图片 都会分类到图片这个菜单下.</p>
+</blockquote>
+<p><strong>配置文字居中显示</strong><br>学习连接:</p>
+<p><a href="https://hexo.io/zh-cn/docs/tag-plugins.html" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/tag-plugins.html</a></p>
+<p>文字居中两种使用:</p>
+<ol>
+<li>HTML方式: 给img添加属性 class=”blockquote-center”</li>
+<li>标签的方式使用  : 使用的标签是 centerquote或者是 cq</li>
+</ol>
+<p>使用样例:</p>
+<pre><code>&lt;!-- 标签 方式，要求版本在0.4.5或以上 --&gt;
+{% centerquote %}blah blah blah{% endcenterquote %}
+
+&lt;!-- 标签别名 --&gt;
+{% cq %} blah blah blah {% endcq %}
+</code></pre><p><strong>突破容器宽度限制的图片</strong></p>
+<p>作用: 图片自动扩大26%,并突破文章容器的宽度.<br>使用的方式两种: </p>
+<ol>
+<li>HTML 使用  添加 class=”full-image”</li>
+<li><p>标签的使用方式: </p>
+ <!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 -->
+ <!-- 其中 class="full-image" 是必须的 -->
+<p> <img src="/image-url" class="full-image"></p>
+ <!-- 标签 方式，要求版本在0.4.5或以上 -->
+ <span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/image-url" class="full-image" alt="alt" title="title"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+ <!-- 别名 -->
+ <span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/image-url" class="full-image" alt="alt" title="title"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+</li>
+</ol>
+<blockquote>
+<blockquote>
+<p> 我习惯是在md文件中直接引用图片的文件,这样设置我们成功.</p>
+</blockquote>
+</blockquote>
+<h1 id="开启评论功能"><a href="#开启评论功能" class="headerlink" title="开启评论功能"></a>开启评论功能</h1><p>文章的md的开头:</p>
+<p>开启评论的设置</p>
+<p>comments  设置为true 就可以了!</p>
+<p>设置阅读更多的操作:</p>
+<p>方式有三种:</p>
+<ol>
+<li>第一种是使用 <!--more--> 之歌标志之前的会作为简介来展现,出现点击阅读全文的字样.</li>
+<li>在文章的 front-matter(hexo中–之间的的文字描述—) 中添加description,,,,,,具体的格式是如下:  <code>description: 这是我要展示的简介文字</code></li>
+<li><p>第三个就是 配置主题文件的配置文件 </p>
+<p> auto_excerpt”<br>   enable: true<br>   length: 150(表示截取的长度是150字符,也是默认的)</p>
+</li>
+</ol>
+<h1 id="最后关于tags和categories"><a href="#最后关于tags和categories" class="headerlink" title="最后关于tags和categories"></a>最后关于tags和categories</h1><p>首先是tags 是会展示在文章的最后的  开头是#区别</p>
+<p>categories是分类,展示在文档的首页.</p>
+
+      
+    </div>
+    
+    
+    
+
+  <div>
+      
+        
+      
+   </div>
+
+    
+
+    <div>
+    
+       <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读!-------------</div>
+    
+</div>
+     
+    </div>
+
+   
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>写作是一个学习的过程,感谢你的赞助!</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="kunkun5love 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="kunkun5love 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/17/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/17/Hexo的个性化配置(一)/" rel="prev" title="Hexo的个性化配置(一)">
+                Hexo的个性化配置(一) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzMwNC85ODYx"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="kunkun5love" />
+            
+              <p class="site-author-name" itemprop="name">kunkun5love</p>
+              <p class="site-description motion-element" itemprop="description">不要太满,给自己一些余地.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/NYK1024212458" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:kunkun5love@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/kunkun5love" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://stackoverflow.com/kunkun5love" target="_blank" title="StackOverflow">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/users/d92fc6aa2781/timeline" target="_blank" title="简书">
+                      
+                        <i class="fa fa-fw fa-usb"></i>简书</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://www.kunkun5love.tk/" target="_blank" title="csdn">
+                      
+                        <i class="fa fa-fw fa-crosshairs"></i>csdn</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://gitee.com/niuyukunwork/events" target="_blank" title="码云">
+                      
+                        <i class="fa fa-fw fa-gg"></i>码云</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="/" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i>QQ</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="/" target="_blank" title="微信">
+                      
+                        <i class="fa fa-fw fa-wexin"></i>微信</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo的安转"><span class="nav-number"></span> <span class="nav-text">Hexo的安转</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安转git"><span class="nav-number">1.</span> <span class="nav-text">安转git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Hexo"><span class="nav-number">2.</span> <span class="nav-text">安装Hexo</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第一次安装之后的访问地址"><span class="nav-number"></span> <span class="nav-text">第一次安装之后的访问地址</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#按照简书的学习一边再做总结"><span class="nav-number"></span> <span class="nav-text">按照简书的学习一边再做总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#绑定独立的域名"><span class="nav-number"></span> <span class="nav-text">绑定独立的域名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装next主题"><span class="nav-number"></span> <span class="nav-text">安装next主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改主题的scheme"><span class="nav-number"></span> <span class="nav-text">修改主题的scheme</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#出错了-明天解决"><span class="nav-number"></span> <span class="nav-text">出错了,明天解决</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置主题"><span class="nav-number"></span> <span class="nav-text">设置主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他的问题"><span class="nav-number"></span> <span class="nav-text">其他的问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于hexo的菜单的设置"><span class="nav-number"></span> <span class="nav-text">关于hexo的菜单的设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#next主题的使用文档"><span class="nav-number"></span> <span class="nav-text">next主题的使用文档:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#傻瓜式安装搭建博客"><span class="nav-number"></span> <span class="nav-text">傻瓜式安装搭建博客</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于头像的设置"><span class="nav-number"></span> <span class="nav-text">关于头像的设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建page"><span class="nav-number"></span> <span class="nav-text">创建page</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#记录一下子自己的配置的"><span class="nav-number"></span> <span class="nav-text">记录一下子自己的配置的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开启评论功能"><span class="nav-number"></span> <span class="nav-text">开启评论功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#最后关于tags和categories"><span class="nav-number"></span> <span class="nav-text">最后关于tags和categories</span></a></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kunkun5love</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">19.9k</span>
+  
+</div>
+
+
+
+ <div class="powered-by">
+ <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  我的网站的访客数:<span id="busuanzi_value_site_uv"></span>
+ </span>
+ </div>
+
+<!--  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+-->
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共19.9k字</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+   <!-- 页面点击小红心 -->
+	<script type="text/javascript" src="/js/src/love.js"></script>
+
+	<!-- 页面的爆炸效果 -->
+
+</body>
+</html>

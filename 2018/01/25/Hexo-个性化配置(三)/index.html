@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+ <script src=""></script>
+  <link href="" rel="stylesheet">
+  <script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+    </script>
+
+  
+  
+    
+     
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/heart_bulb_stars_16px_1209625_easyicon.net.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="技术," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="于七分" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="本片博客是在上一篇博客Hexo个性化配置(二)的基础上在写的一篇博客,主要不在一起写的原因是,这是自己配置自己搭建的博客时候变学习边记录的文章,记录的比较详细.放置在一篇上面文章比较长,所以截取一次十中个性化的配置.这是第三篇.涉及到如下的个性化配置:   jiathis的配置实现博文的分享 文章的置顶功能 打赏功能的实现 点击爆炸效果(有一篇是实现的是红心的效果) github来实现域名的绑定">
+<meta name="keywords" content="技术">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo 个性化配置(三)">
+<meta property="og:url" content="http://yoursite.com/2018/01/25/Hexo-个性化配置(三)/index.html">
+<meta property="og:site_name" content="于七分">
+<meta property="og:description" content="本片博客是在上一篇博客Hexo个性化配置(二)的基础上在写的一篇博客,主要不在一起写的原因是,这是自己配置自己搭建的博客时候变学习边记录的文章,记录的比较详细.放置在一篇上面文章比较长,所以截取一次十中个性化的配置.这是第三篇.涉及到如下的个性化配置:   jiathis的配置实现博文的分享 文章的置顶功能 打赏功能的实现 点击爆炸效果(有一篇是实现的是红心的效果) github来实现域名的绑定">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.imgur.com/kE0zy4D.png">
+<meta property="og:image" content="https://i.imgur.com/Wo2h4uJ.png">
+<meta property="og:image" content="https://i.imgur.com/qTNOf2P.png">
+<meta property="og:image" content="https://i.imgur.com/gCsBIcd.png">
+<meta property="og:image" content="https://i.imgur.com/TVzIniZ.png">
+<meta property="og:image" content="https://i.imgur.com/VXQvIm8.jpg">
+<meta property="og:image" content="https://i.imgur.com/w6Stqqx.jpg">
+<meta property="og:image" content="https://i.imgur.com/ipZ54tz.png">
+<meta property="og:image" content="https://i.imgur.com/XFx5N2q.png">
+<meta property="og:image" content="https://i.imgur.com/JRxsOu7.png">
+<meta property="og:image" content="https://i.imgur.com/9meRnNB.png">
+<meta property="og:image" content="https://i.imgur.com/YO6IjTW.png">
+<meta property="og:image" content="https://i.imgur.com/iKR9MHB.png">
+<meta property="og:image" content="https://i.imgur.com/ocLIBOV.png">
+<meta property="og:image" content="https://i.imgur.com/L9ItxKJ.png">
+<meta property="og:image" content="https://i.imgur.com/UkLHpvr.png">
+<meta property="og:image" content="https://i.imgur.com/KRojUGc.png">
+<meta property="og:image" content="https://i.imgur.com/U2Zx0k2.png">
+<meta property="og:image" content="https://i.imgur.com/tsc2TYA.png">
+<meta property="og:image" content="https://i.imgur.com/wX6Jw6K.png">
+<meta property="og:image" content="https://i.imgur.com/azUXT7H.png">
+<meta property="og:updated_time" content="2018-02-01T09:10:27.170Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo 个性化配置(三)">
+<meta name="twitter:description" content="本片博客是在上一篇博客Hexo个性化配置(二)的基础上在写的一篇博客,主要不在一起写的原因是,这是自己配置自己搭建的博客时候变学习边记录的文章,记录的比较详细.放置在一篇上面文章比较长,所以截取一次十中个性化的配置.这是第三篇.涉及到如下的个性化配置:   jiathis的配置实现博文的分享 文章的置顶功能 打赏功能的实现 点击爆炸效果(有一篇是实现的是红心的效果) github来实现域名的绑定">
+<meta name="twitter:image" content="https://i.imgur.com/kE0zy4D.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/01/25/Hexo-个性化配置(三)/"/>
+
+
+
+
+
+  <title>Hexo 个性化配置(三) | 于七分</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+<a href="https://github.com/NYK1024212458">
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" 
+alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png">
+</a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">于七分</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Don’t panic.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-photo">
+          <a href="/categories/图片" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            图片
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/25/Hexo-个性化配置(三)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kunkun5love">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="于七分">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Hexo 个性化配置(三)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-25T13:37:33+08:00">
+                2018-01-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/博客/" itemprop="url" rel="index">
+                    <span itemprop="name">博客</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2,345
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  11
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本片博客是在上一篇博客Hexo个性化配置(二)的基础上在写的一篇博客,主要不在一起写的原因是,这是自己配置自己搭建的博客时候变学习边记录的文章,记录的比较详细.放置在一篇上面文章比较长,所以截取一次十中个性化的配置.这是第三篇.涉及到如下的个性化配置: </p>
+<ol>
+<li>jiathis的配置实现博文的分享</li>
+<li>文章的置顶功能</li>
+<li>打赏功能的实现</li>
+<li>点击爆炸效果(有一篇是实现的是红心的效果)</li>
+<li>github来实现域名的绑定</li>
+<li>插入音乐</li>
+<li>实现站内搜索</li>
+<li>jjj</li>
+<li>kkk</li>
+<li>kkl<a id="more"></a>
+</li>
+</ol>
+<h1 id="1-jiathis的分享的实现"><a href="#1-jiathis的分享的实现" class="headerlink" title="1.jiathis的分享的实现"></a>1.jiathis的分享的实现</h1><p>在主题配置文件下面搜索 jiathis 我们看到在主题的配置文件中已经给我们配置好了,我们需要的是uid;</p>
+<p>官网的链接地址: <a href="http://www.jiathis.com/" title="连接地址" target="_blank" rel="noopener">http://www.jiathis.com/</a></p>
+<p><img src="https://i.imgur.com/kE0zy4D.png" alt=""></p>
+<p>配置主要的设置: </p>
+<p><img src="https://i.imgur.com/Wo2h4uJ.png" alt=""></p>
+<p>说明一下子: 我们直接在主题的配置文件中搜索jiathis  直接打开jiathis的开关,配置为true uid丢不需要设置.</p>
+<p>最后的结果展示: </p>
+<p><img src="https://i.imgur.com/qTNOf2P.png" alt=""></p>
+<h1 id="2-文章的置顶功能的实现"><a href="#2-文章的置顶功能的实现" class="headerlink" title="2.文章的置顶功能的实现"></a>2.文章的置顶功能的实现</h1><p>修改插件的内容: 这个插件名称: hexo-generator-index </p>
+<p>插件内需要修改文件的名称:  generator.js</p>
+<p>路劲: /root/blog/node_modules/hexo-generator-index/lib</p>
+<p>图片展示: </p>
+<p><img src="https://i.imgur.com/gCsBIcd.png" alt=""></p>
+<p>修改替换的代码: </p>
+<pre><code>&apos;use strict&apos;;
+var pagination = require(&apos;hexo-pagination&apos;);
+module.exports = function(locals){
+  var config = this.config;
+  var posts = locals.posts;
+posts.data = posts.data.sort(function(a, b) {
+    if(a.top &amp;&amp; b.top) { // 两篇文章top都有定义
+        if(a.top == b.top) return b.date - a.date; // 若top值一样则按照文章日期降序排
+        else return b.top - a.top; // 否则按照top值降序排
+    }
+    else if(a.top &amp;&amp; !b.top) { // 以下是只有一篇文章top有定义，那么将有top的排在前面（这里用异或操作居然不行233）
+        return -1;
+    }
+    else if(!a.top &amp;&amp; b.top) {
+        return 1;
+    }
+    else return b.date - a.date; // 都没定义按照文章日期降序排
+});
+  var paginationDir = config.pagination_dir || &apos;page&apos;;
+  return pagination(&apos;&apos;, posts, {
+    perPage: config.index_generator.per_page,
+    layout: [&apos;index&apos;, &apos;archive&apos;],
+    format: paginationDir + &apos;/%d/&apos;,
+    data: {
+      __index: true
+    }
+  });
+};
+</code></pre><p>我们还需要在咋子hexo的Front-matter也就是我们创建的Hexo的使用 —分割开的部分区域里面设置top属性值   注意属性设置的时候的空格.数值越大越靠前.</p>
+<p> 我们在我们的模板中添加top属性,不在我们自己添加了.</p>
+<p>路劲:   /root/blog/scaffolds<br>修改的文件就是 post.md文件.</p>
+<p>添加top属性.</p>
+<p>最后设置完毕的展示效果: </p>
+<p><img src="https://i.imgur.com/TVzIniZ.png" alt=""></p>
+<h1 id="3-打赏功能的实现"><a href="#3-打赏功能的实现" class="headerlink" title="3.打赏功能的实现"></a>3.打赏功能的实现</h1><p>打赏功能一个是微信的我二维码一个支付宝的二维码,我们分别来获取这个两个二维码.</p>
+<h2 id="获取微信的打赏二维码-设置金额"><a href="#获取微信的打赏二维码-设置金额" class="headerlink" title="获取微信的打赏二维码,设置金额"></a>获取微信的打赏二维码,设置金额</h2><p>这个自己设置: 先贴个码.</p>
+<p><img src="https://i.imgur.com/VXQvIm8.jpg" alt="赞赏码"></p>
+<h2 id="设置支付宝的打赏二维码和金额"><a href="#设置支付宝的打赏二维码和金额" class="headerlink" title="设置支付宝的打赏二维码和金额"></a>设置支付宝的打赏二维码和金额</h2><p><img src="https://i.imgur.com/w6Stqqx.jpg" alt=""></p>
+<h2 id="上传图片source-image中"><a href="#上传图片source-image中" class="headerlink" title="上传图片source/image中"></a>上传图片source/image中</h2><h2 id="在主题配置文件中设置"><a href="#在主题配置文件中设置" class="headerlink" title="在主题配置文件中设置"></a>在主题配置文件中设置</h2><p><img src="https://i.imgur.com/ipZ54tz.png" alt=""></p>
+<p>去掉注释,设置图片就OK了!<br>最后是结果的展示: </p>
+<p><img src="https://i.imgur.com/XFx5N2q.png" alt=""></p>
+<h1 id="4-实现爆炸效果"><a href="#4-实现爆炸效果" class="headerlink" title="4.实现爆炸效果"></a>4.实现爆炸效果</h1><p>新建js 命名: fireworks.js  放置的路劲: themes/next/source/js/src </p>
+<p>代码的内容如下: </p>
+<pre><code>&quot;use strict&quot;;function updateCoords(e){pointerX=(e.clientX||e.touches[0].clientX)-canvasEl.getBoundingClientRect().left,pointerY=e.clientY||e.touches[0].clientY-canvasEl.getBoundingClientRect().top}function setParticuleDirection(e){var t=anime.random(0,360)*Math.PI/180,a=anime.random(50,180),n=[-1,1][anime.random(0,1)]*a;return{x:e.x+n*Math.cos(t),y:e.y+n*Math.sin(t)}}function createParticule(e,t){var a={};return a.x=e,a.y=t,a.color=colors[anime.random(0,colors.length-1)],a.radius=anime.random(16,32),a.endPos=setParticuleDirection(a),a.draw=function(){ctx.beginPath(),ctx.arc(a.x,a.y,a.radius,0,2*Math.PI,!0),ctx.fillStyle=a.color,ctx.fill()},a}function createCircle(e,t){var a={};return a.x=e,a.y=t,a.color=&quot;#F00&quot;,a.radius=0.1,a.alpha=0.5,a.lineWidth=6,a.draw=function(){ctx.globalAlpha=a.alpha,ctx.beginPath(),ctx.arc(a.x,a.y,a.radius,0,2*Math.PI,!0),ctx.lineWidth=a.lineWidth,ctx.strokeStyle=a.color,ctx.stroke(),ctx.globalAlpha=1},a}function renderParticule(e){for(var t=0;t&lt;e.animatables.length;t++){e.animatables[t].target.draw()}}function animateParticules(e,t){for(var a=createCircle(e,t),n=[],i=0;i&lt;numberOfParticules;i++){n.push(createParticule(e,t))}anime.timeline().add({targets:n,x:function(e){return e.endPos.x},y:function(e){return e.endPos.y},radius:0.1,duration:anime.random(1200,1800),easing:&quot;easeOutExpo&quot;,update:renderParticule}).add({targets:a,radius:anime.random(80,160),lineWidth:0,alpha:{value:0,easing:&quot;linear&quot;,duration:anime.random(600,800)},duration:anime.random(1200,1800),easing:&quot;easeOutExpo&quot;,update:renderParticule,offset:0})}function debounce(e,t){var a;return function(){var n=this,i=arguments;clearTimeout(a),a=setTimeout(function(){e.apply(n,i)},t)}}var canvasEl=document.querySelector(&quot;.fireworks&quot;);if(canvasEl){var ctx=canvasEl.getContext(&quot;2d&quot;),numberOfParticules=30,pointerX=0,pointerY=0,tap=&quot;mousedown&quot;,colors=[&quot;#FF1461&quot;,&quot;#18FF92&quot;,&quot;#5A87FF&quot;,&quot;#FBF38C&quot;],setCanvasSize=debounce(function(){canvasEl.width=2*window.innerWidth,canvasEl.height=2*window.innerHeight,canvasEl.style.width=window.innerWidth+&quot;px&quot;,canvasEl.style.height=window.innerHeight+&quot;px&quot;,canvasEl.getContext(&quot;2d&quot;).scale(2,2)},500),render=anime({duration:1/0,update:function(){ctx.clearRect(0,0,canvasEl.width,canvasEl.height)}});document.addEventListener(tap,function(e){&quot;sidebar&quot;!==e.target.id&amp;&amp;&quot;toggle-sidebar&quot;!==e.target.id&amp;&amp;&quot;A&quot;!==e.target.nodeName&amp;&amp;&quot;IMG&quot;!==e.target.nodeName&amp;&amp;(render.play(),updateCoords(e),animateParticules(pointerX,pointerY))},!1),setCanvasSize(),window.addEventListener(&quot;resize&quot;,setCanvasSize,!1)}&quot;use strict&quot;;function updateCoords(e){pointerX=(e.clientX||e.touches[0].clientX)-canvasEl.getBoundingClientRect().left,pointerY=e.clientY||e.touches[0].clientY-canvasEl.getBoundingClientRect().top}function setParticuleDirection(e){var t=anime.random(0,360)*Math.PI/180,a=anime.random(50,180),n=[-1,1][anime.random(0,1)]*a;return{x:e.x+n*Math.cos(t),y:e.y+n*Math.sin(t)}}function createParticule(e,t){var a={};return a.x=e,a.y=t,a.color=colors[anime.random(0,colors.length-1)],a.radius=anime.random(16,32),a.endPos=setParticuleDirection(a),a.draw=function(){ctx.beginPath(),ctx.arc(a.x,a.y,a.radius,0,2*Math.PI,!0),ctx.fillStyle=a.color,ctx.fill()},a}function createCircle(e,t){var a={};return a.x=e,a.y=t,a.color=&quot;#F00&quot;,a.radius=0.1,a.alpha=0.5,a.lineWidth=6,a.draw=function(){ctx.globalAlpha=a.alpha,ctx.beginPath(),ctx.arc(a.x,a.y,a.radius,0,2*Math.PI,!0),ctx.lineWidth=a.lineWidth,ctx.strokeStyle=a.color,ctx.stroke(),ctx.globalAlpha=1},a}function renderParticule(e){for(var t=0;t&lt;e.animatables.length;t++){e.animatables[t].target.draw()}}function animateParticules(e,t){for(var a=createCircle(e,t),n=[],i=0;i&lt;numberOfParticules;i++){n.push(createParticule(e,t))}anime.timeline().add({targets:n,x:function(e){return e.endPos.x},y:function(e){return e.endPos.y},radius:0.1,duration:anime.random(1200,1800),easing:&quot;easeOutExpo&quot;,update:renderParticule}).add({targets:a,radius:anime.random(80,160),lineWidth:0,alpha:{value:0,easing:&quot;linear&quot;,duration:anime.random(600,800)},duration:anime.random(1200,1800),easing:&quot;easeOutExpo&quot;,update:renderParticule,offset:0})}function debounce(e,t){var a;return function(){var n=this,i=arguments;clearTimeout(a),a=setTimeout(function(){e.apply(n,i)},t)}}var canvasEl=document.querySelector(&quot;.fireworks&quot;);if(canvasEl){var ctx=canvasEl.getContext(&quot;2d&quot;),numberOfParticules=30,pointerX=0,pointerY=0,tap=&quot;mousedown&quot;,colors=[&quot;#FF1461&quot;,&quot;#18FF92&quot;,&quot;#5A87FF&quot;,&quot;#FBF38C&quot;],setCanvasSize=debounce(function(){canvasEl.width=2*window.innerWidth,canvasEl.height=2*window.innerHeight,canvasEl.style.width=window.innerWidth+&quot;px&quot;,canvasEl.style.height=window.innerHeight+&quot;px&quot;,canvasEl.getContext(&quot;2d&quot;).scale(2,2)},500),render=anime({duration:1/0,update:function(){ctx.clearRect(0,0,canvasEl.width,canvasEl.height)}});document.addEventListener(tap,function(e){&quot;sidebar&quot;!==e.target.id&amp;&amp;&quot;toggle-sidebar&quot;!==e.target.id&amp;&amp;&quot;A&quot;!==e.target.nodeName&amp;&amp;&quot;IMG&quot;!==e.target.nodeName&amp;&amp;(render.play(),updateCoords(e),animateParticules(pointerX,pointerY))},!1),setCanvasSize(),window.addEventListener(&quot;resize&quot;,setCanvasSize,!1)};
+</code></pre><p>之后在themes/next/layout/_layout.swig 添加下面代码:</p>
+<pre><code>{% if theme.fireworks %}
+	   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas> 
+	   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+	   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+	{% endif %}
+</code></pre><p>添加的位置: 在前面添加  最后没有实现还是小桃心效果.</p>
+<p><img src="https://i.imgur.com/JRxsOu7.png" alt=""></p>
+<p>最后在主题配置文件中配置:</p>
+<p> fireworks: true</p>
+<h1 id="5-github-pages-Hexo搭建"><a href="#5-github-pages-Hexo搭建" class="headerlink" title="5.github pages+Hexo搭建"></a>5.github pages+Hexo搭建</h1><p>具体的原因就不细说了!详解参考下面链接的文章:</p>
+<p><a href="http://blog.csdn.net/poem_of_sunshine/article/details/29369785/" target="_blank" rel="noopener">http://blog.csdn.net/poem_of_sunshine/article/details/29369785/</a></p>
+<h2 id="git的安装和创建sshkey"><a href="#git的安装和创建sshkey" class="headerlink" title="git的安装和创建sshkey"></a>git的安装和创建sshkey</h2><p>这个操作有自己的详细的博客地址:</p>
+<p><a href="http://blog.csdn.net/kunkun5love/article/details/71915498" target="_blank" rel="noopener">http://blog.csdn.net/kunkun5love/article/details/71915498</a></p>
+<h2 id="注册github来创建-repositories"><a href="#注册github来创建-repositories" class="headerlink" title="注册github来创建 repositories"></a>注册github来创建 repositories</h2><p>注册github,根据提醒注册一个github,操作失败的请移步下面的连接地址:<a href="https://baijiahao.baidu.com/s?id=1573372372409235&amp;wfr=spider&amp;for=pc" target="_blank" rel="noopener">https://baijiahao.baidu.com/s?id=1573372372409235&amp;wfr=spider&amp;for=pc</a>,</p>
+<p>进入自己的页面;图片展示如下</p>
+<p><img src="https://i.imgur.com/9meRnNB.png" alt=""></p>
+<p>进入创建的页面,展示如下:</p>
+<p><img src="https://i.imgur.com/YO6IjTW.png" alt=""></p>
+<p>点击new repositories 创建来获取github page</p>
+<p><img src="https://i.imgur.com/iKR9MHB.png" alt=""></p>
+<p>说明一下子: 新建的名字必须和你github上面的名称一致,将上面NYK1024212458修改为你的github账户就行,结尾.github.io结尾,我已经创建过一次,这一次只是为了展示说明,注意要初始化一个Readme的文件,也就是最后一个要勾选.</p>
+<p>创建完毕就是获取我们创建仓库的github page ,进入我们刚刚创建的仓库,点击setting</p>
+<p><img src="https://i.imgur.com/ocLIBOV.png" alt=""></p>
+<p>获取githubpage:</p>
+<p><img src="https://i.imgur.com/L9ItxKJ.png" alt=""></p>
+<p>首先是自己的创建的gitpage  <a href="https://nyk1024212458.github.io/" target="_blank" rel="noopener">https://nyk1024212458.github.io/</a></p>
+<p>访问的结果如此:</p>
+<p><img src="https://i.imgur.com/UkLHpvr.png" alt=""></p>
+<p>获取ssh,后面在hexo的主题配置中会使用到</p>
+<p>ssh:  <a href="git@github.com:NYK1024212458/NYK1024212458.github.io.git">git@github.com:NYK1024212458/NYK1024212458.github.io.git</a></p>
+<h2 id="将我们申请的其他域名与github申请的空间绑定"><a href="#将我们申请的其他域名与github申请的空间绑定" class="headerlink" title="将我们申请的其他域名与github申请的空间绑定"></a>将我们申请的其他域名与github申请的空间绑定</h2><p>首先是在github上面的 刚获取的githubpage里面新建一个文件名称是 CNAME 没有后缀,内容就是我们在阿里云或者是其他地方申请的域名,至于域名现在都要实名制,要备案,这些有官方的说明,按着操作就可以了.</p>
+<p>例如我的域名在腾讯云上申请的 kunkun5love.tk  ,我们CNAME 里面的内容就是 kunkun5love.club</p>
+<p>这个CNAME需要上传到我们的初始化的Hexo的博客文件中去,位置就是 初始化的文件夹(执行 hexo init 文件夹的名称) /source 下面</p>
+<p>展示如下: </p>
+<p><img src="https://i.imgur.com/KRojUGc.png" alt=""></p>
+<h2 id="设置自己域名的DNS设置"><a href="#设置自己域名的DNS设置" class="headerlink" title="设置自己域名的DNS设置"></a>设置自己域名的DNS设置</h2><p> 推荐的是DNSpod: </p>
+<p>连接地址: <a href="https://www.dnspod.cn/" title="DNSpod" target="_blank" rel="noopener">https://www.dnspod.cn/</a></p>
+<p>首先是添加你申请的域名,之后是添加解析:</p>
+<p><img src="https://i.imgur.com/U2Zx0k2.png" alt=""></p>
+<h2 id="Hexo中的配置"><a href="#Hexo中的配置" class="headerlink" title="Hexo中的配置"></a>Hexo中的配置</h2><p>安装的扩展插件: </p>
+<pre><code>npm install hexo-deployer-git --save
+</code></pre><h1 id="6-插入音乐"><a href="#6-插入音乐" class="headerlink" title="6.插入音乐"></a>6.插入音乐</h1><p>我们首先是登录网易云: </p>
+<p><a href="http://music.163.com/" title="网易云" target="_blank" rel="noopener">http://music.163.com/</a></p>
+<p>点击自己要插入音乐的首页:  目的是获取播放的外链   展示如下:</p>
+<p><img src="https://i.imgur.com/tsc2TYA.png" alt=""></p>
+<p>复制代码,直接到博客中:  我复制的代码如下</p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=34383004&auto=1&height=66"></iframe>
+
+<p>下面的是flash代码:</p>
+<embed src="//music.163.com/style/swf/widget.swf?sid=34383004&type=2&auto=1&width=320&height=66" width="340" height="86" allownetworking="all">
+
+<p> 我们上传到hexo试试:</p>
+<h1 id="7-增加一个站内搜索"><a href="#7-增加一个站内搜索" class="headerlink" title="7.增加一个站内搜索"></a>7.增加一个站内搜索</h1><h2 id="第一步那转搜索插件"><a href="#第一步那转搜索插件" class="headerlink" title="第一步那转搜索插件"></a>第一步那转搜索插件</h2><pre><code>npm install hexo-generator-search --save
+</code></pre><p>安装展示图片: </p>
+<p><img src="https://i.imgur.com/wX6Jw6K.png" alt=""></p>
+<h2 id="站点配置"><a href="#站点配置" class="headerlink" title="站点配置"></a>站点配置</h2><p><img src="https://i.imgur.com/azUXT7H.png" alt=""></p>
+<h1 id="8"><a href="#8" class="headerlink" title="8."></a>8.</h1><h1 id="9"><a href="#9" class="headerlink" title="9."></a>9.</h1><h1 id="10"><a href="#10" class="headerlink" title="10."></a>10.</h1>
+      
+    </div>
+    
+    
+    
+
+  <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2018/01/25/Hexo-个性化配置(三)/">Hexo 个性化配置(三)</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 kunkun5love 的个人博客">kunkun5love</a></p>
+  <p><span>发布时间:</span>2018年01月25日 - 13:01</p>
+  <p><span>最后更新:</span>2018年02月01日 - 17:02</p>
+  <p><span>原始链接:</span><a href="/2018/01/25/Hexo-个性化配置(三)/" title="Hexo 个性化配置(三)">http://yoursite.com/2018/01/25/Hexo-个性化配置(三)/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/01/25/Hexo-个性化配置(三)/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+      $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+        });
+    });  
+</script>
+
+      
+   </div>
+
+    
+
+    <div>
+    
+       <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读!-------------</div>
+    
+</div>
+     
+    </div>
+
+   
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>写作是一个学习的过程,感谢你的赞助!</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="kunkun5love 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="kunkun5love 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/技术/" rel="tag"><i class="fa fa-tag"></i> 技术</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/22/Hexo的个性化配置(二)/" rel="next" title="Hexo的个性化配置(二)">
+                <i class="fa fa-chevron-left"></i> Hexo的个性化配置(二)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/26/小程序代码构成(一)/" rel="prev" title="小程序代码构成学习">
+                小程序代码构成学习 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="kunkun5love" />
+            
+              <p class="site-author-name" itemprop="name">kunkun5love</p>
+              <p class="site-description motion-element" itemprop="description">不要太满,给自己一些余地.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/NYK1024212458" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:kunkun5love@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/kunkun5love" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://stackoverflow.com/kunkun5love" target="_blank" title="StackOverflow">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/users/d92fc6aa2781/timeline" target="_blank" title="简书">
+                      
+                        <i class="fa fa-fw fa-usb"></i>简书</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://www.kunkun5love.tk/" target="_blank" title="csdn">
+                      
+                        <i class="fa fa-fw fa-crosshairs"></i>csdn</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://gitee.com/niuyukunwork/events" target="_blank" title="码云">
+                      
+                        <i class="fa fa-fw fa-gg"></i>码云</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="/" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i>QQ</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="/" target="_blank" title="微信">
+                      
+                        <i class="fa fa-fw fa-wexin"></i>微信</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-jiathis的分享的实现"><span class="nav-number">1.</span> <span class="nav-text">1.jiathis的分享的实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-文章的置顶功能的实现"><span class="nav-number">2.</span> <span class="nav-text">2.文章的置顶功能的实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-打赏功能的实现"><span class="nav-number">3.</span> <span class="nav-text">3.打赏功能的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#获取微信的打赏二维码-设置金额"><span class="nav-number">3.1.</span> <span class="nav-text">获取微信的打赏二维码,设置金额</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置支付宝的打赏二维码和金额"><span class="nav-number">3.2.</span> <span class="nav-text">设置支付宝的打赏二维码和金额</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上传图片source-image中"><span class="nav-number">3.3.</span> <span class="nav-text">上传图片source/image中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在主题配置文件中设置"><span class="nav-number">3.4.</span> <span class="nav-text">在主题配置文件中设置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-实现爆炸效果"><span class="nav-number">4.</span> <span class="nav-text">4.实现爆炸效果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-github-pages-Hexo搭建"><span class="nav-number">5.</span> <span class="nav-text">5.github pages+Hexo搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git的安装和创建sshkey"><span class="nav-number">5.1.</span> <span class="nav-text">git的安装和创建sshkey</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注册github来创建-repositories"><span class="nav-number">5.2.</span> <span class="nav-text">注册github来创建 repositories</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将我们申请的其他域名与github申请的空间绑定"><span class="nav-number">5.3.</span> <span class="nav-text">将我们申请的其他域名与github申请的空间绑定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置自己域名的DNS设置"><span class="nav-number">5.4.</span> <span class="nav-text">设置自己域名的DNS设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo中的配置"><span class="nav-number">5.5.</span> <span class="nav-text">Hexo中的配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-插入音乐"><span class="nav-number">6.</span> <span class="nav-text">6.插入音乐</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-增加一个站内搜索"><span class="nav-number">7.</span> <span class="nav-text">7.增加一个站内搜索</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一步那转搜索插件"><span class="nav-number">7.1.</span> <span class="nav-text">第一步那转搜索插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#站点配置"><span class="nav-number">7.2.</span> <span class="nav-text">站点配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8"><span class="nav-number">8.</span> <span class="nav-text">8.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9"><span class="nav-number">9.</span> <span class="nav-text">9.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10"><span class="nav-number">10.</span> <span class="nav-text">10.</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kunkun5love</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">19.9k</span>
+  
+</div>
+
+
+
+ <div class="powered-by">
+ <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  我的网站的访客数:<span id="busuanzi_value_site_uv"></span>
+ </span>
+ </div>
+
+<!--  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+-->
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共19.9k字</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+   <!-- 页面点击小红心 -->
+	<script type="text/javascript" src="/js/src/love.js"></script>
+
+	<!-- 页面的爆炸效果 -->
+
+</body>
+</html>

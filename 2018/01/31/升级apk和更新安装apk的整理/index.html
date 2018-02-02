@@ -1,0 +1,1876 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+ <script src=""></script>
+  <link href="" rel="stylesheet">
+  <script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+    </script>
+
+  
+  
+    
+     
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/heart_bulb_stars_16px_1209625_easyicon.net.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Android开发," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="于七分" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="本片是对于安装更新apk的一个集成功能的总结和流程和总结,便于后期遇到,直接复制粘贴使用,需要的文件全部都有,按照自己的思路来总结的,比较详细,也比较多余,权当做是一个笔记来对待就行.">
+<meta name="keywords" content="Android开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="升级apk和更新安装apk的整理">
+<meta property="og:url" content="http://yoursite.com/2018/01/31/升级apk和更新安装apk的整理/index.html">
+<meta property="og:site_name" content="于七分">
+<meta property="og:description" content="本片是对于安装更新apk的一个集成功能的总结和流程和总结,便于后期遇到,直接复制粘贴使用,需要的文件全部都有,按照自己的思路来总结的,比较详细,也比较多余,权当做是一个笔记来对待就行.">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.imgur.com/ZLGPMth.jpg">
+<meta property="og:image" content="https://i.imgur.com/UPmbFD9.png">
+<meta property="og:updated_time" content="2018-01-31T09:00:25.111Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="升级apk和更新安装apk的整理">
+<meta name="twitter:description" content="本片是对于安装更新apk的一个集成功能的总结和流程和总结,便于后期遇到,直接复制粘贴使用,需要的文件全部都有,按照自己的思路来总结的,比较详细,也比较多余,权当做是一个笔记来对待就行.">
+<meta name="twitter:image" content="https://i.imgur.com/ZLGPMth.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/01/31/升级apk和更新安装apk的整理/"/>
+
+
+
+
+
+  <title>升级apk和更新安装apk的整理 | 于七分</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+<a href="https://github.com/NYK1024212458">
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" 
+alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png">
+</a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">于七分</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Don’t panic.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-photo">
+          <a href="/categories/图片" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            图片
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/31/升级apk和更新安装apk的整理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kunkun5love">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="于七分">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">升级apk和更新安装apk的整理</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-31T16:53:20+08:00">
+                2018-01-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3,762
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  18
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p> 本片是对于安装更新apk的一个集成功能的总结和流程和总结,便于后期遇到,直接复制粘贴使用,需要的文件全部都有,按照自己的思路来总结的,比较详细,也比较多余,权当做是一个笔记来对待就行.<a id="more"></a></p>
+<p>#延迟展示对话框 #</p>
+<pre><code>private void initView() {
+
+    ....
+
+    //r:消息的执行操作
+    //delayMillis : 延迟时间,但是毫秒值
+    new Handler().postDelayed(new Runnable() {
+
+        @Override
+        public void run() {
+            //提醒用户更新版本
+            update();
+        }
+    }, 2000);//延迟多少时间给handler发送消息
+
+    //delayMillis : 延迟时间,单位毫秒值
+    /*new Handler(){
+        public void handleMessage(android.os.Message msg) {
+            //提醒用户更新版本
+            update();
+        };
+    }.sendEmptyMessageDelayed(0, 2000);*///延迟多长时间给handler发送消息
+
+}
+</code></pre><hr>
+<h1 id="自己学习和总结的关于app的升级和安装"><a href="#自己学习和总结的关于app的升级和安装" class="headerlink" title="自己学习和总结的关于app的升级和安装"></a>自己学习和总结的关于app的升级和安装</h1><p>就是我们在splash页面(自己随意)先获取自己的版本VersionCode我们在获取服务端的一个json,获取里面的serverVersionCode,比较这两个值,ServerVersionCode &gt; versionCode 进行弹出对话框提示跟新,否则继续执行动画.点击下次在说继续执行动画,点击现在下载,进行下载,之后下载安转. 下载使用的是系统的DownloadManager,下载完成后发送广播,我们需要先注册一个广播</p>
+<h2 id="关于VersionCode和VersionName的区别"><a href="#关于VersionCode和VersionName的区别" class="headerlink" title="关于VersionCode和VersionName的区别"></a>关于VersionCode和VersionName的区别</h2><p>首先就引用一下子: </p>
+<pre><code>Google为APK定义了两个关于版本属性：VersionCode和VersionName，他们有不同的用途。
+VersionCode：对消费者不可见，仅用于应用市场、程序内部识别版本，判断新旧等用途。
+VersionName：展示给消费者，消费者会通过它认知自己安装的版本
+</code></pre><p>ok自己总结一下:</p>
+<p>第一点就是: versioncode是用于版本更新和应用市场来判断是否提醒用户进行安装的一个标识. 而versionName是我们在安转软件的时候展示给用户观看的自己的安装的版本.</p>
+<p>第二点是: verSionCode比较正式,而VersionName就比较随意了,可以随意的取名称.</p>
+<h2 id="获取app的versionCode和versionName"><a href="#获取app的versionCode和versionName" class="headerlink" title="获取app的versionCode和versionName"></a>获取app的versionCode和versionName</h2><p>直接上源码:</p>
+<pre><code>public class PackageUtils {
+public static String getVersionName(Context mContext){
+    // 获取package管理者  需要上下文
+    PackageManager packageManager = mContext.getPackageManager();
+    //参数说明   参数一是获取哪一个包名的package的信息 (application包括了activity所以也会包括activity的信息)
+    //参数二的信息就是设置是不是之后去
+    //获取包名的方法
+    String packageName = mContext.getPackageName();
+
+    try {
+        PackageInfo packageInfo = packageManager.getPackageInfo(packageName, 0);
+        //获取里面的信息
+        String versionName = packageInfo.versionName;
+        return  versionName;
+    } catch (PackageManager.NameNotFoundException e) {
+        e.printStackTrace();
+    }
+    // 获取里面的信息
+    // applicationInfo.
+
+    return  null;
+
+}
+// 获取版本信息
+public static int  getVersionCode(Context mContext){
+    // 获取package管理者  需要上下文
+    PackageManager packageManager = mContext.getPackageManager();
+    //参数说明   参数一是获取哪一个包名的package的信息 (application包括了activity所以也会包括activity的信息)
+    //参数二的信息就是设置是不是获取其他的权限还是获取广播,设置为0只是获取简单的版本名称和版本信息
+    //获取包名的方法
+    String packageName = mContext.getPackageName();
+
+    try {
+        PackageInfo packageInfo = packageManager.getPackageInfo(packageName, 0);
+        //获取里面的信息
+        int versionCode = packageInfo.versionCode;
+        return  versionCode;
+    } catch (PackageManager.NameNotFoundException e) {
+        e.printStackTrace();
+    }
+
+
+    return  -1;
+
+}
+}
+</code></pre><h2 id="服务端的获取的信息"><a href="#服务端的获取的信息" class="headerlink" title="服务端的获取的信息"></a>服务端的获取的信息</h2><p>我访问服务端去获取服务端上app的VersionCode:</p>
+<p>获取的json的展示: </p>
+<pre><code>{
+&quot;data&quot;: {
+&quot;ServerVersionCode&quot;: &quot;2&quot;,
+&quot;ServerVersionName&quot;: &quot;1.0.2&quot;,
+&quot;appname&quot;: &quot;fabei.apk&quot;,
+&quot;updateurl&quot;: &quot;http://IP地址/apk/fabei.apk&quot;,
+&quot;upgradeinfo&quot;: &quot;V1.0.2版本更新，你想不想要试一下哈！！！&quot;
+},
+&quot;code&quot;: &quot;200&quot;,
+&quot;code_msg&quot;: &quot;获取成功&quot;
+}
+</code></pre><p>我们可以看到下载地址.</p>
+<h2 id="关于Retrofit的集成"><a href="#关于Retrofit的集成" class="headerlink" title="关于Retrofit的集成"></a>关于Retrofit的集成</h2><p>注意gradle中的添加的依赖: </p>
+<pre><code> //网络请求框架
+compile &apos;com.squareup.retrofit2:retrofit:2.3.0&apos;
+compile &apos;com.squareup.retrofit2:converter-scalars:2.3.0&apos;
+compile &apos;com.squareup.retrofit2:converter-gson:2.3.0&apos;
+compile &apos;com.squareup.retrofit2:adapter-rxjava2:2.3.0&apos;
+
+//RxJava框架
+compile &apos;io.reactivex.rxjava2:rxandroid:2.0.1&apos;
+compile &apos;io.reactivex.rxjava2:rxjava:2.1.5&apos;
+
+ //运行时权限
+compile &apos;com.tbruyelle.rxpermissions2:rxpermissions:0.9.1@aar&apos;  // 后面说到这个库
+</code></pre><p>使用一个管理类:</p>
+<pre><code>public class RetrofitManager {
+private static RetrofitManager mRetrofitManager;
+private static Retrofit mRetrofit;
+private static Retrofit mDRetrofit;
+
+private RetrofitManager() {
+
+}
+
+/**
+ * 创建网络请求
+ *
+ * @param reqServer 网络接口
+ * @param &lt;T&gt;       泛型
+ * @return 返回网络接口对应的请求类
+ */
+private  &lt;T&gt; T createReq(Class&lt;T&gt; reqServer) {
+    return mRetrofit.create(reqServer);
+}
+/**
+ * 获取服务器网络请求接口对应的类
+ *
+ * @return 服务器网络请求接口对应的类
+ */
+public ServerApi getServer() {
+    return createReq(ServerApi.class);
+}
+
+/**
+ * 返回线程安全的单例
+ *
+ * @return RetrofitManager单例
+ */
+public static synchronized RetrofitManager getInstance() {
+    if (mRetrofitManager == null) {
+        mRetrofitManager = new RetrofitManager();
+    }
+    return mRetrofitManager;
+}
+
+//在自定义Application中初始化
+public static void init() {
+    OkHttpClient.Builder builder = new OkHttpClient.Builder();
+    builder.connectTimeout(50, TimeUnit.SECONDS);
+    builder.readTimeout(50, TimeUnit.SECONDS);
+    builder.writeTimeout(50, TimeUnit.SECONDS);
+    builder.retryOnConnectionFailure(true);
+    OkHttpClient client = builder.build();
+
+    mRetrofit = new Retrofit.Builder()
+            .baseUrl(UrlConstant.BASE_URL)
+            .addConverterFactory(ScalarsConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create()) //通过RxJavaCallAdapterFactory为Retrofit添加RxJava支持：
+            .client(client)
+            .build();
+}
+}
+</code></pre><p>贴一个ServerApi.class 的接口类:</p>
+<pre><code>public interface ServerApi {
+//其他的代码
+
+ /**
+ * 获取跟新app服务器信息
+ * @return
+ */
+
+@GET(&quot;apk/upgrade.json&quot;)  // 这里面就是去掉主机host的其他路劲
+Observable&lt;UpdateAppInfo&gt; getUpdateVersion ();
+
+}
+</code></pre><p>贴一个接口类: UrlConstant:</p>
+<pre><code>public interface UrlConstant {
+//服务器地址
+public static final String BASE_URL = &quot;主机ip地址&quot;;
+//本机地址
+//public static final String BASE_URL = &quot;http://192.168.0.121:8080&quot;;
+}
+</code></pre><h2 id="splash界面代码书写"><a href="#splash界面代码书写" class="headerlink" title="splash界面代码书写"></a>splash界面代码书写</h2><p>splash的初始化界面:</p>
+<p>便于接收到下载完成的通知,我们先初始化广播;在检查更新</p>
+<pre><code>initUpdata();
+
+   // 是否具有新版本
+
+   checkUpdate();
+</code></pre><p>具体的方法代码:</p>
+<pre><code>/**
+ * 初始化app更新广播
+ */
+private void initUpdata() {
+    IntentFilter filter = new IntentFilter();
+    filter.addAction(DownloadManager.ACTION_DOWNLOAD_COMPLETE);
+    filter.addAction(DownloadManager.ACTION_NOTIFICATION_CLICKED);
+    filter.addCategory(&quot;android.intent.category.DEFAULT&quot;);
+    receiver = new DownLoadCompleteReceiver();
+    registerReceiver(receiver, filter);
+}
+</code></pre><p>实质就是动态注册广播,action如下:</p>
+<pre><code>filter.addAction(DownloadManager.ACTION_DOWNLOAD_COMPLETE); 
+</code></pre><p> //  接收下载完成后的广播通知</p>
+<pre><code>filter.addAction(DownloadManager.ACTION_NOTIFICATION_CLICKED);
+</code></pre><p>上面的都是为了安装更新做准备.</p>
+<p>我们看看检查更新:  chenckUpdate();</p>
+<pre><code>private void checkUpdate() {
+    RetrofitManager.getInstance()
+            .getServer()
+            .getUpdateVersion()
+            .compose(RxUtils.&lt;UpdateAppInfo&gt;apply())
+            .subscribe(new Observer&lt;UpdateAppInfo&gt;() {
+                @Override
+                public void onSubscribe(Disposable d) {
+                    Log.d(TAG, &quot;onSubscribe: &quot; + d.toString());
+                }
+                @Override
+                public void onNext(UpdateAppInfo updateAppInfo) {
+                    if (TextUtils.equals(&quot;200&quot;, updateAppInfo.getCode())) {
+                        String appname = updateAppInfo.getData().getAppname();
+                        String serverVersionCode = updateAppInfo.getData().getServerVersionCode();
+                        String serverVersionName = updateAppInfo.getData().getServerVersionName();
+                        String updateurl = updateAppInfo.getData().getUpdateurl();
+                        String updateinfo = updateAppInfo.getData().getUpgradeinfo();
+                        String code_msg = updateAppInfo.getCode_msg();
+                        Long aLong = Long.parseLong(serverVersionCode);
+                        SpUtils.getInstance().putString(UserConstant.UPDATE_URL, updateurl);
+
+                        if (aLong &gt; PackageUtils.getVersionCode(mContext)) {
+
+                            showUpdateConfirmDialog(mContext, updateinfo);
+                        }else{
+                            // 没有更新
+                mHandler.sendEmptyMessage(0x10102);                     
+                        }
+                    }
+                }
+                @Override
+                public void onError(Throwable e) {
+                    Log.d(TAG, &quot;onError: 错误信息&quot; + e);
+                }
+
+                @Override
+                public void onComplete() {
+
+                }
+            });
+}
+</code></pre><p>Handler也来一段,直接复制:</p>
+<pre><code>private  Handler mHandler = new Handler() {
+    @Override
+    public void handleMessage(Message msg) {
+        if (msg.what==0x10102){
+
+           // ToastUtils.showShort(mContext,&quot;执行splash&quot;);
+            continueSplash();  // 继续执行splash的动画
+        }
+
+    }
+};
+</code></pre><h3 id="关于continueSplash-方法"><a href="#关于continueSplash-方法" class="headerlink" title="关于continueSplash();方法"></a>关于continueSplash();方法</h3><p> private void continueSplash() {<br>        //计时器定义<br>        final CountDownTimer countDownTimer = new CountDownTimer(3000, 1000) {<br>            @Override<br>            public void onTick(long millisUntilFinished) {<br>            }</p>
+<pre><code>        @Override
+        public void onFinish() {
+
+            //启动之后，判断是不是第一次启动
+            if (SpUtils.getInstance().getBoolean(SPConstant.IS_FIRST_ENTRY, true)) {
+                //前往欢迎界面
+                Intent intent = new Intent(mContext, WelcomeActivity.class);
+                AnimationUtils.startActivity(mContext, intent);
+                SpUtils.getInstance().putBoolean(SPConstant.IS_FIRST_ENTRY, false);
+                finish();
+            } else {
+                //前往登录界面
+                Intent intent = new Intent(mContext, LoginActivity.class);
+                AnimationUtils.startActivity(mContext, intent);
+                finish();
+            }
+        }
+    };
+    // 如果大于23  使用RxPermissions库来
+    if (Build.VERSION.SDK_INT &gt; 23) {
+        //请求权限
+        RxPermissions rxPermissions = new RxPermissions(SplashActivity.this);
+        String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
+        rxPermissions.request(permissions)
+                .subscribe(new Observer&lt;Boolean&gt;() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(Boolean aBoolean) {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        countDownTimer.start();
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        countDownTimer.start();
+                    }
+                });
+    } else {
+        countDownTimer.start();
+    }
+}
+</code></pre><p>缺少文件补充一: <strong>SpUtils.class</strong></p>
+<pre><code>public class SpUtils {
+
+private static Context mContext;
+private static SharedPreferences sp;
+private static SharedPreferences.Editor editor;
+private static SpUtils instance;
+
+public static void init(Context context) {
+    mContext = context;
+    if (mContext != null) {
+        sp = mContext.getSharedPreferences(SPConstant.SP_NAME, Context.MODE_PRIVATE);
+        editor = sp.edit();
+        boolean commit = editor.commit();
+    } else {
+        throw new IllegalStateException(&quot;init the SharedPreferences first please!&quot;);
+    }
+}
+
+/**
+ * SPUtils构造函数
+ */
+private SpUtils() {
+}
+
+public static SpUtils getInstance() {
+    if (mContext != null) {
+        if (instance == null) {
+            instance = new SpUtils();
+        }
+    } else {
+        throw new IllegalStateException(&quot;init the SharedPreferences first please!&quot;);
+    }
+
+    return instance;
+}
+/**
+ * SP中写入String类型value
+ *
+ * @param key   键
+ * @param value 值
+ */
+public void putString(String key, String value) {
+    editor.putString(key, value).commit();
+}
+
+/**
+ * SP中读取String
+ *
+ * @param key 键
+ * @return 存在返回对应值，不存在返回默认值{@code null}
+ */
+public String getString(String key) {
+    return getString(key, null);
+}
+
+/**
+ * SP中读取String
+ *
+ * @param key          键
+ * @param defaultValue 默认值
+ * @return 存在返回对应值，不存在返回默认值{@code defaultValue}
+ */
+public String getString(String key, String defaultValue) {
+    return sp.getString(key, defaultValue);
+}
+
+/**
+ * SP中写入int类型value
+ *
+ * @param key   键
+ * @param value 值
+ */
+public void putInt(String key, int value) {
+    editor.putInt(key, value).commit();
+}
+
+/**
+ * SP中读取int
+ *
+ * @param key 键
+ * @return 存在返回对应值，不存在返回默认值-1
+ */
+public int getInt(String key) {
+    return getInt(key, -1);
+}
+
+/**
+ * SP中读取int
+ *
+ * @param key          键
+ * @param defaultValue 默认值
+ * @return 存在返回对应值，不存在返回默认值{@code defaultValue}
+ */
+public int getInt(String key, int defaultValue) {
+    return sp.getInt(key, defaultValue);
+}
+
+/**
+ * SP中写入long类型value
+ *
+ * @param key   键
+ * @param value 值
+ */
+public void putLong(String key, long value) {
+    editor.putLong(key, value).commit();
+}
+
+/**
+ * SP中读取long
+ *
+ * @param key 键
+ * @return 存在返回对应值，不存在返回默认值-1
+ */
+public long getLong(String key) {
+    return getLong(key, -1L);
+}
+
+/**
+ * SP中读取long
+ *
+ * @param key          键
+ * @param defaultValue 默认值
+ * @return 存在返回对应值，不存在返回默认值{@code defaultValue}
+ */
+public long getLong(String key, long defaultValue) {
+    return sp.getLong(key, defaultValue);
+}
+
+/**
+ * SP中写入float类型value
+ *
+ * @param key   键
+ * @param value 值
+ */
+public void putFloat(String key, float value) {
+    editor.putFloat(key, value).commit();
+}
+
+/**
+ * SP中读取float
+ *
+ * @param key 键
+ * @return 存在返回对应值，不存在返回默认值-1
+ */
+public float getFloat(String key) {
+    return getFloat(key, -1f);
+}
+
+/**
+ * SP中读取float
+ *
+ * @param key          键
+ * @param defaultValue 默认值
+ * @return 存在返回对应值，不存在返回默认值{@code defaultValue}
+ */
+public float getFloat(String key, float defaultValue) {
+    return sp.getFloat(key, defaultValue);
+}
+
+/**
+ * SP中写入boolean类型value
+ *
+ * @param key   键
+ * @param value 值
+ */
+public void putBoolean(String key, boolean value) {
+    editor.putBoolean(key, value).commit();
+}
+
+/**
+ * SP中读取boolean
+ *
+ * @param key 键
+ * @return 存在返回对应值，不存在返回默认值{@code false}
+ */
+public boolean getBoolean(String key) {
+    return getBoolean(key, false);
+}
+
+/**
+ * SP中读取boolean
+ *
+ * @param key          键
+ * @param defaultValue 默认值
+ * @return 存在返回对应值，不存在返回默认值{@code defaultValue}
+ */
+public boolean getBoolean(String key, boolean defaultValue) {
+    return sp.getBoolean(key, defaultValue);
+}
+
+/**
+ * 获取SP中所有键值对
+ *
+ * @return Map对象
+ */
+public Map&lt;String, ?&gt; getAll() {
+    return sp.getAll();
+}
+
+/**
+ * 从SP中移除该key
+ *
+ * @param key 键
+ */
+public void remove(String key) {
+    editor.remove(key).commit();
+}
+
+/**
+ * 判断SP中是否存在该key
+ *
+ * @param key 键
+ * @return {@code true}: 存在&lt;br&gt;{@code false}: 不存在
+ */
+public boolean contains(String key) {
+    return sp.contains(key);
+}
+
+/**
+ * 清除SP中所有数据
+ */
+public void clear() {
+    editor.clear().commit();
+}
+}
+</code></pre><p>缺少文件补充二: AnimationUtils.class:</p>
+<pre><code>public class AnimationUtils {
+
+public static void backActivity(Context context) {
+    ((Activity) context).overridePendingTransition(R.anim.open_last, R.anim.close_next);
+}
+
+public static void startActivity(Context context, Intent intent) {
+    context.startActivity(intent);
+    ((Activity) context).overridePendingTransition(R.anim.open_next, R.anim.close_last);
+}
+
+public static void startActivityForResult(Context context, Intent intent, int code) {
+    ((Activity) context).startActivityForResult(intent, code);
+    ((Activity) context).overridePendingTransition(R.anim.open_next, R.anim.close_last);
+}
+
+public static void startAlphaActivity(Context context, Intent intent) {
+    context.startActivity(intent);
+    ((Activity) context).overridePendingTransition(R.anim.alpha_open, R.anim.alpha_colse);
+}
+
+public static void startAlphaActivityForResult(Context context, Intent intent, int code) {
+    ((Activity) context).startActivityForResult(intent, code);
+    ((Activity) context).overridePendingTransition(R.anim.alpha_open, R.anim.alpha_colse);
+}
+
+
+
+}
+</code></pre><p>缺少的动画文件:  res新建文件夹anim  </p>
+<p>第一个: opne_last.xml</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;set xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; &gt;
+&lt;translate
+    android:interpolator=&quot;@android:anim/accelerate_interpolator&quot;
+    android:duration=&quot;400&quot;
+    android:fromYDelta=&quot;0&quot;
+    android:toYDelta=&quot;0&quot; 
+    android:fromXDelta=&quot;-20%p&quot;
+    android:toXDelta=&quot;0&quot;/&gt;
+&lt;/set&gt;
+</code></pre><p>第二个: open_next.xml</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;set xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; &gt;
+&lt;translate
+    android:duration=&quot;400&quot;
+    android:fromXDelta=&quot;100%p&quot;
+    android:fromYDelta=&quot;0&quot;
+    android:interpolator=&quot;@android:anim/accelerate_interpolator&quot;
+    android:toXDelta=&quot;0&quot;
+    android:toYDelta=&quot;0&quot;/&gt;
+&lt;/set&gt;
+</code></pre><p>第三个: close_next.xml</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;set xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; &gt;
+&lt;translate
+    android:duration=&quot;400&quot;
+    android:fromXDelta=&quot;0&quot;
+    android:fromYDelta=&quot;0&quot;
+    android:interpolator=&quot;@android:anim/accelerate_interpolator&quot;
+    android:toXDelta=&quot;100%p&quot;
+    android:toYDelta=&quot;0&quot; /&gt;
+&lt;/set&gt;
+</code></pre><p>第四个: close_last.xml</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;set xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; &gt;
+&lt;translate
+    android:interpolator=&quot;@android:anim/accelerate_interpolator&quot;
+    android:duration=&quot;800&quot;
+    android:fromXDelta=&quot;0&quot;
+    android:toXDelta=&quot;-20%p&quot;
+    android:fromYDelta=&quot;0&quot;
+    android:toYDelta=&quot;0&quot;/&gt;
+&lt;/set&gt;
+</code></pre><p>第五个: alpha_close.xml</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;set xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+&lt;alpha
+    android:duration=&quot;400&quot;
+    android:fromAlpha=&quot;1.0&quot;
+    android:interpolator=&quot;@android:anim/linear_interpolator&quot;
+    android:toAlpha=&quot;0.0&quot; /&gt;
+&lt;/set&gt;
+</code></pre><p>第六个: alpha_ipen.xml:</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;set xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; &gt;
+&lt;alpha
+    android:duration=&quot;400&quot;
+    android:fromAlpha=&quot;0.0&quot;
+    android:interpolator=&quot;@android:anim/linear_interpolator&quot;
+    android:toAlpha=&quot;1.0&quot; /&gt;
+&lt;/set&gt;
+</code></pre><p>缺少文件SPConstant</p>
+<pre><code>public interface SPConstant {
+public static final String SP_NAME = &quot;spName&quot;;
+public static final String IS_FIRST_ENTRY = &quot;isFirstEntry&quot;;
+
+}
+</code></pre><h2 id="6-0权限的申请"><a href="#6-0权限的申请" class="headerlink" title="6.0权限的申请"></a>6.0权限的申请</h2><p>具体的细节说明和简单的使用:</p>
+<p>具体的细节看我博客: </p>
+<p><a href="http://blog.csdn.net/kunkun5love/article/details/73311761" target="_blank" rel="noopener">http://blog.csdn.net/kunkun5love/article/details/73311761</a></p>
+<p>github上面的RxPermission的:</p>
+<p><a href="https://github.com/tbruyelle/RxPermissions" title="连接地址" target="_blank" rel="noopener">https://github.com/tbruyelle/RxPermissions</a></p>
+<p>//  首先是gradle的依赖</p>
+<pre><code>dependencies {
+compile &apos;com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar&apos;
+}
+</code></pre><p>代码中的使用: </p>
+<pre><code>if (Build.VERSION.SDK_INT &gt; 23) {
+        //请求权限
+        RxPermissions rxPermissions = new RxPermissions(SplashActivity.this);
+        String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
+        rxPermissions.request(permissions)
+                .subscribe(new Observer&lt;Boolean&gt;() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(Boolean aBoolean) {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        countDownTimer.start();
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        countDownTimer.start();
+                    }
+                });
+    }
+</code></pre><h2 id="有更新展示更新对话框和下载"><a href="#有更新展示更新对话框和下载" class="headerlink" title="有更新展示更新对话框和下载"></a>有更新展示更新对话框和下载</h2><p>展示跟新的对话框和使用DownloadManager来下载文件. 对网络的判断和提醒,和下载展示进度条</p>
+<pre><code> /**
+ * 显示更新对话框,包含版本相关信息
+ */
+private  void showUpdateConfirmDialog(final Context context, final String updateInfo) {
+    new AlertDialog.Builder(context)
+            .setTitle(&quot;发现新版本&quot;)
+            .setMessage(updateInfo)
+            .setPositiveButton(&quot;立即更新&quot;, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    if (NetUtils.isWifi(context)) {
+                        downLoadApp(context);
+                    } else {
+
+                        // 是不是需要坚持手机网络下载
+                             new AlertDialog.Builder(context)
+                                .setTitle(&quot;流量提醒&quot;)
+                                .setMessage(&quot;你正在使用移动流量,是否坚持手机网络下载&quot;)
+                                .setPositiveButton(&quot;是&quot;, new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        downLoadApp(context);
+                                    }
+                                })
+                                .setNegativeButton(&quot;不是&quot;, new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        mHandler.sendEmptyMessage(0x10102);
+                                    }
+                                });
+
+
+                    }
+                }
+            })
+            .setNegativeButton(&quot;以后再说&quot;, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    mHandler.sendEmptyMessage(0x10102);
+                }
+            })
+            .show();
+}
+
+/**
+ * 下载文件
+ *
+ * @param context
+ */
+public static void downLoadApp(Context context) {
+    //downurl:下载app的后台地址
+
+    String downurl = &quot;http://59.110.139.99/apk/fabei.apk&quot;;
+    DownloadManager.Request request = new DownloadManager.Request(Uri.parse(downurl));
+    //  下载时的网络状态，默认是wifi和移动网络都可以下载，如果选择一个，只能在选中的状态下进行下载
+    //request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_MOBILE);
+    request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE);
+    request.setTitle(&quot;app更新&quot;);
+    request.setDescription(&quot;app正在下载&quot;);
+    request.setAllowedOverRoaming(false);
+    //设置文件存放目录
+    //判断文件是否存在，保证其唯一性
+    File file = context.getExternalFilesDir(&quot;Download/ccyj&quot;);
+    if (file.exists()) {
+        file.delete();
+    }
+    request.setDestinationInExternalFilesDir(context, Environment.DIRECTORY_DOWNLOADS, &quot;downapp&quot;);
+    DownloadManager downManager = (DownloadManager) context.getApplicationContext().getSystemService(Context.DOWNLOAD_SERVICE);
+    long id = downManager.enqueue(request);
+    // 存储下载Key
+    SharedPreferences sharedPreferences = context.getSharedPreferences(&quot;downloadapp&quot;, Activity.MODE_PRIVATE);
+    SharedPreferences.Editor editor = sharedPreferences.edit();
+    editor.putLong(&quot;downloadid&quot;, id);
+    editor.commit();
+}
+</code></pre><p>上面中缺失的文件:</p>
+<pre><code>public class NetUtils {
+
+/**
+ * 判断是否是wifi连接
+ */
+public static boolean isWifi(Context context) {
+    ConnectivityManager cm = (ConnectivityManager)
+            context.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+    if (null == cm) {
+        return false;
+    }
+
+    NetworkInfo info = cm.getActiveNetworkInfo();
+    if (null != info) {
+        if (info.getType() == ConnectivityManager.TYPE_WIFI) {
+            return true;
+        }
+    }
+    return false;
+
+}
+</code></pre><h2 id="广播接收者和安装apk"><a href="#广播接收者和安装apk" class="headerlink" title="广播接收者和安装apk"></a>广播接收者和安装apk</h2><p>下在完成之后会发西湖广播,action是: ACTION_DOWNLOAD_COMPLETE</p>
+<p><img src="https://i.imgur.com/ZLGPMth.jpg" alt="具体的介绍"></p>
+<p><strong>动态注册广播在上面(注册就有反注册哦,不要忘记了,还有权限都要声明哦): </strong></p>
+<p>我们直接看广播接收者中接收后安装apk的操作;</p>
+<pre><code>public class DownLoadCompleteReceiver extends BroadcastReceiver {
+@Override
+public void onReceive(Context context, Intent intent) {
+    if (intent.getAction().equals(DownloadManager.ACTION_DOWNLOAD_COMPLETE)) {
+        long id = intent.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1);
+
+        // 发送消息关闭 dialog
+        Message message = new Message();
+        message.what=1010;
+        EventBus.getDefault().post(message);
+
+        installApk(context, id);
+    } else if (intent.getAction().equals(DownloadManager.ACTION_NOTIFICATION_CLICKED)) {
+    }
+
+
+}
+/**
+ * 下载完后安装apk
+ *
+ * @param
+ */
+
+// 安装Apk
+private void installApk(Context context, long downloadApkId) {
+    SharedPreferences sharedPreferences = context.getSharedPreferences(&quot;downloadapp&quot;, Activity.MODE_PRIVATE);
+    long id = sharedPreferences.getLong(&quot;downloadid&quot;, 0);
+
+    // 获取存储ID
+    if (downloadApkId == id) {
+        DownloadManager dManager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
+
+        Uri downloadFileUri = dManager.getUriForDownloadedFile(downloadApkId);
+        if (downloadFileUri != null) {
+            Intent install = new Intent(Intent.ACTION_VIEW);
+            File apkFile = context.getExternalFilesDir(&quot;Download/downapp&quot;);
+            //对Android 版本判断
+            if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.N) {
+                install.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                // context.getPackageName() + &quot;.fileprovider&quot;  是配置中的authorities
+                Uri contentUri = FileProvider.getUriForFile(context, context.getPackageName() + &quot;.fileprovider&quot;, apkFile);
+                install.setDataAndType(contentUri, &quot;application/vnd.android.package-archive&quot;);
+            } else {
+                install.setDataAndType(Uri.fromFile(apkFile), &quot;application/vnd.android.package-archive&quot;);
+            }
+            install.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(install);
+        } else {
+            ToastUtils.showLong(context,&quot;下载失败&quot;);
+        }
+    }
+}
+</code></pre><h1 id="明天将apk的升级和安转和出现的问题进行总结"><a href="#明天将apk的升级和安转和出现的问题进行总结" class="headerlink" title="明天将apk的升级和安转和出现的问题进行总结"></a>明天将apk的升级和安转和出现的问题进行总结</h1><p>下载完毕后出现的问题: </p>
+<p><img src="https://i.imgur.com/UPmbFD9.png" alt=""></p>
+<p>出现的是已经安装了存在签名冲突的同名的数据包.</p>
+<p>原因如下(一): 我此时是直接测试运行,安装的是debug版本,服务器上的是我打包过的版本,有签名等信息,debug的签名是默认的签名;</p>
+<p>先安转以前的签名的版本,在运行一般就不会出错了.</p>
+<p>还有问题可以参考下面链接的文章:</p>
+<p><a href="http://blog.csdn.net/linux_dream_2015/article/details/49890777" target="_blank" rel="noopener">http://blog.csdn.net/linux_dream_2015/article/details/49890777</a></p>
+
+      
+    </div>
+    
+    
+    
+
+  <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2018/01/31/升级apk和更新安装apk的整理/">升级apk和更新安装apk的整理</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 kunkun5love 的个人博客">kunkun5love</a></p>
+  <p><span>发布时间:</span>2018年01月31日 - 16:01</p>
+  <p><span>最后更新:</span>2018年01月31日 - 17:01</p>
+  <p><span>原始链接:</span><a href="/2018/01/31/升级apk和更新安装apk的整理/" title="升级apk和更新安装apk的整理">http://yoursite.com/2018/01/31/升级apk和更新安装apk的整理/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/01/31/升级apk和更新安装apk的整理/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+      $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+        });
+    });  
+</script>
+
+      
+   </div>
+
+    
+
+    <div>
+    
+       <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读!-------------</div>
+    
+</div>
+     
+    </div>
+
+   
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>写作是一个学习的过程,感谢你的赞助!</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="kunkun5love 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="kunkun5love 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android开发/" rel="tag"><i class="fa fa-tag"></i> Android开发</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/26/小程序代码构成(一)/" rel="next" title="小程序代码构成学习">
+                <i class="fa fa-chevron-left"></i> 小程序代码构成学习
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="kunkun5love" />
+            
+              <p class="site-author-name" itemprop="name">kunkun5love</p>
+              <p class="site-description motion-element" itemprop="description">不要太满,给自己一些余地.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/NYK1024212458" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:kunkun5love@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/kunkun5love" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://stackoverflow.com/kunkun5love" target="_blank" title="StackOverflow">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/users/d92fc6aa2781/timeline" target="_blank" title="简书">
+                      
+                        <i class="fa fa-fw fa-usb"></i>简书</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://www.kunkun5love.tk/" target="_blank" title="csdn">
+                      
+                        <i class="fa fa-fw fa-crosshairs"></i>csdn</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://gitee.com/niuyukunwork/events" target="_blank" title="码云">
+                      
+                        <i class="fa fa-fw fa-gg"></i>码云</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="/" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i>QQ</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="/" target="_blank" title="微信">
+                      
+                        <i class="fa fa-fw fa-wexin"></i>微信</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#自己学习和总结的关于app的升级和安装"><span class="nav-number">1.</span> <span class="nav-text">自己学习和总结的关于app的升级和安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于VersionCode和VersionName的区别"><span class="nav-number">1.1.</span> <span class="nav-text">关于VersionCode和VersionName的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取app的versionCode和versionName"><span class="nav-number">1.2.</span> <span class="nav-text">获取app的versionCode和versionName</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务端的获取的信息"><span class="nav-number">1.3.</span> <span class="nav-text">服务端的获取的信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于Retrofit的集成"><span class="nav-number">1.4.</span> <span class="nav-text">关于Retrofit的集成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#splash界面代码书写"><span class="nav-number">1.5.</span> <span class="nav-text">splash界面代码书写</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于continueSplash-方法"><span class="nav-number">1.5.1.</span> <span class="nav-text">关于continueSplash();方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-0权限的申请"><span class="nav-number">1.6.</span> <span class="nav-text">6.0权限的申请</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有更新展示更新对话框和下载"><span class="nav-number">1.7.</span> <span class="nav-text">有更新展示更新对话框和下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#广播接收者和安装apk"><span class="nav-number">1.8.</span> <span class="nav-text">广播接收者和安装apk</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#明天将apk的升级和安转和出现的问题进行总结"><span class="nav-number">2.</span> <span class="nav-text">明天将apk的升级和安转和出现的问题进行总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kunkun5love</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">19.9k</span>
+  
+</div>
+
+
+
+ <div class="powered-by">
+ <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  我的网站的访客数:<span id="busuanzi_value_site_uv"></span>
+ </span>
+ </div>
+
+<!--  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+-->
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共19.9k字</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+   <!-- 页面点击小红心 -->
+	<script type="text/javascript" src="/js/src/love.js"></script>
+
+	<!-- 页面的爆炸效果 -->
+
+</body>
+</html>
