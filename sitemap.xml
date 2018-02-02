@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/404.html</loc>
+    
+    <lastmod>2018-02-02T07:51:10.385Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/01/25/Hexo-%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE(%E4%B8%89)/</loc>
     
     <lastmod>2018-02-01T09:10:27.170Z</lastmod>
@@ -103,13 +110,6 @@
     <loc>http://yoursite.com/2018/01/10/frist/</loc>
     
     <lastmod>2018-01-17T01:32:48.497Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/404.html</loc>
-    
-    <lastmod>2018-01-10T09:26:23.659Z</lastmod>
     
   </url>
   
