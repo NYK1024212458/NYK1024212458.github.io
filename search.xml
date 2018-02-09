@@ -1015,7 +1015,7 @@ posts.data = posts.data.sort(function(a, b) {
 <p> fireworks: true</p>
 <p>展示一下: </p>
 <p><img src="https://i.imgur.com/lZPfZ1D.png" alt=""></p>
-<h1 id="5-github-pages-Hexo搭建"><a href="#5-github-pages-Hexo搭建" class="headerlink" title="5.github pages+Hexo搭建"></a>5.github pages+Hexo搭建</h1><h2 id="具体的总结"><a href="#具体的总结" class="headerlink" title="具体的总结"></a>具体的总结</h2><p>这个在搭配的时候稍微出现了点问题主要是DNS解析这一块, 上一个搭建完成的 <a href="http://kunkun5love.club" title="自己搭建的独立博客" target="_blank" rel="noopener">http://kunkun5love.club</a></p>
+<h1 id="5-github-pages-Hexo搭建"><a href="#5-github-pages-Hexo搭建" class="headerlink" title="5.github pages+Hexo搭建"></a>5.github pages+Hexo搭建</h1><h2 id="具体的总结"><a href="#具体的总结" class="headerlink" title="具体的总结"></a>具体的总结</h2><p>这个在搭配的时候稍微出现了点问题主要是DNS解析这一块, 上一个搭建完成的 <a href="http://kunkun5love.club" title="自己搭建的独立博客">http://kunkun5love.club</a></p>
 <p>至于获取github page 在下面有博文有具体的说明.  主要总结的是 申请域名后将申请的域名通过dns跳转到我们的github page 页面上.</p>
 <p>例如: 我的域名是 <a href="kunkun5love.club">kunkun5love.club</a>   我获取的github page 的 <a href="NYK1024212458.github.io">NYK1024212458.github.io</a>;  实质实现就是浏览器输入 kunkunlove.club 后跳转到 NYK1024212458.github.io,我们将hexo生成的 根目录下面的public目录下的文件上传到我们的仓库中,静态的网址.</p>
 <h3 id="第一步将hexo的public-目录上传到NYK1024212458-github-io仓库"><a href="#第一步将hexo的public-目录上传到NYK1024212458-github-io仓库" class="headerlink" title="第一步将hexo的public 目录上传到NYK1024212458.github.io仓库"></a>第一步将hexo的public 目录上传到NYK1024212458.github.io仓库</h3><p>创建NYK1024212458.github.io仓库(详细在下面)</p>
