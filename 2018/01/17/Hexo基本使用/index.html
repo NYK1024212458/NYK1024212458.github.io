@@ -130,10 +130,7 @@
 <meta property="og:image" content="https://i.imgur.com/6nf0Gs0.png">
 <meta property="og:image" content="https://i.imgur.com/qs6FZvo.png">
 <meta property="og:image" content="https://i.imgur.com/oQwdcvb.png">
-<meta property="og:image" content="http://yoursite.com/image-url">
-<meta property="og:image" content="http://yoursite.com/image-url">
-<meta property="og:image" content="http://yoursite.com/image-url">
-<meta property="og:updated_time" content="2018-01-22T09:00:13.496Z">
+<meta property="og:updated_time" content="2018-02-09T01:55:27.566Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo的使用">
 <meta name="twitter:description" content="前言: 一直对hexo的风格所喜欢者,只是在开始的时候选择阴差阳错的选择了workpress ,搭建的博客也是很好使用,最近看到一篇关于hexo搭建的网页,我觉得我还是在来折腾一次,趁着年轻,赶快折腾.">
@@ -438,7 +435,7 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,356
+                  2,404
                 </span>
               
 
@@ -628,25 +625,25 @@ header: true
 <p>作用: 图片自动扩大26%,并突破文章容器的宽度.<br>使用的方式两种: </p>
 <ol>
 <li>HTML 使用  添加 class=”full-image”</li>
-<li><p>标签的使用方式: </p>
- <!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 -->
- <!-- 其中 class="full-image" 是必须的 -->
-<p> <img src="/image-url" class="full-image"></p>
- <!-- 标签 方式，要求版本在0.4.5或以上 -->
- <span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/image-url" class="full-image" alt="alt" title="title"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
- <!-- 别名 -->
- <span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/image-url" class="full-image" alt="alt" title="title"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
-</li>
+<li>标签的使用方式: </li>
 </ol>
-<blockquote>
+<p>第一种html方式</p>
+<pre><code>&lt;!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 --&gt;
+&lt;!-- 其中 class=&quot;full-image&quot; 是必须的 --&gt;
+
+&lt;img src=&quot;/image-url&quot; class=&quot;full-image&quot; /&gt;
+</code></pre><p>第二种方式:</p>
+<pre><code>&lt;!-- 标签 方式，要求版本在0.4.5或以上 --&gt;
+{% fullimage /image-url, alt, title %}
+
+&lt;!-- 别名 --&gt;
+{% fi /image-url, alt, title %}
+</code></pre><blockquote>
 <blockquote>
 <p> 我习惯是在md文件中直接引用图片的文件,这样设置我们成功.</p>
 </blockquote>
 </blockquote>
-<h1 id="开启评论功能"><a href="#开启评论功能" class="headerlink" title="开启评论功能"></a>开启评论功能</h1><p>文章的md的开头:</p>
-<p>开启评论的设置</p>
-<p>comments  设置为true 就可以了!</p>
-<p>设置阅读更多的操作:</p>
+<h1 id="设置文章的摘要"><a href="#设置文章的摘要" class="headerlink" title="设置文章的摘要"></a>设置文章的摘要</h1><p>设置阅读更多的操作:</p>
 <p>方式有三种:</p>
 <ol>
 <li>第一种是使用 <!--more--> 之歌标志之前的会作为简介来展现,出现点击阅读全文的字样.</li>
@@ -972,7 +969,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo的安转"><span class="nav-number"></span> <span class="nav-text">Hexo的安转</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安转git"><span class="nav-number">1.</span> <span class="nav-text">安转git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Hexo"><span class="nav-number">2.</span> <span class="nav-text">安装Hexo</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第一次安装之后的访问地址"><span class="nav-number"></span> <span class="nav-text">第一次安装之后的访问地址</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#按照简书的学习一边再做总结"><span class="nav-number"></span> <span class="nav-text">按照简书的学习一边再做总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#绑定独立的域名"><span class="nav-number"></span> <span class="nav-text">绑定独立的域名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装next主题"><span class="nav-number"></span> <span class="nav-text">安装next主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改主题的scheme"><span class="nav-number"></span> <span class="nav-text">修改主题的scheme</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#出错了-明天解决"><span class="nav-number"></span> <span class="nav-text">出错了,明天解决</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置主题"><span class="nav-number"></span> <span class="nav-text">设置主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他的问题"><span class="nav-number"></span> <span class="nav-text">其他的问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于hexo的菜单的设置"><span class="nav-number"></span> <span class="nav-text">关于hexo的菜单的设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#next主题的使用文档"><span class="nav-number"></span> <span class="nav-text">next主题的使用文档:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#傻瓜式安装搭建博客"><span class="nav-number"></span> <span class="nav-text">傻瓜式安装搭建博客</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于头像的设置"><span class="nav-number"></span> <span class="nav-text">关于头像的设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建page"><span class="nav-number"></span> <span class="nav-text">创建page</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#记录一下子自己的配置的"><span class="nav-number"></span> <span class="nav-text">记录一下子自己的配置的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开启评论功能"><span class="nav-number"></span> <span class="nav-text">开启评论功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#最后关于tags和categories"><span class="nav-number"></span> <span class="nav-text">最后关于tags和categories</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo的安转"><span class="nav-number"></span> <span class="nav-text">Hexo的安转</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安转git"><span class="nav-number">1.</span> <span class="nav-text">安转git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Hexo"><span class="nav-number">2.</span> <span class="nav-text">安装Hexo</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第一次安装之后的访问地址"><span class="nav-number"></span> <span class="nav-text">第一次安装之后的访问地址</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#按照简书的学习一边再做总结"><span class="nav-number"></span> <span class="nav-text">按照简书的学习一边再做总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#绑定独立的域名"><span class="nav-number"></span> <span class="nav-text">绑定独立的域名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装next主题"><span class="nav-number"></span> <span class="nav-text">安装next主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改主题的scheme"><span class="nav-number"></span> <span class="nav-text">修改主题的scheme</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#出错了-明天解决"><span class="nav-number"></span> <span class="nav-text">出错了,明天解决</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置主题"><span class="nav-number"></span> <span class="nav-text">设置主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他的问题"><span class="nav-number"></span> <span class="nav-text">其他的问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于hexo的菜单的设置"><span class="nav-number"></span> <span class="nav-text">关于hexo的菜单的设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#next主题的使用文档"><span class="nav-number"></span> <span class="nav-text">next主题的使用文档:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#傻瓜式安装搭建博客"><span class="nav-number"></span> <span class="nav-text">傻瓜式安装搭建博客</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于头像的设置"><span class="nav-number"></span> <span class="nav-text">关于头像的设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建page"><span class="nav-number"></span> <span class="nav-text">创建page</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#记录一下子自己的配置的"><span class="nav-number"></span> <span class="nav-text">记录一下子自己的配置的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置文章的摘要"><span class="nav-number"></span> <span class="nav-text">设置文章的摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#最后关于tags和categories"><span class="nav-number"></span> <span class="nav-text">最后关于tags和categories</span></a></div>
             
 
           </div>

@@ -1788,25 +1788,25 @@ header: true
 <p>作用: 图片自动扩大26%,并突破文章容器的宽度.<br>使用的方式两种: </p>
 <ol>
 <li>HTML 使用  添加 class=”full-image”</li>
-<li><p>标签的使用方式: </p>
- <!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 -->
- <!-- 其中 class="full-image" 是必须的 -->
-<p> <img src="/image-url" class="full-image"></p>
- <!-- 标签 方式，要求版本在0.4.5或以上 -->
- <span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/image-url" class="full-image" alt="alt" title="title"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
- <!-- 别名 -->
- <span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/image-url" class="full-image" alt="alt" title="title"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
-</li>
+<li>标签的使用方式: </li>
 </ol>
-<blockquote>
+<p>第一种html方式</p>
+<pre><code>&lt;!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 --&gt;
+&lt;!-- 其中 class=&quot;full-image&quot; 是必须的 --&gt;
+
+&lt;img src=&quot;/image-url&quot; class=&quot;full-image&quot; /&gt;
+</code></pre><p>第二种方式:</p>
+<pre><code>&lt;!-- 标签 方式，要求版本在0.4.5或以上 --&gt;
+{% fullimage /image-url, alt, title %}
+
+&lt;!-- 别名 --&gt;
+{% fi /image-url, alt, title %}
+</code></pre><blockquote>
 <blockquote>
 <p> 我习惯是在md文件中直接引用图片的文件,这样设置我们成功.</p>
 </blockquote>
 </blockquote>
-<h1 id="开启评论功能"><a href="#开启评论功能" class="headerlink" title="开启评论功能"></a>开启评论功能</h1><p>文章的md的开头:</p>
-<p>开启评论的设置</p>
-<p>comments  设置为true 就可以了!</p>
-<p>设置阅读更多的操作:</p>
+<h1 id="设置文章的摘要"><a href="#设置文章的摘要" class="headerlink" title="设置文章的摘要"></a>设置文章的摘要</h1><p>设置阅读更多的操作:</p>
 <p>方式有三种:</p>
 <ol>
 <li>第一种是使用 <!--more--> 之歌标志之前的会作为简介来展现,出现点击阅读全文的字样.</li>
@@ -1873,7 +1873,7 @@ header: true
     </entry>
     
     <entry>
-      <title><![CDATA[测试页面]]></title>
+      <title><![CDATA[TCP/UDP编程]]></title>
       <url>/2018/01/10/%E6%B5%8B%E8%AF%95%E9%A1%B5%E9%9D%A2/</url>
       <content type="html"><![CDATA[<h1 id="TCP-UDP编程"><a href="#TCP-UDP编程" class="headerlink" title="TCP/UDP编程"></a>TCP/UDP编程</h1><p>在最近的无线模组的开发中对于TCP和UDP的协议的要求有了进一步的需求,这片博客是自己学习基础的一片博客,用于自己以后在学习过程中的查看和基础回顾.话说最近是不是该歇一歇面试的知识点整理了!<br><a id="more"></a></p>
 <h2 id="基础知识点详解"><a href="#基础知识点详解" class="headerlink" title="基础知识点详解:"></a>基础知识点详解:</h2><h4 id="第一个基础知识就是OSI模型的展示"><a href="#第一个基础知识就是OSI模型的展示" class="headerlink" title="第一个基础知识就是OSI模型的展示:"></a>第一个基础知识就是OSI模型的展示:</h4><p>osi一直在说,今天来看看osi(open System Interconncetion,OSI/RM,Open System Interconnection Reference Modle):</p>
@@ -2129,7 +2129,7 @@ public static void main(String[] args) throws Exception {
     </entry>
     
     <entry>
-      <title><![CDATA[frist]]></title>
+      <title><![CDATA[基于Esp8266无线配对源码分析]]></title>
       <url>/2018/01/10/frist/</url>
       <content type="html"><![CDATA[<h1 id="执行一任务中Activity的解析"><a href="#执行一任务中Activity的解析" class="headerlink" title="执行一任务中Activity的解析"></a>执行一任务中Activity的解析</h1><p>告诉自己每天认真的学习,充电!过好每一天.</p>
 <a id="more"></a>
