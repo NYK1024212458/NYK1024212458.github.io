@@ -137,7 +137,8 @@
 <meta property="og:image" content="https://i.imgur.com/LxHj7N9.png">
 <meta property="og:image" content="https://i.imgur.com/aVDtMHY.png">
 <meta property="og:image" content="https://i.imgur.com/0oGCjL6.png">
-<meta property="og:updated_time" content="2018-02-08T07:07:22.576Z">
+<meta property="og:image" content="https://i.imgur.com/1gk84rf.png">
+<meta property="og:updated_time" content="2018-02-09T03:05:31.991Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo 个性化配置(三)">
 <meta name="twitter:description" content="本片博客是在上一篇博客Hexo个性化配置(二)的基础上在写的一篇博客,主要不在一起写的原因是,这是自己配置自己搭建的博客时候变学习边记录的文章,记录的比较详细.放置在一篇上面文章比较长,所以截取一次十中个性化的配置.这是第三篇.涉及到如下的个性化配置:   jiathis的配置实现博文的分享 文章的置顶功能 打赏功能的实现 点击爆炸效果(有一篇是实现的是红心的效果) github来实现域名的绑定">
@@ -423,6 +424,8 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
           
 
           
+            
+          
 
           
           
@@ -440,7 +443,7 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3,131
+                  3,218
                 </span>
               
 
@@ -656,7 +659,13 @@ posts.data = posts.data.sort(function(a, b) {
 <p> <img src="https://i.imgur.com/aVDtMHY.png" alt=""></p>
 <p>最后博客的展示页面:<br><img src="https://i.imgur.com/0oGCjL6.png" alt=""></p>
 <p>最后来一个参考博客: <a href="http://www.foreverpx.cn/2014/09/23/hexo404/" target="_blank" rel="noopener">http://www.foreverpx.cn/2014/09/23/hexo404/</a></p>
-<h1 id="9"><a href="#9" class="headerlink" title="9."></a>9.</h1><h1 id="10"><a href="#10" class="headerlink" title="10."></a>10.</h1>
+<h1 id="9-修改评论系统之来比力修改为有言"><a href="#9-修改评论系统之来比力修改为有言" class="headerlink" title="9.修改评论系统之来比力修改为有言"></a>9.修改评论系统之来比力修改为有言</h1><p>来比力的配置在上面的Hexo的个性化配置中有说明,现在是修改为有言的操作记录(Hexp的配置文件中都集成了,需要配置uid).</p>
+<p>官网地址: </p>
+<p><a href="http://www.uyan.cc/" target="_blank" rel="noopener">http://www.uyan.cc/</a></p>
+<p>展示图片: </p>
+<p><img src="https://i.imgur.com/1gk84rf.png" alt=""></p>
+<p>在主题配置文件中配置: </p>
+<h1 id="10"><a href="#10" class="headerlink" title="10."></a>10.</h1>
       
     </div>
     
@@ -675,7 +684,7 @@ posts.data = posts.data.sort(function(a, b) {
   <p><span>本文标题:</span><a href="/2018/01/25/Hexo-个性化配置(三)/">Hexo 个性化配置(三)</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 kunkun5love 的个人博客">kunkun5love</a></p>
   <p><span>发布时间:</span>2018年01月25日 - 13:01</p>
-  <p><span>最后更新:</span>2018年02月08日 - 15:02</p>
+  <p><span>最后更新:</span>2018年02月09日 - 11:02</p>
   <p><span>原始链接:</span><a href="/2018/01/25/Hexo-个性化配置(三)/" title="Hexo 个性化配置(三)">http://yoursite.com/2018/01/25/Hexo-个性化配置(三)/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/01/25/Hexo-个性化配置(三)/"  aria-label="复制成功！"></i></span>
   </p>
@@ -828,6 +837,15 @@ var jiathis_config={
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="uyan_frame"></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -997,7 +1015,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-jiathis的分享的实现"><span class="nav-number">1.</span> <span class="nav-text">1.jiathis的分享的实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-文章的置顶功能的实现"><span class="nav-number">2.</span> <span class="nav-text">2.文章的置顶功能的实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-打赏功能的实现"><span class="nav-number">3.</span> <span class="nav-text">3.打赏功能的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#获取微信的打赏二维码-设置金额"><span class="nav-number">3.1.</span> <span class="nav-text">获取微信的打赏二维码,设置金额</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置支付宝的打赏二维码和金额"><span class="nav-number">3.2.</span> <span class="nav-text">设置支付宝的打赏二维码和金额</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上传图片source-image中"><span class="nav-number">3.3.</span> <span class="nav-text">上传图片source/image中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在主题配置文件中设置"><span class="nav-number">3.4.</span> <span class="nav-text">在主题配置文件中设置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-实现爆炸效果"><span class="nav-number">4.</span> <span class="nav-text">4.实现爆炸效果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-github-pages-Hexo搭建"><span class="nav-number">5.</span> <span class="nav-text">5.github pages+Hexo搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#具体的总结"><span class="nav-number">5.1.</span> <span class="nav-text">具体的总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步将hexo的public-目录上传到NYK1024212458-github-io仓库"><span class="nav-number">5.1.1.</span> <span class="nav-text">第一步将hexo的public 目录上传到NYK1024212458.github.io仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#kunkun5love-club的跳转"><span class="nav-number">5.1.2.</span> <span class="nav-text">kunkun5love.club的跳转</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git的安装和email和name的配置"><span class="nav-number">5.2.</span> <span class="nav-text">git的安装和email和name的配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注册github来创建-repositories"><span class="nav-number">5.3.</span> <span class="nav-text">注册github来创建 repositories</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将我们申请的其他域名与github申请的空间绑定"><span class="nav-number">5.4.</span> <span class="nav-text">将我们申请的其他域名与github申请的空间绑定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置自己域名的DNS设置"><span class="nav-number">5.5.</span> <span class="nav-text">设置自己域名的DNS设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo中的配置"><span class="nav-number">5.6.</span> <span class="nav-text">Hexo中的配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-插入音乐"><span class="nav-number">6.</span> <span class="nav-text">6.插入音乐</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#进入网页版的歌曲页面获取外部播放连接"><span class="nav-number">6.1.</span> <span class="nav-text">进入网页版的歌曲页面获取外部播放连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#直接复制歌曲的播放代码到博客中"><span class="nav-number">6.2.</span> <span class="nav-text">直接复制歌曲的播放代码到博客中</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-增加一个站内搜索"><span class="nav-number">7.</span> <span class="nav-text">7.增加一个站内搜索</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一步那转搜索插件"><span class="nav-number">7.1.</span> <span class="nav-text">第一步那转搜索插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#站点配置"><span class="nav-number">7.2.</span> <span class="nav-text">站点配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-关于404公益页面的实现"><span class="nav-number">8.</span> <span class="nav-text">8.关于404公益页面的实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9"><span class="nav-number">9.</span> <span class="nav-text">9.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10"><span class="nav-number">10.</span> <span class="nav-text">10.</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-jiathis的分享的实现"><span class="nav-number">1.</span> <span class="nav-text">1.jiathis的分享的实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-文章的置顶功能的实现"><span class="nav-number">2.</span> <span class="nav-text">2.文章的置顶功能的实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-打赏功能的实现"><span class="nav-number">3.</span> <span class="nav-text">3.打赏功能的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#获取微信的打赏二维码-设置金额"><span class="nav-number">3.1.</span> <span class="nav-text">获取微信的打赏二维码,设置金额</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置支付宝的打赏二维码和金额"><span class="nav-number">3.2.</span> <span class="nav-text">设置支付宝的打赏二维码和金额</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上传图片source-image中"><span class="nav-number">3.3.</span> <span class="nav-text">上传图片source/image中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在主题配置文件中设置"><span class="nav-number">3.4.</span> <span class="nav-text">在主题配置文件中设置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-实现爆炸效果"><span class="nav-number">4.</span> <span class="nav-text">4.实现爆炸效果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-github-pages-Hexo搭建"><span class="nav-number">5.</span> <span class="nav-text">5.github pages+Hexo搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#具体的总结"><span class="nav-number">5.1.</span> <span class="nav-text">具体的总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步将hexo的public-目录上传到NYK1024212458-github-io仓库"><span class="nav-number">5.1.1.</span> <span class="nav-text">第一步将hexo的public 目录上传到NYK1024212458.github.io仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#kunkun5love-club的跳转"><span class="nav-number">5.1.2.</span> <span class="nav-text">kunkun5love.club的跳转</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git的安装和email和name的配置"><span class="nav-number">5.2.</span> <span class="nav-text">git的安装和email和name的配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注册github来创建-repositories"><span class="nav-number">5.3.</span> <span class="nav-text">注册github来创建 repositories</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将我们申请的其他域名与github申请的空间绑定"><span class="nav-number">5.4.</span> <span class="nav-text">将我们申请的其他域名与github申请的空间绑定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置自己域名的DNS设置"><span class="nav-number">5.5.</span> <span class="nav-text">设置自己域名的DNS设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo中的配置"><span class="nav-number">5.6.</span> <span class="nav-text">Hexo中的配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-插入音乐"><span class="nav-number">6.</span> <span class="nav-text">6.插入音乐</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#进入网页版的歌曲页面获取外部播放连接"><span class="nav-number">6.1.</span> <span class="nav-text">进入网页版的歌曲页面获取外部播放连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#直接复制歌曲的播放代码到博客中"><span class="nav-number">6.2.</span> <span class="nav-text">直接复制歌曲的播放代码到博客中</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-增加一个站内搜索"><span class="nav-number">7.</span> <span class="nav-text">7.增加一个站内搜索</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一步那转搜索插件"><span class="nav-number">7.1.</span> <span class="nav-text">第一步那转搜索插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#站点配置"><span class="nav-number">7.2.</span> <span class="nav-text">站点配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-关于404公益页面的实现"><span class="nav-number">8.</span> <span class="nav-text">8.关于404公益页面的实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-修改评论系统之来比力修改为有言"><span class="nav-number">9.</span> <span class="nav-text">9.修改评论系统之来比力修改为有言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10"><span class="nav-number">10.</span> <span class="nav-text">10.</span></a></li></ol></div>
             
 
           </div>
@@ -1032,7 +1050,7 @@ var jiathis_config={
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">20.7k</span>
+    <span title="Site words total count">20.8k</span>
   
 </div>
 
@@ -1060,7 +1078,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共20.7k字</span>
+  <span class="post-count">博客全站共20.8k字</span>
 </div>
 
         
@@ -1202,6 +1220,10 @@ var jiathis_config={
   
     
 
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2155321"></script>
+      <!-- UY END -->
     
   
 

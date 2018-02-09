@@ -1110,7 +1110,13 @@ posts.data = posts.data.sort(function(a, b) {
 <p> <img src="https://i.imgur.com/aVDtMHY.png" alt=""></p>
 <p>最后博客的展示页面:<br><img src="https://i.imgur.com/0oGCjL6.png" alt=""></p>
 <p>最后来一个参考博客: <a href="http://www.foreverpx.cn/2014/09/23/hexo404/" target="_blank" rel="noopener">http://www.foreverpx.cn/2014/09/23/hexo404/</a></p>
-<h1 id="9"><a href="#9" class="headerlink" title="9."></a>9.</h1><h1 id="10"><a href="#10" class="headerlink" title="10."></a>10.</h1>]]></content>
+<h1 id="9-修改评论系统之来比力修改为有言"><a href="#9-修改评论系统之来比力修改为有言" class="headerlink" title="9.修改评论系统之来比力修改为有言"></a>9.修改评论系统之来比力修改为有言</h1><p>来比力的配置在上面的Hexo的个性化配置中有说明,现在是修改为有言的操作记录(Hexp的配置文件中都集成了,需要配置uid).</p>
+<p>官网地址: </p>
+<p><a href="http://www.uyan.cc/" target="_blank" rel="noopener">http://www.uyan.cc/</a></p>
+<p>展示图片: </p>
+<p><img src="https://i.imgur.com/1gk84rf.png" alt=""></p>
+<p>在主题配置文件中配置: </p>
+<h1 id="10"><a href="#10" class="headerlink" title="10."></a>10.</h1>]]></content>
       
         <categories>
             
