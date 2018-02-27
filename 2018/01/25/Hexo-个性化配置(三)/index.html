@@ -145,13 +145,33 @@ daovoice('update');
 <meta property="og:image" content="https://i.imgur.com/Sfw4RRE.png">
 <meta property="og:image" content="https://i.imgur.com/tsc2TYA.png">
 <meta property="og:image" content="https://i.imgur.com/IHQGHgp.png">
-<meta property="og:image" content="https://i.imgur.com/wX6Jw6K.png">
-<meta property="og:image" content="https://i.imgur.com/azUXT7H.png">
+<meta property="og:image" content="https://i.imgur.com/6Fy6h9H.png">
+<meta property="og:image" content="https://i.imgur.com/26bc3Rl.png">
+<meta property="og:image" content="https://i.imgur.com/XZY40a1.png">
+<meta property="og:image" content="https://i.imgur.com/DlC2SgG.png">
+<meta property="og:image" content="https://i.imgur.com/k2n9tOx.png">
+<meta property="og:image" content="https://i.imgur.com/O5qIkwT.png">
+<meta property="og:image" content="https://i.imgur.com/NbmhWTD.png">
+<meta property="og:image" content="https://i.imgur.com/2feKlpl.png">
+<meta property="og:image" content="https://i.imgur.com/bWnZ4Dg.png">
+<meta property="og:image" content="https://i.imgur.com/FC1KoWg.png">
+<meta property="og:image" content="https://i.imgur.com/cksWxzW.png">
+<meta property="og:image" content="https://i.imgur.com/GQcHsVL.png">
 <meta property="og:image" content="https://i.imgur.com/LxHj7N9.png">
 <meta property="og:image" content="https://i.imgur.com/aVDtMHY.png">
 <meta property="og:image" content="https://i.imgur.com/0oGCjL6.png">
+<meta property="og:image" content="https://i.imgur.com/nlF2Hsl.png">
+<meta property="og:image" content="https://i.imgur.com/Weyfksg.png">
+<meta property="og:image" content="https://i.imgur.com/y0HRtPz.png">
+<meta property="og:image" content="https://i.imgur.com/qNb9f9Y.png">
+<meta property="og:image" content="https://i.imgur.com/zmMjzqW.png">
+<meta property="og:image" content="https://i.imgur.com/gZVIm8m.png">
+<meta property="og:image" content="https://i.imgur.com/ExVAzzO.png">
+<meta property="og:image" content="https://i.imgur.com/mV4fkcX.png">
 <meta property="og:image" content="https://i.imgur.com/1gk84rf.png">
-<meta property="og:updated_time" content="2018-02-09T03:05:31.991Z">
+<meta property="og:image" content="https://i.imgur.com/RNp2ejK.png">
+<meta property="og:image" content="https://i.imgur.com/AEdvvtI.png">
+<meta property="og:updated_time" content="2018-02-27T08:31:00.577Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo 个性化配置(三)">
 <meta name="twitter:description" content="本片博客是在上一篇博客Hexo个性化配置(二)的基础上在写的一篇博客,主要不在一起写的原因是,这是自己配置自己搭建的博客时候变学习边记录的文章,记录的比较详细.放置在一篇上面文章比较长,所以截取一次十中个性化的配置.这是第三篇.涉及到如下的个性化配置:   jiathis的配置实现博文的分享 文章的置顶功能 打赏功能的实现 点击爆炸效果(有一篇是实现的是红心的效果) github来实现域名的绑定">
@@ -494,7 +514,7 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3,218
+                  4,579
                 </span>
               
 
@@ -510,7 +530,7 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  14
+                  20
                 </span>
               
             </div>
@@ -541,8 +561,11 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
 <li>插入音乐</li>
 <li>实现站内搜索</li>
 <li>关于404公益页面的实现</li>
-<li>kkk</li>
-<li>kkl<a id="more"></a>
+<li>DaoVoice在线联系</li>
+<li>为博客添加萌萌的宠物</li>
+<li>修改评论系统之来比力修改为有言</li>
+<li>顺便了解Docker</li>
+<li>Hexo NexT主题中添加网页标题崩溃欺骗搞怪特效<a id="more"></a>
 </li>
 </ol>
 <h1 id="1-jiathis的分享的实现"><a href="#1-jiathis的分享的实现" class="headerlink" title="1.jiathis的分享的实现"></a>1.jiathis的分享的实现</h1><p>在主题配置文件下面搜索 jiathis 我们看到在主题的配置文件中已经给我们配置好了,我们需要的是uid;</p>
@@ -676,19 +699,50 @@ posts.data = posts.data.sort(function(a, b) {
 <p>点击自己要插入音乐的首页:  目的是获取播放的外链   展示如下:</p>
 <p><img src="https://i.imgur.com/tsc2TYA.png" alt=""></p>
 <h2 id="直接复制歌曲的播放代码到博客中"><a href="#直接复制歌曲的播放代码到博客中" class="headerlink" title="直接复制歌曲的播放代码到博客中"></a>直接复制歌曲的播放代码到博客中</h2><p>复制代码,直接到博客中:  我复制的代码如下</p>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=34383004&auto=1&height=66"></iframe>
-
-<p>下面的是flash代码:</p>
-<embed src="//music.163.com/style/swf/widget.swf?sid=34383004&type=2&auto=1&width=320&height=66" width="340" height="86" allownetworking="all">
-
-<p> 我们上传到hexo试试:</p>
+<pre><code>&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=330 height=86 src=&quot;//music.163.com/outchain/player?type=2&amp;id=34383004&amp;auto=1&amp;height=66&quot;&gt;&lt;/iframe&gt;
+</code></pre><p>下面的是flash代码:</p>
+<pre><code>&lt;embed src=&quot;//music.163.com/style/swf/widget.swf?sid=34383004&amp;type=2&amp;auto=1&amp;width=320&amp;height=66&quot; width=&quot;340&quot; height=&quot;86&quot;  allowNetworking=&quot;all&quot;&gt;&lt;/embed&gt;
+</code></pre><p> 我们上传到hexo试试:</p>
 <p><img src="https://i.imgur.com/IHQGHgp.png" alt=""></p>
 <p>说明一下子,win10自带的浏览器是两种都支持的,火狐flash插件的问题,不能播放.</p>
 <p>抽时间写一篇关于火狐flash的处理.</p>
-<h1 id="7-增加一个站内搜索"><a href="#7-增加一个站内搜索" class="headerlink" title="7.增加一个站内搜索"></a>7.增加一个站内搜索</h1><h2 id="第一步那转搜索插件"><a href="#第一步那转搜索插件" class="headerlink" title="第一步那转搜索插件"></a>第一步那转搜索插件</h2><pre><code>npm install hexo-generator-search --save
+<h1 id="7-增加一个站内搜索"><a href="#7-增加一个站内搜索" class="headerlink" title="7.增加一个站内搜索"></a>7.增加一个站内搜索</h1><p>站内的搜索功能是一直在处于可以出现搜索,但是输入搜索的内容没有反应,今天重新开始写搜索的功能.</p>
+<p>参考的博客的地址: </p>
+<p><a href="http://theme-next.iissnan.com/third-party-services.html#algolia-search" title="参考的博客" target="_blank" rel="noopener">http://theme-next.iissnan.com/third-party-services.html#algolia-search</a></p>
+<p> 使用的还是 algolia  注册和新建获取全部相同.</p>
+<h2 id="申请第三方的账号"><a href="#申请第三方的账号" class="headerlink" title="申请第三方的账号"></a>申请第三方的账号</h2><p><a href="https://www.algolia.com/" title="申请的账号" target="_blank" rel="noopener">https://www.algolia.com/</a></p>
+<p><img src="https://i.imgur.com/6Fy6h9H.png" alt=""></p>
+<p>使用的邮箱是自己的qq邮箱  1024212458@qq.com</p>
+<p>获取秘钥: </p>
+<p><img src="https://i.imgur.com/26bc3Rl.png" alt=""></p>
+<p>我们需要的只是仅仅用来搜索的页面 ip: ,,,,,,(不展示了)</p>
+<h2 id="新建搜索的index文件"><a href="#新建搜索的index文件" class="headerlink" title="新建搜索的index文件"></a>新建搜索的index文件</h2><p><img src="https://i.imgur.com/XZY40a1.png" alt=""></p>
+<p>输入新建的index的名称,后面会在主题的配置文件中配置.</p>
+<h2 id="设置权限"><a href="#设置权限" class="headerlink" title="设置权限"></a>设置权限</h2><p>点击API KEY页面,点击  ALL API KEYS 设置权限</p>
+<p><img src="https://i.imgur.com/DlC2SgG.png" alt=""></p>
+<p>点击编辑之后的权限设置: </p>
+<p>图片展示如下: </p>
+<p><img src="https://i.imgur.com/k2n9tOx.png" alt=""></p>
+<p>按照上面的设置就行可!</p>
+<h2 id="上传数据到algolia"><a href="#上传数据到algolia" class="headerlink" title="上传数据到algolia"></a>上传数据到algolia</h2><p>执行命令:</p>
+<pre><code>npm install hexo-algolia --save
 </code></pre><p>安装展示图片: </p>
-<p><img src="https://i.imgur.com/wX6Jw6K.png" alt=""></p>
-<h2 id="站点配置"><a href="#站点配置" class="headerlink" title="站点配置"></a>站点配置</h2><p><img src="https://i.imgur.com/azUXT7H.png" alt=""></p>
+<p><img src="https://i.imgur.com/O5qIkwT.png" alt=""></p>
+<h2 id="站点配置"><a href="#站点配置" class="headerlink" title="站点配置"></a>站点配置</h2><p>站点配置的数据就是我们在algolia注册在 apikey的数据</p>
+<p>展示如下: </p>
+<p><img src="https://i.imgur.com/NbmhWTD.png" alt=""></p>
+<p>站点配置文件的配置: </p>
+<p><img src="https://i.imgur.com/2feKlpl.png" alt=""></p>
+<h2 id="执行命令-hexo-algolia"><a href="#执行命令-hexo-algolia" class="headerlink" title="执行命令 hexo algolia"></a>执行命令 hexo algolia</h2><pre><code>hexo algolia
+</code></pre><p>刚开始的直接执行下面的这个命令报下面的错误: </p>
+<p>错误展示如下: </p>
+<p><img src="https://i.imgur.com/bWnZ4Dg.png" alt=""></p>
+<p><strong>解决的办法:</strong></p>
+<p><img src="https://i.imgur.com/FC1KoWg.png" alt=""></p>
+<p>linux系统使用export  windowns系统使用gitbash </p>
+<h2 id="配置主题文件"><a href="#配置主题文件" class="headerlink" title="配置主题文件"></a>配置主题文件</h2><p><img src="https://i.imgur.com/cksWxzW.png" alt=""></p>
+<p>最后成功的展示图片: </p>
+<p><img src="https://i.imgur.com/GQcHsVL.png" alt=""></p>
 <h1 id="8-关于404公益页面的实现"><a href="#8-关于404公益页面的实现" class="headerlink" title="8.关于404公益页面的实现"></a>8.关于404公益页面的实现</h1><p>我们在前面实现了域名跳转到github page页面 我们实现的是腾讯的404页面 </p>
 <p>连接地址: <a href="http://www.qq.com/404/" title="腾讯的404页面" target="_blank" rel="noopener">http://www.qq.com/404/</a> </p>
 <p>主要的操作就是复制里面的js代码到我们的404页面中.</p>
@@ -710,13 +764,94 @@ posts.data = posts.data.sort(function(a, b) {
 <p> <img src="https://i.imgur.com/aVDtMHY.png" alt=""></p>
 <p>最后博客的展示页面:<br><img src="https://i.imgur.com/0oGCjL6.png" alt=""></p>
 <p>最后来一个参考博客: <a href="http://www.foreverpx.cn/2014/09/23/hexo404/" target="_blank" rel="noopener">http://www.foreverpx.cn/2014/09/23/hexo404/</a></p>
-<h1 id="9-修改评论系统之来比力修改为有言"><a href="#9-修改评论系统之来比力修改为有言" class="headerlink" title="9.修改评论系统之来比力修改为有言"></a>9.修改评论系统之来比力修改为有言</h1><p>来比力的配置在上面的Hexo的个性化配置中有说明,现在是修改为有言的操作记录(Hexp的配置文件中都集成了,需要配置uid).</p>
+<h1 id="9-DaoVoice实现在线联系"><a href="#9-DaoVoice实现在线联系" class="headerlink" title="9.DaoVoice实现在线联系"></a>9.DaoVoice实现在线联系</h1><p>绝佳的用户沟通工具</p>
+<h2 id="注册登录填写邀请码"><a href="#注册登录填写邀请码" class="headerlink" title="注册登录填写邀请码"></a>注册登录填写邀请码</h2><p>注册登录地址如下: </p>
+<p><a href="http://www.daovoice.io/" title="绝佳的用户沟通工具" target="_blank" rel="noopener">http://www.daovoice.io/</a></p>
+<p>官网进行注册,需要邀请码: 0f81ff2f 复制粘贴就可以了~!</p>
+<p>展示的图片如下: </p>
+<p><img src="https://i.imgur.com/nlF2Hsl.png" alt=""></p>
+<h2 id="复制粘贴代码"><a href="#复制粘贴代码" class="headerlink" title="复制粘贴代码"></a>复制粘贴代码</h2><p>修改的hexo的文件路劲如下: themes/next/layout/_partials/head.swig 添加下面的代码:</p>
+<pre><code>{% if theme.daovoice %}
+	 <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0eeeae6f.js","daovoice")
+	 daovoice('init', {
+	  app_id: "你获取的appid"
+	});
+	daovoice('update');
+	 </script>
+	{% endif %}
+</code></pre><p>展示如下: </p>
+<p><img src="https://i.imgur.com/Weyfksg.png" alt=""></p>
+<h2 id="修改主题的配置文件"><a href="#修改主题的配置文件" class="headerlink" title="修改主题的配置文件"></a>修改主题的配置文件</h2><p>在主题的配置文件中添加:</p>
+<p>daovoice: true</p>
+<p>daovoice_app_id:  我们注册获取的id   </p>
+<h2 id="结果没有显示出来"><a href="#结果没有显示出来" class="headerlink" title="结果没有显示出来"></a>结果没有显示出来</h2><p>展示如下: </p>
+<p><img src="https://i.imgur.com/y0HRtPz.png" alt=""></p>
+<p>其他的没有什么改变,要是你也是和我一样出现这样的情况,第一我是检查我的主题配置文件: 将daovoice不要出现书写错误</p>
+<p>第二点就是,我将上面的代码,直接放在最前面,最后hexo clean  重新部署就OK了!</p>
+<h2 id="聊天对话款和欢迎词的设置"><a href="#聊天对话款和欢迎词的设置" class="headerlink" title="聊天对话款和欢迎词的设置"></a>聊天对话款和欢迎词的设置</h2><p> 登录到Dao voice 的官网在应用设置中设置:</p>
+<p>展示如下:<br><img src="https://i.imgur.com/qNb9f9Y.png" alt=""></p>
+<h1 id="10-为博客添加萌萌的宠物"><a href="#10-为博客添加萌萌的宠物" class="headerlink" title="10.为博客添加萌萌的宠物 #\"></a>10.为博客添加萌萌的宠物 #\</h1><p>添加的是宠物信息.</p>
+<h2 id="第一步切换终端输入下面命令-安装live2d"><a href="#第一步切换终端输入下面命令-安装live2d" class="headerlink" title="第一步切换终端输入下面命令  安装live2d"></a>第一步切换终端输入下面命令  安装live2d</h2><pre><code>npm install -save hexo-helper-live2d
+</code></pre><p>安装展示的图片如下: </p>
+<p><img src="https://i.imgur.com/zmMjzqW.png" alt=""></p>
+<h2 id="修改-layout-swig文件"><a href="#修改-layout-swig文件" class="headerlink" title="修改_layout.swig文件"></a>修改_layout.swig文件</h2><p>修改文件的路劲如下: themes/next/layout/-layout.swig文件</p>
+<p> 路劲展示如下: </p>
+<p><img src="https://i.imgur.com/gZVIm8m.png" alt=""></p>
+<p>修改的代码如下: </p>
+<pre><code>{{ live2d() }}
+</code></pre><h2 id="主题配置文件中进行配置"><a href="#主题配置文件中进行配置" class="headerlink" title="主题配置文件中进行配置"></a>主题配置文件中进行配置</h2><p><img src="https://i.imgur.com/ExVAzzO.png" alt=""></p>
+<p>注释掉是在底部挡住了在线聊天的那个图标.</p>
+<p>最后是图片的展示页面: </p>
+<p><img src="https://i.imgur.com/mV4fkcX.png" alt=""></p>
+<h1 id="11-修改评论系统之来比力修改为有言"><a href="#11-修改评论系统之来比力修改为有言" class="headerlink" title="11.修改评论系统之来比力修改为有言"></a>11.修改评论系统之来比力修改为有言</h1><p>来比力的配置在上面的Hexo的个性化配置中有说明,现在是修改为有言的操作记录(Hexp的配置文件中都集成了,需要配置uid).</p>
 <p>官网地址: </p>
 <p><a href="http://www.uyan.cc/" target="_blank" rel="noopener">http://www.uyan.cc/</a></p>
 <p>展示图片: </p>
 <p><img src="https://i.imgur.com/1gk84rf.png" alt=""></p>
 <p>在主题配置文件中配置: </p>
-<h1 id="10"><a href="#10" class="headerlink" title="10."></a>10.</h1>
+<p>youyan_uid :  自己设置的uid </p>
+<p>这样设置来比力是没有问题的,有言设置之后没有显示出来.</p>
+<h1 id="12-DaoCloud的了解"><a href="#12-DaoCloud的了解" class="headerlink" title="12.DaoCloud的了解"></a>12.DaoCloud的了解</h1><p>首先就是在官网注册: </p>
+<p>DaoVoice的官网的连接地址如下: <a href="https://account.daocloud.io/signin" title="DaoVoice的官网连接地址" target="_blank" rel="noopener">https://account.daocloud.io/signin</a></p>
+<p>展示图片如下: </p>
+<p><img src="https://i.imgur.com/RNp2ejK.png" alt=""></p>
+<p>我直接使用的是github的账户来登录的: </p>
+<p><img src="https://i.imgur.com/AEdvvtI.png" alt=""></p>
+<p>Talk is cheap,show me the code: 空谈误国,实干兴邦</p>
+<p>Eat your own dogfood : 做好自己</p>
+<p>DaoKer Day:  日复一日</p>
+<h2 id="顺便学习了Docker"><a href="#顺便学习了Docker" class="headerlink" title="顺便学习了Docker"></a>顺便学习了Docker</h2><p><a href="http://guide.daocloud.io/dcs/docker-daocloud-9153164.html" target="_blank" rel="noopener">http://guide.daocloud.io/dcs/docker-daocloud-9153164.html</a></p>
+<p>上面的连接说的很是直接明白,这里自己摘取一些作为自己 的笔记.</p>
+<ul>
+<li>Docker image 和Dockerfile</li>
+</ul>
+<p>Docker image 相当于就是我们安转系统时候说的镜像(image),系统的Ghost是对系统一些设置和安装软件后的设置进行clone的备份,在Docker中 是对Docker image 的修改写在了 Dockerfile中然后 构建为一个新的Docker image ,这些对软件或者系统等的修改或者是安转软件的操作此时还是没有运行生效的,只不过在 构建完成的Docker image在 容器中运行的时候才会生效 ,而Docker node就是提过容器的.  Docker image就是镜像 Dockerfile里面记录的就是对镜像的操作, Docker node提供的就是容器.  源Docker Image 在Dockerfiler里面的命令 构建一个新的Docker image 就是一个构建的过程.   让Docker image 运行 在container中, 将 Docker image 调入容器运行的动作叫做 是  部署 . </p>
+<p> Docker 软件就是 下载 安装 配置的 Dockere server 是一个虚拟化的软件.Docker node</p>
+<p>Docker node 就是安装了Docker软件的硬件机器,从而成为Docker虚拟机母平台.</p>
+<h1 id="13-Hexo-NexT主题中添加网页标题崩溃欺骗搞怪特效"><a href="#13-Hexo-NexT主题中添加网页标题崩溃欺骗搞怪特效" class="headerlink" title="13.Hexo NexT主题中添加网页标题崩溃欺骗搞怪特效"></a>13.Hexo NexT主题中添加网页标题崩溃欺骗搞怪特效</h1><p>是一个js特效:</p>
+<h2 id="创建js"><a href="#创建js" class="headerlink" title="创建js"></a>创建js</h2><p>在next\source\js\src文件夹下创建crash_cheat.js，添加代码：</p>
+<pre><code>&lt;!--崩溃欺骗--&gt;
+var OriginTitile = document.title;
+ var titleTime;
+ document.addEventListener(&apos;visibilitychange&apos;, function () {
+ if (document.hidden) {
+     $(&apos;[rel=&quot;icon&quot;]&apos;).attr(&apos;href&apos;, &quot;/img/TEP.ico&quot;);
+     document.title = &apos;╭(°A°`)╮ 页面崩溃啦 ~&apos;;
+     clearTimeout(titleTime);
+ }
+ else {
+     $(&apos;[rel=&quot;icon&quot;]&apos;).attr(&apos;href&apos;, &quot;/favicon.ico&quot;);
+     document.title = &apos;(ฅ&gt;ω&lt;*ฅ) 噫又好了~&apos; + OriginTitile;
+     titleTime = setTimeout(function () {
+         document.title = OriginTitile;
+     }, 2000);
+ }
+ });
+</code></pre><h2 id="在-layout-swig中的使用"><a href="#在-layout-swig中的使用" class="headerlink" title="在_layout.swig中的使用"></a>在_layout.swig中的使用</h2><pre><code>&lt;!--崩溃欺骗--&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;/js/src/crash_cheat.js&quot;&gt;&lt;/script&gt;
+</code></pre><p>最后实现: </p>
+<p>展示效果:<br> <a href="kunkun5love.club" title="个人网站">kunkun5love.club</a></p>
+
       
     </div>
     
@@ -735,7 +870,7 @@ posts.data = posts.data.sort(function(a, b) {
   <p><span>本文标题:</span><a href="/2018/01/25/Hexo-个性化配置(三)/">Hexo 个性化配置(三)</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 kunkun5love 的个人博客">kunkun5love</a></p>
   <p><span>发布时间:</span>2018年01月25日 - 13:01</p>
-  <p><span>最后更新:</span>2018年02月09日 - 11:02</p>
+  <p><span>最后更新:</span>2018年02月27日 - 16:02</p>
   <p><span>原始链接:</span><a href="/2018/01/25/Hexo-个性化配置(三)/" title="Hexo 个性化配置(三)">http://kunkun5love.club/2018/01/25/Hexo-个性化配置(三)/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://kunkun5love.club/2018/01/25/Hexo-个性化配置(三)/"  aria-label="复制成功！"></i></span>
   </p>
@@ -957,7 +1092,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -968,7 +1103,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1066,7 +1201,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-jiathis的分享的实现"><span class="nav-number">1.</span> <span class="nav-text">1.jiathis的分享的实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-文章的置顶功能的实现"><span class="nav-number">2.</span> <span class="nav-text">2.文章的置顶功能的实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-打赏功能的实现"><span class="nav-number">3.</span> <span class="nav-text">3.打赏功能的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#获取微信的打赏二维码-设置金额"><span class="nav-number">3.1.</span> <span class="nav-text">获取微信的打赏二维码,设置金额</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置支付宝的打赏二维码和金额"><span class="nav-number">3.2.</span> <span class="nav-text">设置支付宝的打赏二维码和金额</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上传图片source-image中"><span class="nav-number">3.3.</span> <span class="nav-text">上传图片source/image中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在主题配置文件中设置"><span class="nav-number">3.4.</span> <span class="nav-text">在主题配置文件中设置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-实现爆炸效果"><span class="nav-number">4.</span> <span class="nav-text">4.实现爆炸效果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-github-pages-Hexo搭建"><span class="nav-number">5.</span> <span class="nav-text">5.github pages+Hexo搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#具体的总结"><span class="nav-number">5.1.</span> <span class="nav-text">具体的总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步将hexo的public-目录上传到NYK1024212458-github-io仓库"><span class="nav-number">5.1.1.</span> <span class="nav-text">第一步将hexo的public 目录上传到NYK1024212458.github.io仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#kunkun5love-club的跳转"><span class="nav-number">5.1.2.</span> <span class="nav-text">kunkun5love.club的跳转</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git的安装和email和name的配置"><span class="nav-number">5.2.</span> <span class="nav-text">git的安装和email和name的配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注册github来创建-repositories"><span class="nav-number">5.3.</span> <span class="nav-text">注册github来创建 repositories</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将我们申请的其他域名与github申请的空间绑定"><span class="nav-number">5.4.</span> <span class="nav-text">将我们申请的其他域名与github申请的空间绑定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置自己域名的DNS设置"><span class="nav-number">5.5.</span> <span class="nav-text">设置自己域名的DNS设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo中的配置"><span class="nav-number">5.6.</span> <span class="nav-text">Hexo中的配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-插入音乐"><span class="nav-number">6.</span> <span class="nav-text">6.插入音乐</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#进入网页版的歌曲页面获取外部播放连接"><span class="nav-number">6.1.</span> <span class="nav-text">进入网页版的歌曲页面获取外部播放连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#直接复制歌曲的播放代码到博客中"><span class="nav-number">6.2.</span> <span class="nav-text">直接复制歌曲的播放代码到博客中</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-增加一个站内搜索"><span class="nav-number">7.</span> <span class="nav-text">7.增加一个站内搜索</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一步那转搜索插件"><span class="nav-number">7.1.</span> <span class="nav-text">第一步那转搜索插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#站点配置"><span class="nav-number">7.2.</span> <span class="nav-text">站点配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-关于404公益页面的实现"><span class="nav-number">8.</span> <span class="nav-text">8.关于404公益页面的实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-修改评论系统之来比力修改为有言"><span class="nav-number">9.</span> <span class="nav-text">9.修改评论系统之来比力修改为有言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10"><span class="nav-number">10.</span> <span class="nav-text">10.</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-jiathis的分享的实现"><span class="nav-number">1.</span> <span class="nav-text">1.jiathis的分享的实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-文章的置顶功能的实现"><span class="nav-number">2.</span> <span class="nav-text">2.文章的置顶功能的实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-打赏功能的实现"><span class="nav-number">3.</span> <span class="nav-text">3.打赏功能的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#获取微信的打赏二维码-设置金额"><span class="nav-number">3.1.</span> <span class="nav-text">获取微信的打赏二维码,设置金额</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置支付宝的打赏二维码和金额"><span class="nav-number">3.2.</span> <span class="nav-text">设置支付宝的打赏二维码和金额</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上传图片source-image中"><span class="nav-number">3.3.</span> <span class="nav-text">上传图片source/image中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在主题配置文件中设置"><span class="nav-number">3.4.</span> <span class="nav-text">在主题配置文件中设置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-实现爆炸效果"><span class="nav-number">4.</span> <span class="nav-text">4.实现爆炸效果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-github-pages-Hexo搭建"><span class="nav-number">5.</span> <span class="nav-text">5.github pages+Hexo搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#具体的总结"><span class="nav-number">5.1.</span> <span class="nav-text">具体的总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步将hexo的public-目录上传到NYK1024212458-github-io仓库"><span class="nav-number">5.1.1.</span> <span class="nav-text">第一步将hexo的public 目录上传到NYK1024212458.github.io仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#kunkun5love-club的跳转"><span class="nav-number">5.1.2.</span> <span class="nav-text">kunkun5love.club的跳转</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git的安装和email和name的配置"><span class="nav-number">5.2.</span> <span class="nav-text">git的安装和email和name的配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注册github来创建-repositories"><span class="nav-number">5.3.</span> <span class="nav-text">注册github来创建 repositories</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将我们申请的其他域名与github申请的空间绑定"><span class="nav-number">5.4.</span> <span class="nav-text">将我们申请的其他域名与github申请的空间绑定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置自己域名的DNS设置"><span class="nav-number">5.5.</span> <span class="nav-text">设置自己域名的DNS设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo中的配置"><span class="nav-number">5.6.</span> <span class="nav-text">Hexo中的配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-插入音乐"><span class="nav-number">6.</span> <span class="nav-text">6.插入音乐</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#进入网页版的歌曲页面获取外部播放连接"><span class="nav-number">6.1.</span> <span class="nav-text">进入网页版的歌曲页面获取外部播放连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#直接复制歌曲的播放代码到博客中"><span class="nav-number">6.2.</span> <span class="nav-text">直接复制歌曲的播放代码到博客中</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-增加一个站内搜索"><span class="nav-number">7.</span> <span class="nav-text">7.增加一个站内搜索</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#申请第三方的账号"><span class="nav-number">7.1.</span> <span class="nav-text">申请第三方的账号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建搜索的index文件"><span class="nav-number">7.2.</span> <span class="nav-text">新建搜索的index文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置权限"><span class="nav-number">7.3.</span> <span class="nav-text">设置权限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上传数据到algolia"><span class="nav-number">7.4.</span> <span class="nav-text">上传数据到algolia</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#站点配置"><span class="nav-number">7.5.</span> <span class="nav-text">站点配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行命令-hexo-algolia"><span class="nav-number">7.6.</span> <span class="nav-text">执行命令 hexo algolia</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置主题文件"><span class="nav-number">7.7.</span> <span class="nav-text">配置主题文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-关于404公益页面的实现"><span class="nav-number">8.</span> <span class="nav-text">8.关于404公益页面的实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-DaoVoice实现在线联系"><span class="nav-number">9.</span> <span class="nav-text">9.DaoVoice实现在线联系</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注册登录填写邀请码"><span class="nav-number">9.1.</span> <span class="nav-text">注册登录填写邀请码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复制粘贴代码"><span class="nav-number">9.2.</span> <span class="nav-text">复制粘贴代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改主题的配置文件"><span class="nav-number">9.3.</span> <span class="nav-text">修改主题的配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结果没有显示出来"><span class="nav-number">9.4.</span> <span class="nav-text">结果没有显示出来</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#聊天对话款和欢迎词的设置"><span class="nav-number">9.5.</span> <span class="nav-text">聊天对话款和欢迎词的设置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-为博客添加萌萌的宠物"><span class="nav-number">10.</span> <span class="nav-text">10.为博客添加萌萌的宠物 #\</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一步切换终端输入下面命令-安装live2d"><span class="nav-number">10.1.</span> <span class="nav-text">第一步切换终端输入下面命令  安装live2d</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改-layout-swig文件"><span class="nav-number">10.2.</span> <span class="nav-text">修改_layout.swig文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主题配置文件中进行配置"><span class="nav-number">10.3.</span> <span class="nav-text">主题配置文件中进行配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11-修改评论系统之来比力修改为有言"><span class="nav-number">11.</span> <span class="nav-text">11.修改评论系统之来比力修改为有言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#12-DaoCloud的了解"><span class="nav-number">12.</span> <span class="nav-text">12.DaoCloud的了解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#顺便学习了Docker"><span class="nav-number">12.1.</span> <span class="nav-text">顺便学习了Docker</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#13-Hexo-NexT主题中添加网页标题崩溃欺骗搞怪特效"><span class="nav-number">13.</span> <span class="nav-text">13.Hexo NexT主题中添加网页标题崩溃欺骗搞怪特效</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建js"><span class="nav-number">13.1.</span> <span class="nav-text">创建js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-layout-swig中的使用"><span class="nav-number">13.2.</span> <span class="nav-text">在_layout.swig中的使用</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1101,7 +1236,7 @@ var jiathis_config={
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">20.8k</span>
+    <span title="Site words total count">22.6k</span>
   
 </div>
 
@@ -1129,7 +1264,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共20.8k字</span>
+  <span class="post-count">博客全站共22.6k字</span>
 </div>
 
         
