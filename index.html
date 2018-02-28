@@ -762,7 +762,7 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kunkun5love.club/2018/02/08/BottomNavigationView实现底部导航栏的实现/">
+    <link itemprop="mainEntityOfPage" href="http://kunkun5love.club/2018/02/08/BottomNavigationView实现底部导航栏的实现(一)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kunkun5love">
@@ -781,7 +781,7 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/08/BottomNavigationView实现底部导航栏的实现/" itemprop="url">BottomNavigationView实现底部导航栏的实现</a></h1>
+                <a class="post-title-link" href="/2018/02/08/BottomNavigationView实现底部导航栏的实现(一)/" itemprop="url">BottomNavigationView实现底部导航栏的实现(一)</a></h1>
         
 
         <div class="post-meta">
@@ -845,7 +845,7 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  429
+                  2,357
                 </span>
               
 
@@ -861,7 +861,7 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  10
                 </span>
               
             </div>
@@ -883,34 +883,16 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
 
       
         
-          
-            <h1 id="支持库的依赖-Android-Design-Support-Library"><a href="#支持库的依赖-Android-Design-Support-Library" class="headerlink" title="支持库的依赖(Android Design Support Library)"></a>支持库的依赖(Android Design Support Library)</h1><p>开始之前打一波推广,推广的就是我自己,最近喜欢hexo的博客主题,自己上手搭建一个,从开始使用到Hexo的个性化配置,自己边学习边记录,形成了Hexo搭建个人网站的一个体系,同步在个人的博客上:</p>
+          <h1 id="支持库的依赖-Android-Design-Support-Library"><a href="#支持库的依赖-Android-Design-Support-Library" class="headerlink" title="支持库的依赖(Android Design Support Library)"></a>支持库的依赖(Android Design Support Library)</h1><p>开始之前打一波推广,推广的就是我自己,最近喜欢hexo的博客主题,自己上手搭建一个,从开始使用到Hexo的个性化配置,自己边学习边记录,形成了Hexo搭建个人网站的一个体系,同步在个人的博客上:</p>
 <p><a href="http://kunkun5love.club" title="个人网站">http://kunkun5love.club</a></p>
-<p>选取常见的图标: <a href="https://fontawesome.com/icons" target="_blank" rel="noopener">https://fontawesome.com/icons</a></p>
-<blockquote>
-<p>注意: 下面的连接请在微信上打开</p>
-</blockquote>
-<p>学习的笔记来源是微信公众号的文章: 连接如下<a href="http://mp.weixin.qq.com/s/k6GUzoE5b-MiekmrO9_VTg" target="_blank" rel="noopener">http://mp.weixin.qq.com/s/k6GUzoE5b-MiekmrO9_VTg</a></p>
-<h2 id="支持库的依赖"><a href="#支持库的依赖" class="headerlink" title="支持库的依赖"></a>支持库的依赖</h2><p>首先是上代码: </p>
-<pre><code>// 支持库
-compile &apos;com.android.support:design:25.3.1&apos;
-</code></pre><p>不然是不会出现对应的提示;</p>
-<h2 id="开始新建布局书写"><a href="#开始新建布局书写" class="headerlink" title="开始新建布局书写"></a>开始新建布局书写</h2><p>开始之前学习一下子 ColorStateList 类型的资源: </p>
-<p><a href="https://www.cnblogs.com/xirihanlin/archive/2010/06/11/1756121.html" target="_blank" rel="noopener">https://www.cnblogs.com/xirihanlin/archive/2010/06/11/1756121.html</a></p>
-<p>新建项目开始决定来书写: </p>
-<p>添加布局文件时候注意的事项: </p>
-<ol>
-<li>属性一: iteamBackground 指定的是底部导航栏的背景颜色,默认是主题的颜色;</li>
-<li>属性二: iteamIconTint 指的是导航栏中图片的颜色</li>
-<li>属性三: iteamTextColor 指的是导航栏文字的颜色 </li>
-<li>属性四: menu </li>
-</ol>
-<p>BottomNavigationView在使用时，除了普通空间的属性外，还需要注意如下几个特有属性：</p>
-<p>app:itemBackground:指定底部导航栏的背景颜色，默认是当前主题的背景色，白色or黑色；</p>
-<p>app:itemIconTint:指定底部导航栏元素图标的着色方式，默认元素选中时icon颜色为@color/colorPrimary；<br>app:itemTextColor:指定底部导航栏元素文字的着色方式；</p>
-<p>app:menu:使用Menu的形式为底部导航栏指定元素；</p>
-
-          
+<p>本文是对底部导航学习和最后笔记记录,使用的是BottomNavigationView 控件.</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/08/BottomNavigationView实现底部导航栏的实现(一)/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2436,7 +2418,7 @@ compile &apos;com.android.support:design:25.3.1&apos;
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">22.6k</span>
+    <span title="Site words total count">24.5k</span>
   
 </div>
 
@@ -2464,7 +2446,7 @@ compile &apos;com.android.support:design:25.3.1&apos;
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共22.6k字</span>
+  <span class="post-count">博客全站共24.5k字</span>
 </div>
 
         
