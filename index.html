@@ -762,6 +762,240 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://kunkun5love.club/2018/03/05/DOS常见命名整理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kunkun5love">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="于七分">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/05/DOS常见命名整理/" itemprop="url">DOS常见命名整理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-05T13:04:35+08:00">
+                2018-03-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/DOS/" itemprop="url" rel="index">
+                    <span itemprop="name">DOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,093
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="打开命令行"><a href="#打开命令行" class="headerlink" title="打开命令行"></a>打开命令行</h1><p>win +  r 输入的就是cmd 打开;</p>
+<h1 id="常见的命令"><a href="#常见的命令" class="headerlink" title="常见的命令"></a>常见的命令</h1><p>下面的经常使用到的命令:</p>
+<h2 id="关于ping"><a href="#关于ping" class="headerlink" title="关于ping"></a>关于ping</h2><p>PING：它是用来检查网络是否通畅或者网络连接速度的命令。它所利用的原理：网络上的机器都有唯一确定的IP地址，我们给目标IP地址发送一个数据包，对方就要返回一个同样大小的数据包，根据返回的数据包我们可以确定目标主机的存在，可以初步判断目标主机的操作系统等。</p>
+<p>  输入: ping  /?</p>
+<p>图片展示:</p>
+<p><img src="http://i.imgur.com/AOP9bp2.png" alt=""></p>
+<p>百度主机地址: ping www.baidu.com -t<br>接收显示的就是百度主机地址的ip;区别在于 ping www.baidu.com的时候不会一直发送和接收包;</p>
+<p>本人亲测: ping www.baidu.com 只会进行四次的发包和接收, ping www.baidu.com -t之后会一直进行发包接包;  需要对数据统计  使用 ctrl +  pause/break 按键; 退出  ctrl + c ;  清屏:  cls;</p>
+<p><img src="http://i.imgur.com/2JZysbU.png" alt=""></p>
+<h2 id="关于nbtstat"><a href="#关于nbtstat" class="headerlink" title="关于nbtstat  /?"></a>关于nbtstat  /?</h2><p>NBTSTAT命令可以用来查询网络机器的NetBIOS信息及机器的MAC地址。另外，它还可以用来消除NetBIOS高速缓存器和预加载LMHOSTS文件。这个命令在进行安全检查时非常有用。</p>
+<p><img src="http://i.imgur.com/ICf7agX.png" alt=""></p>
+<h2 id="关于netstat"><a href="#关于netstat" class="headerlink" title="关于netstat"></a>关于netstat</h2><p>Netstat用于显示与IP、TCP、UDP和ICMP协议相关的统计数据，一般用于检验本机各端口的网络连接情况。<br>输入: netstat /?</p>
+<p><img src="http://i.imgur.com/YuDXLP4.png" alt=""></p>
+<h2 id="关于TRACERT"><a href="#关于TRACERT" class="headerlink" title="关于TRACERT"></a>关于TRACERT</h2><p>Tracert是路由跟踪实用程序，用于确定 IP 数据报访问目标所采取的路径。</p>
+<p>该命令用 IP 生存时间 (TTL) 字段和 ICMP 错误消息来确定从一个主机到网络上其他主机的路由。</p>
+<p>输入: tracert /?</p>
+<p><img src="http://i.imgur.com/Xe7Oqx6.png" alt=""></p>
+<h2 id="net命令"><a href="#net命令" class="headerlink" title="net命令"></a>net命令</h2><p>这个命令是网络命令中最重要的一个，必须透彻掌握它的每一个子命令的用法，因为它的功能实在是太强大了，这简直就是微软为我们提供的最好的入侵工具。</p>
+<p>输入: net /?</p>
+<p><img src="http://i.imgur.com/jm2mfd9.png" alt=""></p>
+<h2 id="关于at命令已经弃用-使用新的命令-schtask-exe"><a href="#关于at命令已经弃用-使用新的命令-schtask-exe" class="headerlink" title="关于at命令已经弃用,使用新的命令 schtask.exe"></a>关于at命令已经弃用,使用新的命令 schtask.exe</h2><p>允许管理员创建、删除、查询、更改、运行和中止本地或远程系统上的计划任务。</p>
+<p><img src="http://i.imgur.com/hBIx4qr.png" alt=""></p>
+<p><img src="http://i.imgur.com/ukOctx9.png" alt=""></p>
+<h2 id="关于ftp"><a href="#关于ftp" class="headerlink" title="关于ftp"></a>关于ftp</h2><p>网络上开放的ftp的主机很多，其中很大一部分是匿名的，也就是说任何人都可以登陆上去。现在如果你公司开放了一个 ftp服务服务器（一般都是开了21端口的机器）,输入 ftp /?</p>
+<p><img src="http://i.imgur.com/kSH601K.png" alt=""></p>
+<h1 id="关于telnet"><a href="#关于telnet" class="headerlink" title="关于telnet"></a>关于telnet</h1><p>功能强大的远程登陆命令，它操作简单，登陆远程电脑如同使用自己的机器一样，只要你熟悉DOS命令，在成功以 administrator身份连接了远程机器后，就可以用它做一切了。</p>
+<p>注意点: 不一定所有的电脑安装了telnet 客户端,打开的方法就是 打开控制面板;点击程序之后点击启动或关闭windows功能;勾选telnet客户端,之后完成修改</p>
+<p><img src="http://i.imgur.com/R6dBj3d.png" alt=""></p>
+<p>点击程序:</p>
+<p><img src="http://i.imgur.com/D5GcgGr.png" alt=""></p>
+<p>之后就是点击:打开或者关闭windows功能</p>
+<p><img src="http://i.imgur.com/LGti13M.png" alt=""></p>
+<p>就是最后一个就是我们需要勾选的:</p>
+<p>命令行输入: telnet /?</p>
+<p><img src="http://i.imgur.com/eAiwLZY.png" alt=""></p>
+<h2 id="关于ARP"><a href="#关于ARP" class="headerlink" title="关于ARP"></a>关于ARP</h2><p>ARP是一个重要的TCP/IP协议，并且用于确定对应IP地址的网卡物理地址。使用arp命令，我们能够查看本地计算机或另一台计算机的ARP高速缓存中的当前内容。此外，使用arp命令，也可以用人工方式绑定网卡物理和IP地址;</p>
+<p>输入: arp /?</p>
+<p><img src="http://i.imgur.com/CwWkjIh.png" alt=""></p>
+<h2 id="关于route"><a href="#关于route" class="headerlink" title="关于route"></a>关于route</h2><p>大多数主机一般都是驻留在只连接一台路由器的网段上。由于只有一台路由器，因此不存在使用哪一台路由器将数据报发表到远程计算机上去的问题，该路由器的IP地址可作为该网段上所有计算机的默认网关.</p>
+<p><img src="http://i.imgur.com/LRLMCcf.png" alt=""></p>
+<p>下面展示的是实例</p>
+<p><img src="http://i.imgur.com/ngZHxM1.png" alt=""></p>
+<h2 id="Nslookup"><a href="#Nslookup" class="headerlink" title="Nslookup"></a>Nslookup</h2><p>Nslookup 是一个监测网络中 DNS 服务器是否能正确实现域名解析的命令行工具。</p>
+<p>输入: nslookup /?</p>
+<p><img src="http://i.imgur.com/UuMLfiQ.png" alt=""></p>
+<h2 id="其他常见的命令"><a href="#其他常见的命令" class="headerlink" title="其他常见的命令"></a>其他常见的命令</h2><ol>
+<li>查看ip   ipconfig</li>
+<li>ip所有的信息  ipall</li>
+</ol>
+<h2 id="adb安装apk"><a href="#adb安装apk" class="headerlink" title="adb安装apk"></a>adb安装apk</h2><p>首先是配置了adb的环境变量,其次是有链接的调试的设备,</p>
+<p>cmd命令输入:  adb install “安转软件的路劲” </p>
+<p>回车等待基本就OK了!</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+  <div>
+      
+   </div>
+
+    
+
+    <div>
+    
+    </div>
+
+   
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://kunkun5love.club/2018/03/05/Android中关于存贮的类的详解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2550,171 +2784,6 @@ public int getCount() {
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kunkun5love.club/2018/01/17/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kunkun5love">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="于七分">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/17/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-17T09:51:03+08:00">
-                2018-01-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  114
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/01/17/hello-world/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-  <div>
-      
-   </div>
-
-    
-
-    <div>
-    
-    </div>
-
-   
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2769,7 +2838,7 @@ public int getCount() {
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2780,7 +2849,7 @@ public int getCount() {
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2791,7 +2860,7 @@ public int getCount() {
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2908,7 +2977,7 @@ public int getCount() {
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">28.3k</span>
+    <span title="Site words total count">29.4k</span>
   
 </div>
 
@@ -2936,7 +3005,7 @@ public int getCount() {
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共28.3k字</span>
+  <span class="post-count">博客全站共29.4k字</span>
 </div>
 
         
