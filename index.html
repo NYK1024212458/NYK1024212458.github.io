@@ -762,6 +762,395 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://kunkun5love.club/2018/03/01/BottomNavigationView底部导航栏+fragemnt+viewpage的实现实现(二)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kunkun5love">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="于七分">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/01/BottomNavigationView底部导航栏+fragemnt+viewpage的实现实现(二)/" itemprop="url">BottomNavigationView底部导航栏+fragemnt和viewpage的实现实现(二)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-01T10:30:28+08:00">
+                2018-03-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,787
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>声明: 本文的连接地址(微信打开): <a href="http://view.inews.qq.com/w/WXN20180301025918030?refer=nwx&amp;bat_id=1115006214&amp;cur_pos=1&amp;openid=o04IBAOQzAM4aOm6JQYDgPf5unAs&amp;groupid=1519893627&amp;msgid=1" target="_blank" rel="noopener">http://view.inews.qq.com/w/WXN20180301025918030?refer=nwx&amp;bat_id=1115006214&amp;cur_pos=1&amp;openid=o04IBAOQzAM4aOm6JQYDgPf5unAs&amp;groupid=1519893627&amp;msgid=1</a></p>
+<p>我学习的大牛的微信公众号的文章,特此说明.</p>
+<p>记录一点就是自己火狐的通行证 账号: 1024212458@qq.com</p>
+<p>密码: 经常使用的哪一个</p>
+<p>三月一号,加油学习.</p>
+<p>基于上一篇的学习,我们基本对于底部导航栏有一个明确的认识很基本使用,我们常见的是底部导航栏搭配的fragment来使用,完成页面的切换.</p>
+<h1 id="BottomNavigationView-fragment"><a href="#BottomNavigationView-fragment" class="headerlink" title="BottomNavigationView+fragment"></a>BottomNavigationView+fragment</h1><p>思路就是我们想集成底部的导航栏,对导航栏进行select的监听;</p>
+<p>代码如下: </p>
+<p> 布局: </p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+android:layout_width=&quot;match_parent&quot;
+android:layout_height=&quot;match_parent&quot;
+android:orientation=&quot;vertical&quot;&gt;
+
+&lt;FrameLayout
+    android:id=&quot;@+id/fl_main_contain&quot;
+    android:layout_above=&quot;@id/bottom_navigation1&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:orientation=&quot;vertical&quot;&gt;
+&lt;/FrameLayout&gt;
+
+&lt;android.support.design.widget.BottomNavigationView
+    android:id=&quot;@+id/bottom_frgament&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:layout_alignParentBottom=&quot;true&quot;
+    app:itemBackground=&quot;@color/colorPrimary&quot;
+    app:itemIconTint=&quot;@drawable/bottom_icon_list&quot;
+    app:itemTextColor=&quot;@drawable/bottom_text_list&quot;
+    app:menu=&quot;@menu/bottom_navigation_main4&quot; /&gt;
+&lt;/RelativeLayout&gt;
+</code></pre><p>menu的代码 如果需要自己寻找图片代替: </p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;menu xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;&gt;
+&lt;item
+    android:id=&quot;@+id/action_favorites4&quot;
+    android:enabled=&quot;true&quot;
+    android:icon=&quot;@mipmap/canvas&quot;
+    android:title=&quot;@string/text_favorites&quot;
+    app:showAsAction=&quot;ifRoom&quot; /&gt;
+&lt;item
+    android:id=&quot;@+id/action_launcher4&quot;
+    android:enabled=&quot;true&quot;
+    android:icon=&quot;@mipmap/ic_launcher&quot;
+    android:title=&quot;@string/text_schedules&quot;
+    app:showAsAction=&quot;ifRoom&quot; /&gt;
+&lt;item
+    android:id=&quot;@+id/action_music4&quot;
+    android:enabled=&quot;true&quot;
+    android:icon=&quot;@mipmap/music&quot;
+    android:title=&quot;@string/text_music&quot;
+    app:showAsAction=&quot;ifRoom&quot; /&gt;
+&lt;item
+    android:id=&quot;@+id/action_sport4&quot;
+    android:enabled=&quot;true&quot;
+    android:icon=&quot;@mipmap/transportation_color_moto&quot;
+    android:title=&quot;@string/text_music&quot;
+    app:showAsAction=&quot;ifRoom&quot; /&gt;
+&lt;/menu&gt;
+</code></pre><p>我们新建需要的fragment,然后对fragemnt开启事物进行替换.替换的就是对我们展示的FrameLayout的布局.</p>
+<p>具体的代码如下: </p>
+<pre><code> /**
+ * 事物的处理
+ */
+private void initEvent() {
+
+    bottom_frgament.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.action_favorites4:
+                    // 点击的时候切换的 就是我们的FrameLayout
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fl_main_contain, own1Fragment).commit();
+                    return true;
+                // break;
+                case R.id.action_launcher4:
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fl_main_contain, own1Fragment).commit();
+                    return true;
+                // break;
+                case R.id.action_music4:
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fl_main_contain, own1Fragment).commit();
+                    return true;
+                // break;
+                case R.id.action_sport4:
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fl_main_contain, own1Fragment).commit();
+                    return true;
+                //  break;
+            }
+            return false;
+        }
+    });
+}
+</code></pre><p>注意的是关于supportfragment和fragment,然后就是监听select的时候返回使用return true,不然不会生效.还有就是事物提交时候注意的事项.</p>
+<h2 id="BottomNavigationView-viewpage"><a href="#BottomNavigationView-viewpage" class="headerlink" title="BottomNavigationView+viewpage"></a>BottomNavigationView+viewpage</h2><p>这次要实现的是关于BottomNavigation和Viewpage实现,我们发现底部导航只能点击进入下一个页面,不能滑动到下一个页面,我们搭建viewpage的组合;</p>
+<p>页面的布局展示: </p>
+<p><img src="https://i.imgur.com/ccSDdPI.png" alt=""></p>
+<p>初始化结束后先给ViewPage设置设置适配器</p>
+<h3 id="关于viewpage的适配器的选择"><a href="#关于viewpage的适配器的选择" class="headerlink" title="关于viewpage的适配器的选择"></a>关于viewpage的适配器的选择</h3><p>关于适配器的学习连接: <a href="http://blog.csdn.net/jack_king007/article/details/41413405" target="_blank" rel="noopener">http://blog.csdn.net/jack_king007/article/details/41413405</a></p>
+<p>第一点就是 PagerAdapter 是基类, FragmentPagerAdapter 是继承PagerAdapter 的,FragmentStatePagerAdapter也是继承于PagerAdapter.</p>
+<p>我们直接使用FrgamentAdapter: </p>
+<p>代码如下: </p>
+<pre><code> public class VgAdapter extends FragmentPagerAdapter{
+ private List&lt;Fragment&gt; fragmentList ;
+public VgAdapter(FragmentManager fm, List&lt;Fragment&gt; fragments) {
+    super(fm);
+    fragmentList=fragments;
+}
+@Override
+public Fragment getItem(int position) {
+    Fragment fragment = fragmentList.get(position);
+    return fragment;
+}
+@Override
+public int getCount() {
+    return fragmentList.size();
+}
+}
+</code></pre><p>在主页面设置adapter和对BottomNavigationView监听,展示返回true,不然底部不能点金,此时发现底部可以点金,viewpage也可以滑动,下面就是关联起来.</p>
+<p>这是昨天的一些遗漏,我们今天主要是对ViewPage的适配器的学习,上面介绍了关于Viewpage的三种适配器,我们分别继承来实现我们当前的viewpage的实现.</p>
+<h4 id="第一个就是继承FagmentPagerAdapter类"><a href="#第一个就是继承FagmentPagerAdapter类" class="headerlink" title="第一个就是继承FagmentPagerAdapter类"></a>第一个就是继承FagmentPagerAdapter类</h4><p>具体代码的实现在上面,这里面说说,类中方法的实现含义,构造方法便于传递一个FragmentManager,后面的list是便于Fragment的传递,geItem(postion),根据postion绑定对应的fragment.  最后是getCount(),返回的是页面的size.</p>
+<p>实现起来比较方便.</p>
+<h4 id="第二个adapter继承基类PagerAdapter"><a href="#第二个adapter继承基类PagerAdapter" class="headerlink" title="第二个adapter继承基类PagerAdapter"></a>第二个adapter继承基类PagerAdapter</h4><p>使用pageradapter，至少必须重写下面的四个方法<br>【 instantiateItem(ViewGroup, int)】</p>
+<p>这个函数的实现的功能是创建指定位置的页面视图。适配器有责任增加即将创建的View视图到这里给定的container中，这是为了确保在finishUpdate(viewGroup)返回时这个已经完成<br>返回值：返回一个代表新增视图页面的Object</p>
+<p>【public void destroyItem (ViewGroup container, int position, Object object)】</p>
+<p>该方法实现的功能是移除一个给定位置的页面。适配器有责任从容器中删除这个视图。这是为了确保在finishUpdate(viewGroup)返回时视图能够被移除。<br>【 public int getCount()】</p>
+<p>返回当前有效视图的个数。</p>
+<p>【isViewFromObject(View, Object)】</p>
+<p>功能：该函数用来判断instantiateItem(ViewGroup, int)函数所返回来的Key与一个页面视图是否是代表的同一个视图(即它俩是否是对应的，对应的表示同一个View)<br>返回值：如果对应的是同一个View，返回True，否则返回False。</p>
+<p>代码展示:<br>     public class ViewPagerPageAdapter extends PagerAdapter {<br>    private List<fragment> fragmentList;<br>    private List<view> mVIEWList;</view></fragment></p>
+<pre><code>/*public ViewPagerPageAdapter(List&lt;Fragment&gt; fragments) {
+    fragmentList = fragments;
+}*/
+
+public ViewPagerPageAdapter(Context context) {
+    TextView textView = new TextView(context);
+    textView.setText(&quot;这是textview&quot;);
+    mVIEWList = new ArrayList&lt;&gt;();
+    mVIEWList.add(textView);
+    mVIEWList.add(textView);
+    mVIEWList.add(textView);
+    mVIEWList.add(textView);
+}
+
+@Override
+public Object instantiateItem(ViewGroup container, int position) {
+    container.addView( mVIEWList.get(position));
+    return  mVIEWList.get(position);
+}
+
+@Override
+public void destroyItem(ViewGroup container, int position, Object object) {
+   container.removeView( mVIEWList.get(position));
+}
+
+@Override
+public int getCount() {
+    return mVIEWList.size();
+}
+@Override
+public boolean isViewFromObject(View view, Object object) {
+    return view==object;
+}
+}
+</code></pre><h4 id="还有一个FragmentStatePagerAdapter"><a href="#还有一个FragmentStatePagerAdapter" class="headerlink" title="还有一个FragmentStatePagerAdapter"></a>还有一个FragmentStatePagerAdapter</h4><p>代码展示如下: </p>
+<pre><code>public class VPFragmentStusAdapter extends FragmentStatePagerAdapter {
+private List&lt;Fragment&gt; fragmentList;
+
+public VPFragmentStusAdapter(FragmentManager fm, List&lt;Fragment&gt; fragments) {
+    super(fm);
+    fragmentList = fragments;
+}
+
+@Override
+public Fragment getItem(int position) {
+    return fragmentList.get(position);
+}
+
+@Override
+public int getCount() {
+    return fragmentList.size();
+}
+}
+</code></pre><p>在Activity中的使用的情况也是一致的.</p>
+<p>这个类也是继承与PagerAdapter; 使用于多个tab页面的情况.</p>
+<h4 id="最后是适配器的区别"><a href="#最后是适配器的区别" class="headerlink" title="最后是适配器的区别"></a>最后是适配器的区别</h4><p>首先他们都是继承自PagerAdapter，FragmentPagerAdapter适合使用在固定的数量较少的场景，比如本例的4个tab的fragment滑动界面，而FragmentStatePagerAdapter适合适合用在多个tab场景下，并且会保存当前界面以及下一个界面和上一界面，最多可以保留3个（具体源码分析参见<a href="http://blog.csdn.net/jackrex/article/details/9885469?utm_source=tuicool&amp;utm_medium=referral）他们的使用方式一致" target="_blank" rel="noopener">http://blog.csdn.net/jackrex/article/details/9885469?utm_source=tuicool&amp;utm_medium=referral）他们的使用方式一致</a></p>
+<h3 id="底部点击和viewpage绑定的fragment的切话"><a href="#底部点击和viewpage绑定的fragment的切话" class="headerlink" title="底部点击和viewpage绑定的fragment的切话"></a>底部点击和viewpage绑定的fragment的切话</h3><p>首先是底部选中切换到对应的viewpage:</p>
+<p>代码如下:</p>
+<p><img src="https://i.imgur.com/Q5axTkd.png" alt=""></p>
+<p>图中有注意点,我们case后面使用break,也可以实现点击底部导航栏完成viewpage的切换,但是使用break的话,底部不会出现选择和为选择时候颜色的变化.</p>
+<pre><code>// 设置viewpage的滑动的监听
+   mVg_bvg.addOnPageChangeListener(this);
+</code></pre><p>上面我们已经实现了对底部点击和viewpage中对应fragment的切话,你仔细看还有一个问题那就是我们滑动的时候,底部不会变化.</p>
+<h3 id="滑动viewpage出现对底部同步变化"><a href="#滑动viewpage出现对底部同步变化" class="headerlink" title="滑动viewpage出现对底部同步变化"></a>滑动viewpage出现对底部同步变化</h3><p>哪我们想到是什么时候viewpage滑动,我们需要监听viewpage在做出底部的切换.</p>
+<p>我们知道底部导航栏使用的menu指定的元素,BottomNavigationView的源码方法可以获取一个menu;</p>
+<p><img src="https://i.imgur.com/lRNVDwK.png" alt=""></p>
+<p>我们进Menu源码查看<br><img src="https://i.imgur.com/QKdOrsW.png" alt=""></p>
+<p>我们可以finIteam(postion),滑动到哪里我们可以获取到postion的iteam,之个对象是MenuIteam,我们进去看看:</p>
+<p><img src="https://i.imgur.com/BS4uPSQ.png" alt=""></p>
+<p>最后成功关联.</p>
+<p>最后的代码展示: </p>
+<p><img src="https://i.imgur.com/mC24T34.png" alt=""></p>
+<p>最后的展示图片(ps图片这张是借用的):</p>
+<p><img src="https://i.imgur.com/L3CJ3tY.gif" alt=""></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+  <div>
+      
+   </div>
+
+    
+
+    <div>
+    
+    </div>
+
+   
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://kunkun5love.club/2018/02/08/BottomNavigationView实现底部导航栏的实现(一)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2038,193 +2427,6 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kunkun5love.club/2018/01/10/测试页面/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kunkun5love">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="于七分">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/10/测试页面/" itemprop="url">TCP/UDP编程</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-10T14:46:24+08:00">
-                2018-01-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/博客/" itemprop="url" rel="index">
-                    <span itemprop="name">博客</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  2,444
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  10
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="TCP-UDP编程"><a href="#TCP-UDP编程" class="headerlink" title="TCP/UDP编程"></a>TCP/UDP编程</h1><p>在最近的无线模组的开发中对于TCP和UDP的协议的要求有了进一步的需求,这片博客是自己学习基础的一片博客,用于自己以后在学习过程中的查看和基础回顾.话说最近是不是该歇一歇面试的知识点整理了!<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/01/10/测试页面/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-  <div>
-      
-   </div>
-
-    
-
-    <div>
-    
-    </div>
-
-   
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2279,7 +2481,7 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2418,7 +2620,7 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">24.5k</span>
+    <span title="Site words total count">26.3k</span>
   
 </div>
 
@@ -2446,7 +2648,7 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共24.5k字</span>
+  <span class="post-count">博客全站共26.3k字</span>
 </div>
 
         
